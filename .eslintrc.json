@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true,
+    "node": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
+    ],
+    "react/no-unescaped-entities": "off",
+    "import/no-anonymous-default-export": "off"
+  }
+}
