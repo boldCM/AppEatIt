@@ -1,17 +1,15 @@
 import React from "react";
-import "./App.css";
-import Page from "./pages/Page";
+import GlobalStyle from "./GlobalStyle";
 
 function App() {
   return (
-    <div className="App">
-      <Page
-        onLogin={() => console.log("login")}
-        onLogout={() => console.log("logout")}
-        onCreateAccount={() => console.log("create account")}
-      />
+    <>
+      <GlobalStyle />
+      <div>AppEatit</div>
+      <h1>Hallo</h1>
+      <h2>Hallo du!</h2>
       <a href="/storybook">To Storybook</a>
-    </div>
+    </>
   );
 }
 
