@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
 --primary-color: #F8E4CF;
 --text-color: #262626
 }
+
+button:focus {
+  outline: none;
+}
+
 body {
 font-family: 'Encode Sans', sans-serif;
 -webkit-font-smoothing: antialiased;
