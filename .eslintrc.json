@@ -8,8 +8,8 @@
   "extends": [
     "react-app",
     "eslint:recommended",
-    "plugin:react/recommended",
-    "prettier"
+    "prettier",
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
