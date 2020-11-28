@@ -7,7 +7,6 @@ const CornerContainer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  /* z-index: 1; */
 `;
 
 const WhiteCorner = styled.div`
