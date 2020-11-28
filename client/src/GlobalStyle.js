@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
 --text-color: #262626
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 button:focus {
   outline: none;
 }

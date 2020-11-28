@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
-import DiamondButton from "../../assets/MainButton.png";
+import DiamondButton from "../../assets/mainButton.png";
+import BackIcon from "../../assets/backIcon.png";
+import IconButton from "./IconButton";
 
 const Footer = styled.footer`
   position: fixed;
@@ -62,13 +64,15 @@ const BorderTraingle = styled.div`
 const BottomNav = () => {
   return (
     <>
-      <Triangle/>
-      <BorderTraingle/>
+      <Triangle />
+      <BorderTraingle />
       <MainButton>
         <MainButtonImg src={DiamondButton} alt="Menu-Button" />
       </MainButton>
       <Footer>
-        <BottomNavBar />
+        <BottomNavBar>
+          <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
+        </BottomNavBar>
       </Footer>
     </>
   );
