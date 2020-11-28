@@ -29,6 +29,8 @@ font-family: 'Encode Sans', sans-serif;
 font-size: 16px;
 font-weight: 300;
 background: var(--gradient-color);
+background-repeat: no-repeat;
+background-attachment: fixed;
 margin: 0;
 color: var(---text-color);
 height: 100vh

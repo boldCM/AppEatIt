@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components/macro";
+import CornerElement from "../Corner/Corner";
 // import PropTypes from "prop-types";
 
 const ContainerHeader = styled.div`
+  background-color: #f2d3ac;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
 `;
 
 const UnderlineHeader = styled.div`
@@ -17,10 +21,13 @@ const UnderlineHeader = styled.div`
 
 const Header = () => {
   return (
-    <ContainerHeader>
-      <h1>Wochenplan</h1>
-      <UnderlineHeader />
-    </ContainerHeader>
+    <>
+      <ContainerHeader>
+        <h1>Wochenplan</h1>
+        <UnderlineHeader />
+      </ContainerHeader>
+      <CornerElement />
+    </>
   );
 };
 
