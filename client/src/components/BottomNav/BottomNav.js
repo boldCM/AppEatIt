@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.png";
-import BackIcon from "../../assets/backIcon.png";
 import IconButton from "./IconButton";
+import BackIcon from "../../assets/backIcon.png";
+import CalendarIcon from "../../assets/calendarIcon.png";
+import DeleteIcon from "../../assets/deleteIcon.png";
+import ShareIcon from "../../assets/shareIcon.png";
 
 const Footer = styled.footer`
   position: fixed;
@@ -15,6 +18,9 @@ const BottomNavBar = styled.div`
   height: 56px;
   background-color: var(--primary-color);
   border-top: 2px solid var(--active-color);
+  display: flex;
+  justify-content: space-around;
+  padding-right: 6rem;
 `;
 
 const MainButton = styled.button`
@@ -72,6 +78,9 @@ const BottomNav = () => {
       <Footer>
         <BottomNavBar>
           <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
+          <IconButton iconSrc={CalendarIcon} iconAlt={"CalendarIcon"} />
+          <IconButton iconSrc={ShareIcon} iconAlt={"ShareIcon"} />
+          <IconButton iconSrc={DeleteIcon} iconAlt={"DeleteIcon"} />
         </BottomNavBar>
       </Footer>
     </>
