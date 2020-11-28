@@ -6,6 +6,7 @@ import DiamondActiveImg from "../../assets/diamondActive.png";
 const ContainerWeekLI = styled.div`
   display: flex;
   align-items: center;
+  margin: 10px 0 10px 0.5rem;
 `;
 
 const Diamond = styled.div`
@@ -21,7 +22,7 @@ const Diamond = styled.div`
 
 const DiamondLine = styled.div`
   border-top: 1.5px solid var(--active-color);
-  width: 100px;
+  width: 5rem;
   margin-left: -2px;
   margin-bottom: 1px;
 `;

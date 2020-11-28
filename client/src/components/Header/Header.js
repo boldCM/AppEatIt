@@ -4,7 +4,7 @@ import CornerElement from "../Corner/Corner";
 // import PropTypes from "prop-types";
 
 const ContainerHeader = styled.div`
-  background-color: #f2d3ac;
+  background: linear-gradient(#f2d3ac, #f3d7b4);
   display: flex;
   flex-direction: column;
   align-items: center;
