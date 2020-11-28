@@ -62,8 +62,8 @@ const BorderTraingle = styled.div`
 const BottomNav = () => {
   return (
     <>
-      <Triangle></Triangle>
-      <BorderTraingle></BorderTraingle>
+      <Triangle/>
+      <BorderTraingle/>
       <MainButton>
         <MainButtonImg src={DiamondButton} alt="Menu-Button" />
       </MainButton>
