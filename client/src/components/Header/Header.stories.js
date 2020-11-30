@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Header";
 
 export default {
-  title: "Example/Components/Header",
+  title: "Components",
   component: Header,
 };
 

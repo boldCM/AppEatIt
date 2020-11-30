@@ -3,7 +3,7 @@ import React from "react";
 import BottomNav from "./BottomNav";
 
 export default {
-  title: "Example/Components/BottomNav",
+  title: "Components",
   component: BottomNav,
 };
 

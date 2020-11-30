@@ -4,7 +4,7 @@ import WeeklyPage from "./WeeklyPage";
 // import * as HeaderStories from "../../components/Header/Header.stories";
 
 export default {
-  title: "Example/Page",
+  title: "Page",
   component: WeeklyPage,
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import WeekListItem from "./WeekListItem";
 
 export default {
-  title: "Example/Components/WeekListItem",
+  title: "Components",
   component: WeekListItem,
 };
 

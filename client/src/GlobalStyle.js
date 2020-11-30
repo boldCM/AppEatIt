@@ -32,7 +32,7 @@ background: var(--gradient-color);
 background-repeat: no-repeat;
 background-attachment: fixed;
 margin: 0;
-color: var(---text-color);
+color: var(--text-color);
 height: 100vh
 
 }
@@ -47,7 +47,7 @@ font-weight: 400;
 }
 a {
     text-decoration: none;
-    color: var(---text-color)
+    color: var(--text-color)
 }
 
 `;
