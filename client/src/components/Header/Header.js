@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 import CornerElement from "../Corner/Corner";
-// import PropTypes from "prop-types";
 
 const ContainerHeader = styled.header`
   background: linear-gradient(#f2d3ac, #f3d7b4);

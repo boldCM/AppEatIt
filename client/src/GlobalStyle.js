@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 --gradient-color: linear-gradient(#F2D3AC, #FFFFFF );
 --active-color: #037F8C;
 --primary-color: #F8E4CF;
+--secondary-color: #F2D3AC;
 --text-color: #262626
 }
 
