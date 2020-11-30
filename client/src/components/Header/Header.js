@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import CornerElement from "../Corner/Corner";
+import PropTypes from "prop-types";
 
 const ContainerHeader = styled.header`
   background: linear-gradient(#f2d3ac, #f3d7b4);
@@ -19,11 +20,11 @@ const UnderlineHeader = styled.hr`
   /* spacing looked best with the odd number of -7px */
 `;
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <>
       <ContainerHeader>
-        <h1>Wochenplan</h1>
+        <h1>{title}</h1>
         <UnderlineHeader />
       </ContainerHeader>
       <CornerElement />
@@ -32,3 +33,7 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  title: PropTypes.string,
+};

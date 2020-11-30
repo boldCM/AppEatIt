@@ -12,7 +12,7 @@ const WeekListContainer = styled.div`
 const WeeklyPage = () => {
   return (
     <>
-      <Header />
+      <Header title="Wochenplan" />
       <WeekListContainer>
         <WeekListItem />
         <WeekListItem />
