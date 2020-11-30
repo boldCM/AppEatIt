@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.png";
-import DiamondActiveImg from "../../assets/diamondActive.png";
 
-const ContainerWeekLI = styled.div`
+const ContainerWeek = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 0 10px 0.5rem;
 `;
 
 const Diamond = styled.div`
-  background-image: url(${DiamondActiveImg});
+  background-image: url(${DiamondImg});
   height: 5.8rem;
   width: 5.8rem;
   background-repeat: no-repeat;
@@ -23,20 +22,20 @@ const Diamond = styled.div`
 `;
 
 const DiamondLine = styled.hr`
-  border-top: 1.5px solid var(--active-color);
+  border: 0.5px solid var(--secondary-color);
   width: 5rem;
   margin: 0 5px 0 -2px;
 `;
 
-const TextWeekLI = styled.p`
-  color: var(--active-color);
+const TextWeek = styled.p`
+  color: var(--text-color);
   padding-bottom: 1px;
   /* 1px looked more aligned with the hr line. */
 `;
 
 const WeekListItem = () => {
   return (
-    <ContainerWeekLI>
+    <ContainerWeek>
       <Diamond>
         <time dateTime="11-30">
           Mo
@@ -45,8 +44,8 @@ const WeekListItem = () => {
         </time>
       </Diamond>
       <DiamondLine />
-      <TextWeekLI>Geschnetzeltes</TextWeekLI>
-    </ContainerWeekLI>
+      <TextWeek>Geschnetzeltes</TextWeek>
+    </ContainerWeek>
   );
 };
 
