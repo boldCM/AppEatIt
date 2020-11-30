@@ -18,27 +18,31 @@ const Diamond = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--active-color);
+  text-align: center;
+  padding-bottom: 5px;
 `;
 
-const DiamondLine = styled.div`
+const DiamondLine = styled.hr`
   border-top: 1.5px solid var(--active-color);
   width: 5rem;
-  margin-left: -2px;
-  margin-bottom: 1px;
+  margin: 0 5px 0 -2px;
 `;
 
-const TextWeekLI = styled.div`
+const TextWeekLI = styled.p`
   color: var(--active-color);
-  margin-bottom: 2px;
-  margin-left: 5px;
+  padding-bottom: 1px;
+  /* 1px looked more aligned with the hr line. */
 `;
 
 const WeekListItem = () => {
   return (
     <ContainerWeekLI>
       <Diamond>
-        {/* <img src={DiamondActiveImg} alt="Active Diamond" /> */}
-        28.11.
+        <time dateTime="11-30">
+          Mo
+          <br />
+          30.11.
+        </time>
       </Diamond>
       <DiamondLine />
       <TextWeekLI>Geschnetzeltes</TextWeekLI>
@@ -47,11 +51,3 @@ const WeekListItem = () => {
 };
 
 export default WeekListItem;
-
-// ein Eltern Div:
-
-// ein Div für diamond bild damit man den Text schön zentrieren kann
-// evtl ein weiteres Div für das Datum
-
-// ein Div für den Strich(oder bild als Strich)
-// ein Div für den TextRezept
