@@ -5,8 +5,8 @@ import CornerElement from "../../components/Corner/Corner";
 const EmptyPage = () => {
   return (
     <>
-      <CornerElement />;
-      <BottomNav />;
+      <CornerElement />
+      <BottomNav />
     </>
   );
 };

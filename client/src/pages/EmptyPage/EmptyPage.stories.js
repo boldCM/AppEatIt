@@ -2,7 +2,7 @@ import React from "react";
 import EmptyPage from "./EmptyPage";
 
 export default {
-  title: "Example/Page",
+  title: "Page",
   component: EmptyPage,
 };
 

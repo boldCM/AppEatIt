@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 --gradient-color: linear-gradient(#F2D3AC, #FFFFFF );
 --active-color: #037F8C;
 --primary-color: #F8E4CF;
+--secondary-color: #F2D3AC;
 --text-color: #262626
 }
 
@@ -29,8 +30,10 @@ font-family: 'Encode Sans', sans-serif;
 font-size: 16px;
 font-weight: 300;
 background: var(--gradient-color);
+background-repeat: no-repeat;
+background-attachment: fixed;
 margin: 0;
-color: var(---text-color);
+color: var(--text-color);
 height: 100vh
 
 }
@@ -45,7 +48,7 @@ font-weight: 400;
 }
 a {
     text-decoration: none;
-    color: var(---text-color)
+    color: var(--text-color)
 }
 
 `;

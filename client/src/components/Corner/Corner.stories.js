@@ -2,7 +2,7 @@ import React from "react";
 import CornerElement from "./Corner";
 
 export default {
-  title: "Example/Components/Corner",
+  title: "Components",
   component: CornerElement,
 };
 
