@@ -9,7 +9,8 @@ const ContainerHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
 `;
 

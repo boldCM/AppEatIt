@@ -4,14 +4,19 @@ import styled from "styled-components/macro";
 import Header from "../../components/Header";
 import WeekListItem from "../../components/WeekListItem/WeekListItem";
 
+const Layout = styled.div`
+  padding: 60px 0 56px 0;
+  height: 100vh;
+`;
+
 const WeekListContainer = styled.div`
-  height: 26rem;
   overflow: auto;
+  max-height: 100%;
 `;
 
 const WeeklyPage = () => {
   return (
-    <>
+    <Layout>
       <Header title="Wochenplan" />
       <WeekListContainer>
         <WeekListItem />
@@ -33,7 +38,7 @@ const WeeklyPage = () => {
         <WeekListItem />
       </WeekListContainer>
       <BottomNav />
-    </>
+    </Layout>
   );
 };
 
