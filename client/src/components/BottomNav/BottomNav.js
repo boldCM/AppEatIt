@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.png";
 import IconButton from "./IconButton";
@@ -6,6 +6,8 @@ import BackIcon from "../../assets/backIcon.png";
 import CalendarIcon from "../../assets/calendarIcon.png";
 import DeleteIcon from "../../assets/deleteIcon.png";
 import ShareIcon from "../../assets/shareIcon.png";
+import Overlay from "../../pages/OverlayMenue/Overlay";
+// import PropTypes from 'prop-types'
 
 const Footer = styled.footer`
   position: fixed;
@@ -68,13 +70,22 @@ const BorderTraingle = styled.div`
 `;
 
 const BottomNav = () => {
+  const [open, setOpen] = useState(false);
+
+  // const toggleOpen = () => {
+  //   setOpen(!open);
+  // };
+
+  // evtl eine funktion die gerendert wird, wenn ein useState true ist...
+
   return (
     <>
       <Triangle />
       <BorderTraingle />
-      <MainButton>
+      <MainButton onClick={() => setOpen(!open)}>
         <MainButtonImg src={DiamondButton} alt="Menu-Button" />
       </MainButton>
+      {open && <Overlay open={open} />}
       <Footer>
         <BottomNavBar>
           <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
