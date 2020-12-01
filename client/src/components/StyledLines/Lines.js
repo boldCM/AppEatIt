@@ -19,4 +19,8 @@ const UnderlineHeader = styled.hr`
   /* spacing looked best with the odd number of -7px */
 `;
 
-export { DiamondLine, OverlayLine, UnderlineHeader };
+const UnderlineHeaderOverlay = styled(UnderlineHeader)`
+  margin: -7px 0 20px auto;
+`;
+
+export { DiamondLine, OverlayLine, UnderlineHeader, UnderlineHeaderOverlay };
