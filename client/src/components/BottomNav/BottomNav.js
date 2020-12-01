@@ -7,7 +7,6 @@ import CalendarIcon from "../../assets/calendarIcon.png";
 import DeleteIcon from "../../assets/deleteIcon.png";
 import ShareIcon from "../../assets/shareIcon.png";
 import Overlay from "../../pages/OverlayMenue/Overlay";
-// import PropTypes from 'prop-types'
 
 const Footer = styled.footer`
   position: fixed;

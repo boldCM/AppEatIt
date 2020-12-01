@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { OverlayLine } from "../StyledLines/Lines";
+import { OverlayLine, UnderlineHeaderOverlay } from "../StyledLines/Lines";
 
 const ContainerOverlayItems = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: right;
-
-  right: 0;
-  bottom: 0;
+  padding: 1.5rem;
+  background: var(--gradient-color);
+  background-repeat: no-repeat;
+  height: 100%;
+  justify-content: center;
+  text-align: right;
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+  }
 `;
 
 const LinkedItem = styled.a`
@@ -21,6 +27,8 @@ const LinkedItem = styled.a`
 const OverlayItem = () => {
   return (
     <ContainerOverlayItems>
+      <h2>Übersicht</h2>
+      <UnderlineHeaderOverlay />
       <LinkedItem href="/">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
       <LinkedItem href="/">Neue Einkaufsliste erstellen</LinkedItem>
