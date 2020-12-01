@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.png";
 import IconButton from "./IconButton";
@@ -31,7 +31,7 @@ const MainButton = styled.button`
   bottom: 0;
   right: 0;
   position: fixed;
-  z-index: 3;
+  z-index: 2;
 `;
 
 const MainButtonImg = styled.img`
@@ -72,12 +72,25 @@ const BorderTraingle = styled.div`
 const BottomNav = () => {
   const [open, setOpen] = useState(false);
 
-  // const toggleOpen = () => {
-  //   setOpen(!open);
-  // };
+  const node = useRef();
 
-  // evtl eine funktion die gerendert wird, wenn ein useState true ist...
+  const useOnClickOutside = (ref, handler) => {
+    useEffect(() => {
+      const listener = (event) => {
+        if (!ref.current || ref.current.contains(event.target)) {
+          return;
+        }
+        handler(event);
+      };
+      document.addEventListener("mousedown", listener);
 
+      return () => {
+        document.removeEventListener("mousedown", listener);
+      };
+    }, [ref, handler]);
+  };
+
+  useOnClickOutside(node, () => setOpen(false));
   return (
     <>
       <Triangle />
@@ -85,7 +98,7 @@ const BottomNav = () => {
       <MainButton onClick={() => setOpen(!open)}>
         <MainButtonImg src={DiamondButton} alt="Menu-Button" />
       </MainButton>
-      {open && <Overlay open={open} />}
+      <Overlay open={open} />
       <Footer>
         <BottomNavBar>
           <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
