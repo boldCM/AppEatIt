@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.png";
+import { DiamondLine } from "../StyledLines/Lines";
 
 const ContainerWeek = styled.div`
   display: flex;
@@ -19,12 +20,6 @@ const Diamond = styled.div`
   color: var(--active-color);
   text-align: center;
   padding-bottom: 5px;
-`;
-
-const DiamondLine = styled.hr`
-  border: 0.5px solid var(--secondary-color);
-  width: 5rem;
-  margin: 0 5px 0 -2px;
 `;
 
 const TextWeek = styled.p`
@@ -49,4 +44,4 @@ const WeekListItem = () => {
   );
 };
 
-export default WeekListItem;
+export { WeekListItem };

@@ -50,6 +50,10 @@ a {
     text-decoration: none;
     color: var(--text-color)
 }
+hr{
+  border:none;
+  height: 1px;
+}
 
 `;
 

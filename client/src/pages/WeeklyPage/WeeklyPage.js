@@ -1,8 +1,8 @@
 import React from "react";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import styled from "styled-components/macro";
-import Header from "../../components/Header";
-import WeekListItem from "../../components/WeekListItem/WeekListItem";
+import { Header } from "../../components/Header";
+import { WeekListItem } from "../../components/WeekListItem/WeekListItem";
 
 const Layout = styled.div`
   padding: 60px 0 56px 0;
