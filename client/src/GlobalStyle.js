@@ -34,7 +34,8 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 margin: 0;
 color: var(--text-color);
-height: 100vh
+height: 100vh;
+overflow-x: hidden;
 
 }
 h1{
