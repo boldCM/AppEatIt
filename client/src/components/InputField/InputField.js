@@ -19,7 +19,14 @@ const StyledInputField = styled.textarea`
 `;
 
 const InputField = () => {
-  return <StyledInputField placeholder="Füge etwas der Einkaufsliste hinzu" />;
+  return (
+    <form>
+      <StyledInputField
+        placeholder="Füge etwas der Einkaufsliste hinzu"
+        type="submit"
+      />
+    </form>
+  );
 };
 
 export default InputField;
