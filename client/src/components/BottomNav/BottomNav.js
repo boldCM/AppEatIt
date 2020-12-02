@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.png";
 import IconButton from "./IconButton";
@@ -71,25 +71,6 @@ const BorderTraingle = styled.div`
 const BottomNav = () => {
   const [open, setOpen] = useState(false);
 
-  const node = useRef();
-
-  const useOnClickOutside = (ref, handler) => {
-    useEffect(() => {
-      const listener = (event) => {
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-        handler(event);
-      };
-      document.addEventListener("mousedown", listener);
-
-      return () => {
-        document.removeEventListener("mousedown", listener);
-      };
-    }, [ref, handler]);
-  };
-
-  useOnClickOutside(node, () => setOpen(false));
   return (
     <>
       <Triangle />

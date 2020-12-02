@@ -1,7 +1,6 @@
 import React from "react";
 
-import WeeklyPage from "./WeeklyPage";
-// import * as HeaderStories from "../../components/Header/Header.stories";
+import { WeeklyPage } from "./WeeklyPage";
 
 export default {
   title: "Page",
