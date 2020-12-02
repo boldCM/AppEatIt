@@ -34,7 +34,8 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 margin: 0;
 color: var(--text-color);
-height: 100vh
+height: 100vh;
+overflow-x: hidden;
 
 }
 h1{
@@ -49,6 +50,10 @@ font-weight: 400;
 a {
     text-decoration: none;
     color: var(--text-color)
+}
+hr{
+  border:none;
+  height: 1px;
 }
 
 `;

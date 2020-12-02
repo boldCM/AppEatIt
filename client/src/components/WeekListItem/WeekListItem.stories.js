@@ -1,5 +1,5 @@
 import React from "react";
-import WeekListItem from "./WeekListItem";
+import { WeekListItem } from "./WeekListItem";
 
 export default {
   title: "Components",

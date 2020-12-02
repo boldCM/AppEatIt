@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import CornerElement from "../Corner/Corner";
 import PropTypes from "prop-types";
+import { UnderlineHeader } from "../StyledLines/Lines";
 
 const ContainerHeader = styled.header`
   background: linear-gradient(var(--secondary-color), #f3d7b4);
@@ -12,13 +13,6 @@ const ContainerHeader = styled.header`
   position: fixed;
   width: 100%;
   top: 0;
-`;
-
-const UnderlineHeader = styled.hr`
-  border-top: 1.5px solid var(--active-color);
-  width: 100px;
-  margin-top: -7px;
-  /* spacing looked best with the odd number of -7px */
 `;
 
 const Header = ({ title }) => {
@@ -33,7 +27,7 @@ const Header = ({ title }) => {
   );
 };
 
-export default Header;
+export { Header, ContainerHeader };
 
 Header.propTypes = {
   title: PropTypes.string,

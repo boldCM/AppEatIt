@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.png";
 import IconButton from "./IconButton";
@@ -6,6 +6,7 @@ import BackIcon from "../../assets/backIcon.png";
 import CalendarIcon from "../../assets/calendarIcon.png";
 import DeleteIcon from "../../assets/deleteIcon.png";
 import ShareIcon from "../../assets/shareIcon.png";
+import Overlay from "../../pages/OverlayMenue/Overlay";
 
 const Footer = styled.footer`
   position: fixed;
@@ -29,7 +30,7 @@ const MainButton = styled.button`
   bottom: 0;
   right: 0;
   position: fixed;
-  z-index: 3;
+  z-index: 2;
 `;
 
 const MainButtonImg = styled.img`
@@ -68,13 +69,35 @@ const BorderTraingle = styled.div`
 `;
 
 const BottomNav = () => {
+  const [open, setOpen] = useState(false);
+
+  const node = useRef();
+
+  const useOnClickOutside = (ref, handler) => {
+    useEffect(() => {
+      const listener = (event) => {
+        if (!ref.current || ref.current.contains(event.target)) {
+          return;
+        }
+        handler(event);
+      };
+      document.addEventListener("mousedown", listener);
+
+      return () => {
+        document.removeEventListener("mousedown", listener);
+      };
+    }, [ref, handler]);
+  };
+
+  useOnClickOutside(node, () => setOpen(false));
   return (
     <>
       <Triangle />
       <BorderTraingle />
-      <MainButton>
+      <MainButton onClick={() => setOpen(!open)}>
         <MainButtonImg src={DiamondButton} alt="Menu-Button" />
       </MainButton>
+      <Overlay open={open} />
       <Footer>
         <BottomNavBar>
           <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
