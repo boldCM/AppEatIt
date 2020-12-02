@@ -42,4 +42,4 @@ const WeeklyPage = () => {
   );
 };
 
-export default WeeklyPage;
+export { WeeklyPage, Layout, WeekListContainer };
