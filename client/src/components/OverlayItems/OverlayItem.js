@@ -11,6 +11,7 @@ const ContainerOverlayItems = styled.div`
   height: 100%;
   justify-content: center;
   text-align: right;
+  margin-bottom: 50px;
   h2 {
     font-size: 24px;
     font-weight: 500;

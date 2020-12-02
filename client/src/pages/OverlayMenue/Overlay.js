@@ -13,7 +13,7 @@ const Blur = styled.div`
   top: 0;
   right: 0;
   backdrop-filter: blur(10px);
-  ${({ open }) => (!open ? "opacity:0; visibility:hidden;" : "opacity:0.8")};
+  ${({ open }) => (!open ? "opacity:0; visibility:hidden;" : "opacity:0.7")};
   transition: opacity 0.3s ease-in-out;
 `;
 
