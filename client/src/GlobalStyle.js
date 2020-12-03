@@ -56,6 +56,10 @@ hr{
   height: 1px;
 }
 
+ul {
+  list-style-type:none;
+}
+
 `;
 
 export default GlobalStyle;

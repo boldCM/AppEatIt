@@ -5,7 +5,7 @@ import { Header } from "../../components/Header";
 import { WeekListItem } from "../../components/WeekListItem/WeekListItem";
 
 const Layout = styled.div`
-  padding: 60px 0 56px 0;
+  padding: 63px 0 56px 0;
   height: 100vh;
 `;
 
