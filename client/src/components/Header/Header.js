@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import CornerElement from "../Corner/Corner";
 import PropTypes from "prop-types";
-import { UnderlineHeader } from "../StyledLines/Lines";
+import { UnderlineHeader } from "../styledComponents/Lines";
 
 const ContainerHeader = styled.header`
   background: linear-gradient(var(--secondary-color), #f3d7b4);

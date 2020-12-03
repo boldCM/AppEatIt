@@ -1,5 +1,5 @@
-import React from "react";
-import { DiamondLine } from "../StyledLines/Lines";
+import React, { useState } from "react";
+import { DiamondLine } from "../styledComponents/Lines";
 import styled from "styled-components/macro";
 import IconButton from "../BottomNav/IconButton";
 import CalendarCheck from "../../assets/calendarCheck.svg";
@@ -27,16 +27,28 @@ const RecipeItem = styled.div`
 `;
 
 const RecipeList = () => {
+  const [inCalender, setInCalender] = useState(false);
+
+  const CalendarSrc = inCalender ? CalendarCheck : CalendarFilled;
+
+  const CalendarAlt = inCalender
+    ? "Item not in Calendar"
+    : "Item is in Calendar";
+
   return (
     <ListContainer>
       <RecipeItem>
         <a href="/">Lasagne</a>
-        <IconButton iconSrc={CalendarCheck} iconAlt={"Item is in Calendar"} />
+        <IconButton
+          iconSrc={CalendarSrc}
+          iconAlt={CalendarAlt}
+          onClick={() => setInCalender(!inCalender)}
+        />
       </RecipeItem>
       <DiamondLine />
       <RecipeItem>
-        <a href="/">Geschnetzltes</a>
-        <IconButton iconSrc={CalendarFilled} iconAlt={"item in Calendar?"} />
+        <a href="/">Geschnetzeltes</a>
+        <IconButton iconSrc={CalendarSrc} iconAlt={CalendarAlt} />
       </RecipeItem>
       <DiamondLine />
     </ListContainer>

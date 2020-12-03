@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.svg";
-import { DiamondLine } from "../StyledLines/Lines";
+import { DiamondLine } from "../styledComponents/Lines";
 
 const ContainerWeek = styled.div`
   display: flex;
