@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 79.196 79.196" xmlns="http://www.w3.org/2000/svg" width="79.196" height="79.196">
+<g transform="translate(-2994.4 -702.4)">
+<g transform="translate(3034 702.4) rotate(45)" fill="#037f8c" stroke="#037f8c" data-name="Rechteck 100">
+<rect width="56" height="56" rx="2" stroke="none"/>
+<rect x=".5" y=".5" width="55" height="55" rx="1.5" fill="none"/>
+</g>
+<g transform="translate(3022 730)" data-name="icon/content/add_24px">
+<rect width="24" height="24" fill="none"/>
+<path transform="translate(5 5)" d="M14,8H8v6H6V8H0V6H6V0H8V6h6Z" fill="#f8e4cf" data-name=" ↳Color"/>
+</g>
+</g>
+</svg>

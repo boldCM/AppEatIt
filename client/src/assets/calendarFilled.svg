@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 15.419 16.92" xmlns="http://www.w3.org/2000/svg"  width="15.419" height="16.92" >
+<g transform="translate(-598.45 -553.5)" data-name="Gruppe 32">
+<g transform="translate(598.95 554)" fill="#037f8c" data-name="Icon feather-calendar">
+<path transform="translate(-4.5 -4.408)" d="M6.092,6H17.236a1.592,1.592,0,0,1,1.592,1.592V18.736a1.592,1.592,0,0,1-1.592,1.592H6.092A1.592,1.592,0,0,1,4.5,18.736V7.592A1.592,1.592,0,0,1,6.092,6Z" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 54"/>
+<path transform="translate(-13.652 -3)" d="m24 3v3.184" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 55"/>
+<path transform="translate(-8.02 -3)" d="m12 3v3.184" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 56"/>
+<path transform="translate(-4.5 -8.632)" d="m4.5 15h14.328" data-name="Pfad 57"/>
+</g>
+<path transform="translate(597.53 554.65)" d="M10.673,9,7.46,12.213,6,10.752" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" data-name="Icon feather-check"/>
+<path transform="translate(598.5 560.5)" d="m0 0h15.366" fill="#fff" stroke="#fff" data-name="Pfad 58"/>
+</g>
+</svg>
