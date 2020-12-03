@@ -28,20 +28,18 @@ const RecipeItem = styled.div`
 
 const RecipeList = () => {
   return (
-    <>
-      <ListContainer>
-        <RecipeItem>
-          <a href="/">Lasagne</a>
-          <IconButton iconSrc={CalendarCheck} iconAlt={"Item is in Calendar"} />
-        </RecipeItem>
-        <DiamondLine />
-        <RecipeItem>
-          <a href="/">Geschnetzltes</a>
-          <IconButton iconSrc={CalendarFilled} iconAlt={"item in Calendar?"} />
-        </RecipeItem>
-        <DiamondLine />
-      </ListContainer>
-    </>
+    <ListContainer>
+      <RecipeItem>
+        <a href="/">Lasagne</a>
+        <IconButton iconSrc={CalendarCheck} iconAlt={"Item is in Calendar"} />
+      </RecipeItem>
+      <DiamondLine />
+      <RecipeItem>
+        <a href="/">Geschnetzltes</a>
+        <IconButton iconSrc={CalendarFilled} iconAlt={"item in Calendar?"} />
+      </RecipeItem>
+      <DiamondLine />
+    </ListContainer>
   );
 };
 
