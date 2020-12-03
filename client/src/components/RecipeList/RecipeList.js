@@ -2,9 +2,8 @@ import React from "react";
 import { DiamondLine } from "../StyledLines/Lines";
 import styled from "styled-components/macro";
 import IconButton from "../BottomNav/IconButton";
-import CalendarCheck from "../../assets/calendarCheck.png";
-import CalendarFilled from "../../assets/calendarFilled.png";
-import CalendarFilledSVG from "../../assets/calendarFilled.svg";
+import CalendarCheck from "../../assets/calendarCheck.svg";
+import CalendarFilled from "../../assets/calendarFilled.svg";
 
 const ListContainer = styled.div`
   display: flex;
@@ -33,15 +32,12 @@ const RecipeList = () => {
       <ListContainer>
         <RecipeItem>
           <a href="/">Lasagne</a>
-          <IconButton
-            iconSrc={CalendarFilledSVG}
-            iconAlt={"Item is in Calendar"}
-          />
+          <IconButton iconSrc={CalendarCheck} iconAlt={"Item is in Calendar"} />
         </RecipeItem>
         <DiamondLine />
         <RecipeItem>
           <a href="/">Geschnetzltes</a>
-          <IconButton iconSrc={CalendarCheck} iconAlt={"item in Calendar?"} />
+          <IconButton iconSrc={CalendarFilled} iconAlt={"item in Calendar?"} />
         </RecipeItem>
         <DiamondLine />
       </ListContainer>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import DiamondButton from "../../assets/mainButton.png";
+import DiamondButton from "../../assets/mainButton.svg";
 import IconButton from "./IconButton";
-import BackIcon from "../../assets/backIcon.png";
-import CalendarIcon from "../../assets/calendarIcon.png";
-import DeleteIcon from "../../assets/deleteIcon.png";
-import ShareIcon from "../../assets/shareIcon.png";
+import BackIcon from "../../assets/backIcon.svg";
+import CalendarIcon from "../../assets/calendarIcon.svg";
+import DeleteIcon from "../../assets/deleteIcon.svg";
+import ShareIcon from "../../assets/shareIcon.svg";
 import Overlay from "../../pages/OverlayMenue/Overlay";
 
 const Footer = styled.footer`
@@ -34,8 +34,8 @@ const MainButton = styled.button`
 `;
 
 const MainButtonImg = styled.img`
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 11px;
+  margin-bottom: 12px;
 `;
 
 const Triangle = styled.div`

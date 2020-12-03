@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="15.419" height="16.92" viewBox="0 0 15.419 16.92">
-  <g id="Gruppe_32" data-name="Gruppe 32" transform="translate(-598.448 -553.5)">
-    <g id="Icon_feather-calendar" data-name="Icon feather-calendar" transform="translate(598.947 554)">
-      <path id="Pfad_54" data-name="Pfad 54" d="M6.092,6H17.236a1.592,1.592,0,0,1,1.592,1.592V18.736a1.592,1.592,0,0,1-1.592,1.592H6.092A1.592,1.592,0,0,1,4.5,18.736V7.592A1.592,1.592,0,0,1,6.092,6Z" transform="translate(-4.5 -4.408)" fill="#037f8c" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      <path id="Pfad_55" data-name="Pfad 55" d="M24,3V6.184" transform="translate(-13.652 -3)" fill="#037f8c" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      <path id="Pfad_56" data-name="Pfad 56" d="M12,3V6.184" transform="translate(-8.02 -3)" fill="#037f8c" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      <path id="Pfad_57" data-name="Pfad 57" d="M4.5,15H18.828" transform="translate(-4.5 -8.632)" fill="#037f8c"/>
-    </g>
-    <path id="Icon_feather-check" data-name="Icon feather-check" d="M10.673,9,7.46,12.213,6,10.752" transform="translate(597.532 554.652)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-    <path id="Pfad_58" data-name="Pfad 58" d="M0,0H15.366" transform="translate(598.5 560.501)" fill="#fff" stroke="#fff" stroke-width="1"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 15.419 16.92" xmlns="http://www.w3.org/2000/svg"  width="15.419" height="16.92" >
+<g transform="translate(-598.45 -553.5)" data-name="Gruppe 32">
+<g transform="translate(598.95 554)" fill="#037f8c" data-name="Icon feather-calendar">
+<path transform="translate(-4.5 -4.408)" d="M6.092,6H17.236a1.592,1.592,0,0,1,1.592,1.592V18.736a1.592,1.592,0,0,1-1.592,1.592H6.092A1.592,1.592,0,0,1,4.5,18.736V7.592A1.592,1.592,0,0,1,6.092,6Z" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 54"/>
+<path transform="translate(-13.652 -3)" d="m24 3v3.184" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 55"/>
+<path transform="translate(-8.02 -3)" d="m12 3v3.184" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" data-name="Pfad 56"/>
+<path transform="translate(-4.5 -8.632)" d="m4.5 15h14.328" data-name="Pfad 57"/>
+</g>
+<path transform="translate(597.53 554.65)" d="M10.673,9,7.46,12.213,6,10.752" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" data-name="Icon feather-check"/>
+<path transform="translate(598.5 560.5)" d="m0 0h15.366" fill="#fff" stroke="#fff" data-name="Pfad 58"/>
+</g>
 </svg>

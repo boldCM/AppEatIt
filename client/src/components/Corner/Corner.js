@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Corner from "../../assets/corner.png";
+import Corner from "../../assets/corner.svg";
 
 const CornerContainer = styled.div`
   background-color: transparent;

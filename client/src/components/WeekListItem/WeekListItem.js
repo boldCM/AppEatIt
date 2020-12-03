@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import DiamondImg from "../../assets/diamond.png";
+import DiamondImg from "../../assets/diamond.svg";
 import { DiamondLine } from "../StyledLines/Lines";
 
 const ContainerWeek = styled.div`
