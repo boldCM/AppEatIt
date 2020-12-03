@@ -22,7 +22,7 @@ const Diamond = styled.div`
   padding-bottom: 5px;
 `;
 
-const TextWeek = styled.p`
+const TextWeek = styled.a`
   color: var(--text-color);
   padding-bottom: 1px;
   /* 1px looked more aligned with the hr line. */
@@ -39,7 +39,7 @@ const WeekListItem = () => {
         </time>
       </Diamond>
       <DiamondLine />
-      <TextWeek>Geschnetzeltes</TextWeek>
+      <TextWeek href="/">Geschnetzeltes</TextWeek>
     </ContainerWeek>
   );
 };
