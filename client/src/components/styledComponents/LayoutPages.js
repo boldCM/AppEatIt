@@ -5,9 +5,9 @@ const Layout = styled.div`
   height: 100vh;
 `;
 
-const WeekListContainer = styled.div`
+const ContentContainer = styled.div`
   overflow: auto;
   max-height: 100%;
 `;
 
-export { Layout, WeekListContainer };
+export { Layout, ContentContainer };

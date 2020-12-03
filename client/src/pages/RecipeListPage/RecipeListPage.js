@@ -4,14 +4,14 @@ import { Header } from "../../components/Header";
 import RecipeList from "../../components/RecipeList/RecipeList";
 import {
   Layout,
-  WeekListContainer,
+  ContentContainer,
 } from "../../components/styledComponents/LayoutPages";
 
 const RecipeListPage = () => {
   return (
     <Layout>
       <Header title="Rezepte" />
-      <WeekListContainer>
+      <ContentContainer>
         <RecipeList />
         <RecipeList />
         <RecipeList />
@@ -36,7 +36,7 @@ const RecipeListPage = () => {
         <RecipeList />
         <RecipeList />
         <BottomNav />
-      </WeekListContainer>
+      </ContentContainer>
     </Layout>
   );
 };

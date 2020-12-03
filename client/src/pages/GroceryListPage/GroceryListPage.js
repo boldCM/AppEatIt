@@ -5,17 +5,17 @@ import GroceryList from "../../components/GroceryList/GroceryList";
 import { Header } from "../../components/Header";
 import {
   Layout,
-  WeekListContainer,
+  ContentContainer,
 } from "../../components/styledComponents/LayoutPages";
 
 const GroceryListPage = () => {
   return (
     <Layout>
       <Header title="Einkaufsliste" />
-      <WeekListContainer>
+      <ContentContainer>
         <GroceryList />
         <BottomNav />
-      </WeekListContainer>
+      </ContentContainer>
     </Layout>
   );
 };

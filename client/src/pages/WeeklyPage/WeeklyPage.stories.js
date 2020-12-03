@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WeeklyPage } from "./WeeklyPage";
+import WeeklyPage from "./WeeklyPage";
 
 export default {
   title: "Page",
