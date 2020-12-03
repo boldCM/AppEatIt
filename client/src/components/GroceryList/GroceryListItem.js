@@ -18,11 +18,13 @@ const GroceryListItem = ({ Grocery }) => {
 
   const CheckboxSrc = ischecked ? Checkbox : CheckboxChecked;
 
+  const CheckboxAlt = ischecked ? "Checkbox" : "Checkbox is ticked";
+
   return (
     <ListItem>
       <IconButton
         iconSrc={CheckboxSrc}
-        iconAlt="Checkbox"
+        iconAlt={CheckboxAlt}
         onClick={() => setIsChecked(!ischecked)}
       />
       {Grocery}
