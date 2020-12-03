@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components/macro";
 
 const Ingredient = styled.ul`
-  /* list-style-type: none; */
   margin-bottom: 25px;
   li {
     padding: 0.3rem 0;

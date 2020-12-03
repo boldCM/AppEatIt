@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { OverlayLine, UnderlineHeaderOverlay } from "../StyledLines/Lines";
+import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 
 const ContainerOverlayItems = styled.div`
   display: flex;

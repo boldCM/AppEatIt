@@ -1,5 +1,5 @@
 import React from "react";
-import { DiamondLine } from "../StyledLines/Lines";
+import { DiamondLine } from "../styledComponents/Lines";
 import styled from "styled-components/macro";
 import IconButton from "../BottomNav/IconButton";
 import CalendarCheck from "../../assets/calendarCheck.svg";
