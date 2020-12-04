@@ -3,7 +3,8 @@ import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.svg";
 import { DiamondLine } from "../styledComponents/Lines";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import "./DatePicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 // import "react-datepicker/src/stylesheets/datepicker.scss";
 // import "node_modules/react-datepicker/src/stylesheets/datepicker-cssmodules.scss";
 // client/node_modules/react-datepicker/src/stylesheets/datepicker.scss
