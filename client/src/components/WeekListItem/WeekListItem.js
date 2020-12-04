@@ -65,7 +65,6 @@ const WeekListItem = () => {
           onChange={(selectedDate) => setDate(selectedDate)}
           dateFormat="dd.MM."
           locale="de"
-          useWeekdaysShort={false}
         />
       </Diamond>
       <DiamondLine />
