@@ -4,28 +4,22 @@ import DiamondImg from "../../assets/diamond.svg";
 import { DiamondLine } from "../styledComponents/Lines";
 import DatePicker from "react-datepicker";
 import "./DatePicker.css";
-// import "react-datepicker/dist/react-datepicker.css";
-// import "react-datepicker/src/stylesheets/datepicker.scss";
-// import "node_modules/react-datepicker/src/stylesheets/datepicker-cssmodules.scss";
-// client/node_modules/react-datepicker/src/stylesheets/datepicker.scss
+import { registerLocale } from "react-datepicker";
+import de from "date-fns/locale/de";
+registerLocale("de", de);
 
-// const StyledDatePicker = styled(DatePicker)`
-//   background-color: pink;
-//   border-radius: 10px;
-//   border: none;
-//    {
-//     background-color: pink;
-//   }
-
-//   .react-datepicker__header {
-//     text-align: center;
-//     background-color: pink;
-//     border-bottom: 1px solid $datepicker__border-color;
-//     border-top-left-radius: $datepicker__border-radius;
-//     padding-top: 8px;
-//     position: relative;
-//   }
-// `;
+const StyledDatePicker = styled(DatePicker)`
+  border: none;
+  background: transparent;
+  color: var(--active-color);
+  text-align: center;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  :focus {
+    outline: none;
+  }
+`;
 
 const ContainerWeek = styled.div`
   display: flex;
@@ -39,6 +33,7 @@ const Diamond = styled.div`
   width: 5.8rem;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--active-color);
@@ -54,36 +49,29 @@ const TextWeek = styled.a`
 
 const WeekListItem = () => {
   const [date, setDate] = useState(new Date());
+
+  const getWeekDay = (date) => {
+    const week = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+    const weekday = week[date.getDay()];
+    return weekday;
+  };
+
   return (
     <ContainerWeek>
       <Diamond>
-        <time dateTime="11-30">
-          Mo
-          <br />
-          30.11.
-        </time>
+        <div>{getWeekDay(date)}</div>
+        <StyledDatePicker
+          selected={date}
+          onChange={(selectedDate) => setDate(selectedDate)}
+          dateFormat="dd.MM."
+          locale="de"
+          useWeekdaysShort={false}
+        />
       </Diamond>
       <DiamondLine />
-      {/* <label>
-        <input type="date" />
-      </label> */}
-      <DatePicker
-        selected={date}
-        onChange={(selectedDate) => setDate(selectedDate)}
-        dateFormat="d.MM."
-      />
       <TextWeek href="/">Geschnetzeltes</TextWeek>
     </ContainerWeek>
   );
 };
 
 export { WeekListItem };
-
-// holt mir das aktuelle Datum+Uhrzeit:
-const day = new Date();
-// Array mit den Wochentagen:
-const weekday = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
-// Schreibt mir den aktuellen Wochentag, indem er ihn aus dem array zieht.
-// getDay arbeitet mit dem Index des Arrays, wobei 0 der Sonntag ist
-// dh mit day.getDay() lege ich die Stelle im Array fest, die ich ausgegeben haben will.
-document.write("Today is " + weekday[day.getDay()]);
