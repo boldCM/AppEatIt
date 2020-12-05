@@ -1,6 +1,6 @@
 import React from "react";
 import GlobalStyle from "./GlobalStyle";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WeeklyPage from "./pages/WeeklyPage/WeeklyPage";
 import SingleRecipe from "./pages/SingleRecipePage/SingleRecipePage";
 import RecipeListPage from "./pages/RecipeListPage/RecipeListPage";
