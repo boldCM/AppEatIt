@@ -20,9 +20,9 @@ const RecipeItem = styled.div`
 const RecipeListItem = ({ RecipeName }) => {
   const [inCalender, setInCalender] = useState(false);
 
-  const CalendarSrc = inCalender ? CalendarCheck : CalendarFilled;
+  const CalendarSrc = !inCalender ? CalendarCheck : CalendarFilled;
 
-  const CalendarAlt = inCalender
+  const CalendarAlt = !inCalender
     ? "Item not in Calendar"
     : "Item is in Calendar";
 
