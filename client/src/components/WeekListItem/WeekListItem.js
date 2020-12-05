@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.svg";
 import { DiamondLine } from "../styledComponents/Lines";
+import DatePicker from "react-datepicker";
+import "./DatePicker.css";
+import { registerLocale } from "react-datepicker";
+import de from "date-fns/locale/de";
+registerLocale("de", de);
+
+const StyledDatePicker = styled(DatePicker)`
+  border: none;
+  background: transparent;
+  color: var(--active-color);
+  text-align: center;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  :focus {
+    outline: none;
+  }
+`;
 
 const ContainerWeek = styled.div`
   display: flex;
@@ -15,6 +33,7 @@ const Diamond = styled.div`
   width: 5.8rem;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--active-color);
@@ -29,14 +48,22 @@ const TextWeek = styled.a`
 `;
 
 const WeekListItem = () => {
+  const [date, setDate] = useState(new Date());
+
+  const getWeekDay = (date) => {
+    return (new Intl.DateTimeFormat('de-DE', {weekday: "short"}).format(date))
+  };
+
   return (
     <ContainerWeek>
       <Diamond>
-        <time dateTime="11-30">
-          Mo
-          <br />
-          30.11.
-        </time>
+        <div>{getWeekDay(date)}</div>
+        <StyledDatePicker
+          selected={date}
+          onChange={(selectedDate) => setDate(selectedDate)}
+          dateFormat="dd.MM."
+          locale="de"
+        />
       </Diamond>
       <DiamondLine />
       <TextWeek href="/">Geschnetzeltes</TextWeek>
