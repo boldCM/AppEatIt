@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 
@@ -18,7 +19,7 @@ const ContainerOverlayItems = styled.div`
   }
 `;
 
-const LinkedItem = styled.a`
+const LinkedItem = styled(Link)`
   /* font-weight: 400; */
   margin: 1rem 0;
   display: block;
@@ -30,17 +31,17 @@ const OverlayItem = () => {
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
       <UnderlineHeaderOverlay />
-      <LinkedItem href="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
+      <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/">Neue Einkaufsliste erstellen</LinkedItem>
+      <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/">Listen-Übersicht</LinkedItem>
+      <LinkedItem to="/">Listen-Übersicht</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/">Neue Liste erstellen</LinkedItem>
+      <LinkedItem to="/">Neue Liste erstellen</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/Rezeptübersicht">Zur Rezeptübersicht</LinkedItem>
+      <LinkedItem to="/Rezeptübersicht">Zur Rezeptübersicht</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/">Neues Rezept erstellen</LinkedItem>
+      <LinkedItem to="/">Neues Rezept erstellen</LinkedItem>
       <OverlayLine />
     </ContainerOverlayItems>
   );

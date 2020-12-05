@@ -5,6 +5,7 @@ import DeleteIcon from "../../assets/deleteIcon.svg";
 import ShareIcon from "../../assets/shareIcon.svg";
 import HomeIcon from "../../assets/home.svg";
 import MenueButton from "./MenueButton";
+import { Link } from "react-router-dom";
 
 const Footer = styled.footer`
   position: fixed;
@@ -22,7 +23,7 @@ const BottomNavBar = styled.div`
   padding-right: 6rem;
 `;
 
-const HomeButton = styled.a`
+const HomeButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +36,7 @@ const BottomNav = () => {
       <MenueButton />
       <Footer>
         <BottomNavBar>
-          <HomeButton href="/">
+          <HomeButton to="/">
             <img src={HomeIcon} alt={"Zur Wochenübersicht"} />
           </HomeButton>
           <IconButton iconSrc={ShareIcon} iconAlt={"ShareIcon"} />

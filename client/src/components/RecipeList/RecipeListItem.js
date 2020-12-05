@@ -5,6 +5,7 @@ import IconButton from "../BottomNav/IconButton";
 import CalendarCheck from "../../assets/calendarCheck.svg";
 import CalendarFilled from "../../assets/calendarFilled.svg";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const RecipeItem = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const RecipeListItem = ({ RecipeName }) => {
   return (
     <>
       <RecipeItem>
-        <a href="/Rezept">{RecipeName}</a>
+        <Link to="/Rezept">{RecipeName}</Link>
         <IconButton
           iconSrc={CalendarSrc}
           iconAlt={CalendarAlt}
