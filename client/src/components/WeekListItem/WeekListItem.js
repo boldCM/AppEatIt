@@ -51,9 +51,7 @@ const WeekListItem = () => {
   const [date, setDate] = useState(new Date());
 
   const getWeekDay = (date) => {
-    const week = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
-    const weekday = week[date.getDay()];
-    return weekday;
+    return (new Intl.DateTimeFormat('de-DE', {weekday: "short"}).format(date))
   };
 
   return (
