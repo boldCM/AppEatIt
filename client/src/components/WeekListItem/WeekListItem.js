@@ -51,7 +51,7 @@ const WeekListItem = () => {
   const [date, setDate] = useState(new Date());
 
   const getWeekDay = (date) => {
-    return (new Intl.DateTimeFormat('de-DE', {weekday: "short"}).format(date))
+    return new Intl.DateTimeFormat("de-DE", { weekday: "short" }).format(date);
   };
 
   return (
@@ -66,7 +66,7 @@ const WeekListItem = () => {
         />
       </Diamond>
       <DiamondLine />
-      <TextWeek href="/">Geschnetzeltes</TextWeek>
+      <TextWeek href="/Rezept">Geschnetzeltes</TextWeek>
     </ContainerWeek>
   );
 };

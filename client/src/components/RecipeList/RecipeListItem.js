@@ -29,7 +29,7 @@ const RecipeListItem = ({ RecipeName }) => {
   return (
     <>
       <RecipeItem>
-        <a href="/">{RecipeName}</a>
+        <a href="/Rezept">{RecipeName}</a>
         <IconButton
           iconSrc={CalendarSrc}
           iconAlt={CalendarAlt}
