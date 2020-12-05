@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import DiamondButton from "../../assets/mainButton.svg";
 import IconButton from "./IconButton";
-import BackIcon from "../../assets/backIcon.svg";
 import CalendarIcon from "../../assets/calendarIcon.svg";
 import DeleteIcon from "../../assets/deleteIcon.svg";
 import ShareIcon from "../../assets/shareIcon.svg";
+import HomeIcon from "../../assets/home.svg";
 import Overlay from "../../pages/OverlayMenue/Overlay";
 
 const Footer = styled.footer`
@@ -68,6 +68,13 @@ const BorderTraingle = styled.div`
   z-index: 1;
 `;
 
+const HomeButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+`;
+
 const BottomNav = () => {
   const [open, setOpen] = useState(false);
 
@@ -81,8 +88,10 @@ const BottomNav = () => {
       <Overlay open={open} />
       <Footer>
         <BottomNavBar>
-          <IconButton iconSrc={BackIcon} iconAlt={"BackIcon"} />
-          <IconButton iconSrc={CalendarIcon} iconAlt={"CalendarIcon"} />
+          <HomeButton href="/">
+            <img src={HomeIcon} alt={"Zur Wochenübersicht"} />
+          </HomeButton>
+          {/* <IconButton iconSrc={CalendarIcon} iconAlt={"CalendarIcon"} /> */}
           <IconButton iconSrc={ShareIcon} iconAlt={"ShareIcon"} />
           <IconButton iconSrc={DeleteIcon} iconAlt={"DeleteIcon"} />
         </BottomNavBar>

@@ -16,9 +16,9 @@ const ListItem = styled.p`
 const GroceryListItem = ({ Grocery }) => {
   const [ischecked, setIsChecked] = useState(false);
 
-  const CheckboxSrc = ischecked ? Checkbox : CheckboxChecked;
+  const CheckboxSrc = !ischecked ? Checkbox : CheckboxChecked;
 
-  const CheckboxAlt = ischecked ? "Checkbox" : "Checkbox is ticked";
+  const CheckboxAlt = !ischecked ? "Checkbox" : "Checkbox is ticked";
 
   return (
     <ListItem>

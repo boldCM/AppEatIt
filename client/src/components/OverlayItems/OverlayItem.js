@@ -30,7 +30,7 @@ const OverlayItem = () => {
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
       <UnderlineHeaderOverlay />
-      <LinkedItem href="/">Zur Einkaufsliste</LinkedItem>
+      <LinkedItem href="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
       <LinkedItem href="/">Neue Einkaufsliste erstellen</LinkedItem>
       <OverlayLine />
@@ -38,7 +38,7 @@ const OverlayItem = () => {
       <OverlayLine />
       <LinkedItem href="/">Neue Liste erstellen</LinkedItem>
       <OverlayLine />
-      <LinkedItem href="/">Zur Rezeptübersicht</LinkedItem>
+      <LinkedItem href="/Rezeptübersicht">Zur Rezeptübersicht</LinkedItem>
       <OverlayLine />
       <LinkedItem href="/">Neues Rezept erstellen</LinkedItem>
       <OverlayLine />
