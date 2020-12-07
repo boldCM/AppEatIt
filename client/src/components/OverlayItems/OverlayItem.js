@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 
 const ContainerOverlayItems = styled.div`
+  /* @media (min-width: 576px) { */
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -17,6 +18,7 @@ const ContainerOverlayItems = styled.div`
     font-size: 24px;
     font-weight: 500;
   }
+  /* } */
 `;
 
 const LinkedItem = styled(Link)`

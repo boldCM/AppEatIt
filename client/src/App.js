@@ -26,8 +26,6 @@ function App() {
             <WeeklyPage />
           </Route>
         </Switch>
-
-        <a href="/storybook">To Storybook</a>
       </Router>
     </>
   );
