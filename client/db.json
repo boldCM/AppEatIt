@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": 1,
-      "title": "Möhrensuppe mit Maultaschen",
+      "RecipeName": "Möhrensuppe mit Maultaschen",
       "Ingredients": [
         "500gr Möhren",
         "500ml Brühe",
@@ -19,7 +19,7 @@
     },
     {
       "id": 2,
-      "title": "Geschnetzeltes",
+      "RecipeName": "Geschnetzeltes",
       "Ingredients": ["Fleisch", "Sahne", "Champignons", "1 Zwiebel", "uvm"],
       "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
     }
