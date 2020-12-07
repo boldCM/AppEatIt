@@ -58,7 +58,7 @@ a {
     color: var(--text-color)
 }
 hr{
-  border:none;
+  border: none;
   height: 1px;
 }
 
