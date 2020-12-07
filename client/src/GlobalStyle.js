@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyle = createGlobalStyle`
 
+
+
 *,*::before,*::after{
   box-sizing:border-box
 }
@@ -13,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 --secondary-color: #F2D3AC;
 --text-color: #262626
 }
+
 
 button {
   border: none;
@@ -36,8 +39,11 @@ margin: 0;
 color: var(--text-color);
 height: 100vh;
 overflow-x: hidden;
-
 }
+
+
+
+
 h1{
 font-size: 24px;
 font-weight: 500;
@@ -59,7 +65,7 @@ hr{
 ul {
   list-style-type:none;
 }
-
+  
 `;
 
 export default GlobalStyle;
