@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "./DatePicker.css";
 import { registerLocale } from "react-datepicker";
 import de from "date-fns/locale/de";
+import { Link } from "react-router-dom";
 registerLocale("de", de);
 
 const StyledDatePicker = styled(DatePicker)`
@@ -41,7 +42,7 @@ const Diamond = styled.div`
   padding-bottom: 5px;
 `;
 
-const TextWeek = styled.a`
+const TextWeek = styled(Link)`
   color: var(--text-color);
   padding-bottom: 1px;
   /* 1px looked more aligned with the hr line. */
@@ -66,7 +67,7 @@ const WeekListItem = () => {
         />
       </Diamond>
       <DiamondLine />
-      <TextWeek href="/Rezept">Geschnetzeltes</TextWeek>
+      <TextWeek to="/Rezept">Geschnetzeltes</TextWeek>
     </ContainerWeek>
   );
 };
