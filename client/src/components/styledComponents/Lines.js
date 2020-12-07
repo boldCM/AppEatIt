@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 const DiamondLine = styled.hr`
   width: 5rem;
   margin: 0 5px 1px -2px;
-  /* color: var(--secondary-color); */
   background-color: var(--secondary-color);
 `;
 
@@ -12,7 +11,6 @@ const OverlayLine = styled(DiamondLine)`
 `;
 
 const UnderlineHeader = styled.hr`
-  /* color: var(--active-color); */
   background-color: var(--active-color);
   width: 100px;
   margin-top: -7px;
