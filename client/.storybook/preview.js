@@ -1,12 +1,13 @@
 import React from "react";
 import GlobalStyle from "../src/GlobalStyle";
+import { MemoryRouter } from "react-router-dom";
 
 export const decorators = [
   (Story) => (
-    <>
+    <MemoryRouter>
       <GlobalStyle />
       <Story />
-    </>
+    </MemoryRouter>
   ),
 ];
 
