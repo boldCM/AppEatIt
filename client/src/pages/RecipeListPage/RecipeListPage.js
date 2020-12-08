@@ -13,28 +13,6 @@ const RecipeListPage = () => {
       <Header title="Rezepte" />
       <ContentContainer>
         <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
-        <RecipeList />
         <BottomNav />
       </ContentContainer>
     </Layout>
