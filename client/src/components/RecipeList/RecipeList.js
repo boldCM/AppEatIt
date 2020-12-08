@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
-import { connectDB } from "../../api/ConnectJSON";
+import {
+  connectDB,
+  getRecipeByRecipeName,
+  getRecipies,
+} from "../../api/connectJSON";
 import RecipeListItem from "./RecipeListItem";
 
 const ListContainer = styled.div`
@@ -18,19 +22,18 @@ const RecipeList = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const getRecipes = await connectDB();
+      const getRecipes = await getRecipies();
       setRecipes(getRecipes);
     }
     fetchData();
     console.log(recipes + " hallo");
-  }, [recipes]);
-  console.log(recipes + " hallo");
+  }, []);
+
   return (
     <ListContainer>
       {recipes?.map((recipes) => (
         <RecipeListItem key={recipes.id} RecipeName={recipes.RecipeName} />
       ))}
-      {/* <RecipeListItem RecipeName="Lasagne" /> */}
     </ListContainer>
   );
 };
