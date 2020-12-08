@@ -22,7 +22,6 @@ const RecipeList = () => {
       setRecipes(getRecipes);
     }
     fetchData();
-    console.log(recipes + " hallo");
   }, []);
 
   return (
