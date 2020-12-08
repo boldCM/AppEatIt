@@ -11,29 +11,29 @@ const Ingredient = styled.ul`
 `;
 
 const RecipeIngredients = ({ Ingredients, id }) => {
-  const [ingredients, setIngredients] = useState([]);
+  // const [ingredients, setIngredients] = useState([]);
 
-  setIngredients(Ingredients);
+  // setIngredients(Ingredients);
 
   // useEffect(()=> {
   //   async function fetchDate() {
   //     const getIngredients = await
   //   }
   // })
-  console.log(ingredients);
+  console.log(Ingredients);
   return (
     <>
       <h2>Zutaten</h2>
       <Ingredient>
-        {ingredients?.map((ingredient) => (
+        {Ingredients?.map((ingredient) => (
           <li key={id}>{ingredient}</li>
         ))}
-        <li>Mehl</li>
+        {/* <li>Mehl</li>
         <li>Wasser</li>
         <li>Salz</li>
         <li>Hefe</li>
         <li>Sack Kartoffeln</li>
-        <li>Butter</li>
+        <li>Butter</li> */}
       </Ingredient>
     </>
   );

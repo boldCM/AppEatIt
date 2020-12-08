@@ -7,7 +7,7 @@ export async function getRecipies() {
 
 export async function getRecipeByRecipeName(RecipeName) {
   const response = await fetch(
-    `http://localhost:8080/recipes?Recipename=${RecipeName}`
+    `http://localhost:8080/recipes?RecipeName=${RecipeName}`
   );
   const recipe = await response.json();
   return recipe;

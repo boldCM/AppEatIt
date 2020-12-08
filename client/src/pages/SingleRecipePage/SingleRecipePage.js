@@ -16,31 +16,33 @@ const RecipeLayout = styled(ContentContainer)`
 `;
 
 const SingleRecipe = ({ RecipeName }) => {
-  const [singleRecipe, setSingleRecipe] = useState({});
+  const [singleRecipeId, setSingleRecipeId] = useState(Number);
+  const [ingredients, setIngredients] = useState([]);
+  const [instructions, setInstructions] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       // const getSingleRecipe = await getRecipeByRecipeName("Geschnetzeltes");
-      const { id, Ingredients, Instructions } = await getRecipeByRecipeName(
-        RecipeName
-      );
+      const result = await getRecipeByRecipeName(RecipeName);
+
+      const { id, Ingredients, Instructions } = result[0];
       // const getSingleRecipe = await getRecipeByRecipeName(RecipeName);
       // setSingleRecipe(getSingleRecipe);
-      setSingleRecipe({ id, Ingredients, Instructions });
-      return id, Ingredients, Instructions;
+      console.log(Ingredients);
+      setSingleRecipeId(id);
+      setIngredients(Ingredients);
+      setInstructions(Instructions);
+      // return id, Ingredients, Instructions;
     }
     fetchData();
-  }, []);
-
+  }, [RecipeName]);
+  console.log(ingredients);
   return (
     <Layout>
       <Header title={RecipeName} />
       <RecipeLayout>
-        <RecipeIngredients
-          Ingredients={singleRecipe.Ingredients}
-          id={singleRecipe.id}
-        />
-        <RecipePreparation instructions={singleRecipe.Instructions} />
+        <RecipeIngredients Ingredients={ingredients} id={singleRecipeId} />
+        <RecipePreparation Instructions={instructions} />
       </RecipeLayout>
       <BottomNav />
     </Layout>

@@ -13,7 +13,7 @@ function App() {
         <GlobalStyle />
         <Switch>
           <Route path="/Rezept">
-            <SingleRecipe RecipeName="Geschnetzeltes" />
+            <SingleRecipe RecipeName="Möhrensuppe mit Maultaschen" />
           </Route>
           <Route path="/Rezeptübersicht">
             <RecipeListPage />
