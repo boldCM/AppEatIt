@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
 const Ingredient = styled.ul`
   margin-bottom: 25px;
@@ -9,11 +10,24 @@ const Ingredient = styled.ul`
   }
 `;
 
-const RecipeIngredients = () => {
+const RecipeIngredients = ({ Ingredients, id }) => {
+  const [ingredients, setIngredients] = useState([]);
+
+  setIngredients(Ingredients);
+
+  // useEffect(()=> {
+  //   async function fetchDate() {
+  //     const getIngredients = await
+  //   }
+  // })
+  console.log(ingredients);
   return (
     <>
       <h2>Zutaten</h2>
       <Ingredient>
+        {ingredients?.map((ingredient) => (
+          <li key={id}>{ingredient}</li>
+        ))}
         <li>Mehl</li>
         <li>Wasser</li>
         <li>Salz</li>
@@ -23,6 +37,11 @@ const RecipeIngredients = () => {
       </Ingredient>
     </>
   );
+};
+
+RecipeIngredients.propTypes = {
+  Ingredients: PropTypes.array,
+  id: PropTypes.number,
 };
 
 export default RecipeIngredients;

@@ -13,7 +13,7 @@ function App() {
         <GlobalStyle />
         <Switch>
           <Route path="/Rezept">
-            <SingleRecipe />
+            <SingleRecipe RecipeName="Geschnetzeltes" />
           </Route>
           <Route path="/Rezeptübersicht">
             <RecipeListPage />
