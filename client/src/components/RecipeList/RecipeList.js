@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
-import {
-  connectDB,
-  getRecipeByRecipeName,
-  getRecipies,
-} from "../../api/connectJSON";
+import { getRecipies } from "../../api/connectJSON";
 import RecipeListItem from "./RecipeListItem";
 
 const ListContainer = styled.div`
