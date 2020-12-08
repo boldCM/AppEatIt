@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
@@ -11,15 +11,6 @@ const Ingredient = styled.ul`
 `;
 
 const RecipeIngredients = ({ Ingredients, id }) => {
-  // const [ingredients, setIngredients] = useState([]);
-
-  // setIngredients(Ingredients);
-
-  // useEffect(()=> {
-  //   async function fetchDate() {
-  //     const getIngredients = await
-  //   }
-  // })
   console.log(Ingredients);
   return (
     <>
@@ -28,12 +19,6 @@ const RecipeIngredients = ({ Ingredients, id }) => {
         {Ingredients?.map((ingredient) => (
           <li key={id}>{ingredient}</li>
         ))}
-        {/* <li>Mehl</li>
-        <li>Wasser</li>
-        <li>Salz</li>
-        <li>Hefe</li>
-        <li>Sack Kartoffeln</li>
-        <li>Butter</li> */}
       </Ingredient>
     </>
   );

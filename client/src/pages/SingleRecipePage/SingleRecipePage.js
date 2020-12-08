@@ -22,21 +22,15 @@ const SingleRecipe = ({ RecipeName }) => {
 
   useEffect(() => {
     async function fetchData() {
-      // const getSingleRecipe = await getRecipeByRecipeName("Geschnetzeltes");
       const result = await getRecipeByRecipeName(RecipeName);
-
       const { id, Ingredients, Instructions } = result[0];
-      // const getSingleRecipe = await getRecipeByRecipeName(RecipeName);
-      // setSingleRecipe(getSingleRecipe);
-      console.log(Ingredients);
       setSingleRecipeId(id);
       setIngredients(Ingredients);
       setInstructions(Instructions);
-      // return id, Ingredients, Instructions;
     }
     fetchData();
   }, [RecipeName]);
-  console.log(ingredients);
+
   return (
     <Layout>
       <Header title={RecipeName} />
