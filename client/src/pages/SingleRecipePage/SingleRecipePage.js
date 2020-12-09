@@ -10,12 +10,15 @@ import {
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import { getRecipeByRecipeName } from "../../api/connectJSON";
+import { useParams } from "react-router-dom";
 
 const RecipeLayout = styled(ContentContainer)`
   padding-left: 20px;
 `;
 
-const SingleRecipe = ({ RecipeName }) => {
+const SingleRecipe = () => {
+  const { RecipeName } = useParams();
+
   const [singleRecipeId, setSingleRecipeId] = useState(Number);
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState("");

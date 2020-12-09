@@ -12,16 +12,15 @@ function App() {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route path="/Rezept">
-            <SingleRecipe RecipeName="Möhrensuppe mit Maultaschen" />
-          </Route>
           <Route path="/Rezeptübersicht">
             <RecipeListPage />
           </Route>
           <Route path="/Einkaufsliste">
             <GroceryListPage />
           </Route>
-
+          <Route path="/:RecipeName">
+            <SingleRecipe />
+          </Route>
           <Route path="/">
             <WeeklyPage />
           </Route>
