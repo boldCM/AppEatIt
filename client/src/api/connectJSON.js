@@ -1,7 +1,6 @@
 export async function getRecipies() {
   const response = await fetch("api/recipes");
   const recipeList = await response.json();
-  console.log(recipeList);
   return recipeList;
 }
 
