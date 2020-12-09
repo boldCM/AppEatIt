@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "json-server": "^0.16.3",
     "node": "^15.2.1"
   }
 }

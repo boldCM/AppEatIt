@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
 const Ingredient = styled.ul`
   margin-bottom: 25px;
@@ -9,20 +10,23 @@ const Ingredient = styled.ul`
   }
 `;
 
-const RecipeIngredients = () => {
+const RecipeIngredients = ({ Ingredients, id }) => {
+  console.log(Ingredients);
   return (
     <>
       <h2>Zutaten</h2>
       <Ingredient>
-        <li>Mehl</li>
-        <li>Wasser</li>
-        <li>Salz</li>
-        <li>Hefe</li>
-        <li>Sack Kartoffeln</li>
-        <li>Butter</li>
+        {Ingredients?.map((ingredient) => (
+          <li key={id}>{ingredient}</li>
+        ))}
       </Ingredient>
     </>
   );
+};
+
+RecipeIngredients.propTypes = {
+  Ingredients: PropTypes.array,
+  id: PropTypes.number,
 };
 
 export default RecipeIngredients;
