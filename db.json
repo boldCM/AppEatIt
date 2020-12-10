@@ -20,7 +20,13 @@
     {
       "id": 2,
       "RecipeName": "Geschnetzeltes",
-      "Ingredients": ["Fleisch", "Sahne", "Champignons", "1 Zwiebel", "uvm"],
+      "Ingredients": [
+        "Fleisch",
+        "Sahne",
+        "Champignons",
+        "1 Zwiebel",
+        "uvm"
+      ],
       "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
     }
   ],
@@ -29,11 +35,6 @@
       "id": 3,
       "date": "Mo, 16.12.20",
       "RecipeName": "Lasagne"
-    },
-    {
-      "id": 1,
-      "date": "Di, 17.12.20",
-      "RecipeName": "Möhrensuppe mit Maultaschen"
     },
     {
       "id": 4,
@@ -49,6 +50,14 @@
       "id": 7,
       "date": "24.12.20",
       "RecipeName": "Hühnersuppe"
+    },
+    {
+      "RecipeName": "Geschnetzeltes",
+      "id": 8
+    },
+    {
+      "RecipeName": "Möhrensuppe mit Maultaschen",
+      "id": 9
     }
   ]
 }
