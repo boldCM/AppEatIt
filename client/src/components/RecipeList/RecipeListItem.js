@@ -6,12 +6,7 @@ import CalendarCheck from "../../assets/calendarCheck.svg";
 import CalendarFilled from "../../assets/calendarFilled.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import {
-  getWeekByRecipeName,
-  updateWeekByRecipeName,
-  isRecipeInWeek,
-  putRecipeInWeek,
-} from "../../api/connectJSON";
+import { isRecipeInWeek, putRecipeInWeek } from "../../api/connectJSON";
 
 const RecipeItem = styled.div`
   display: flex;
