@@ -20,13 +20,7 @@
     {
       "id": 2,
       "RecipeName": "Geschnetzeltes",
-      "Ingredients": [
-        "Fleisch",
-        "Sahne",
-        "Champignons",
-        "1 Zwiebel",
-        "uvm"
-      ],
+      "Ingredients": ["Fleisch", "Sahne", "Champignons", "1 Zwiebel", "uvm"],
       "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
     }
   ],
@@ -55,15 +49,6 @@
       "id": 7,
       "date": "24.12.20",
       "RecipeName": "Hühnersuppe"
-    },
-    {
-      "RecipeName": "Geschnetzeltes",
-      "id": 8
     }
-  ],
-  "grocerieList": [
-    "Mehl",
-    "Milch",
-    "Butter"
   ]
 }
