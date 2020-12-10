@@ -15,3 +15,16 @@ export async function getWeek() {
   const week = await response.json();
   return week;
 }
+
+export async function updateWeekByRecipeName(RecipeName) {
+  const newWeekItem = { RecipeName: RecipeName };
+  console.log(newWeekItem);
+  const url = `api/week`;
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(newWeekItem),
+  });
+}

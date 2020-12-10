@@ -6,6 +6,7 @@ import CalendarCheck from "../../assets/calendarCheck.svg";
 import CalendarFilled from "../../assets/calendarFilled.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { updateWeekByRecipeName } from "../../api/connectJSON";
 
 const RecipeItem = styled.div`
   display: flex;
@@ -27,6 +28,16 @@ const RecipeListItem = ({ RecipeName }) => {
     ? "Item not in Calendar"
     : "Item is in Calendar";
 
+  const putRecipeInWeek = async (RecipeName) => {
+    await updateWeekByRecipeName(RecipeName);
+  };
+
+  const handleClick = (RecipeName) => {
+    // write function, die in die db.json speichert, also ein put(?)
+    putRecipeInWeek(RecipeName);
+    setInCalender(!inCalender);
+  };
+
   return (
     <>
       <RecipeItem>
@@ -34,7 +45,8 @@ const RecipeListItem = ({ RecipeName }) => {
         <IconButton
           iconSrc={CalendarSrc}
           iconAlt={CalendarAlt}
-          onClick={() => setInCalender(!inCalender)}
+          // onClick={() => setInCalender(!inCalender)}
+          onClick={() => handleClick(RecipeName)}
         />
       </RecipeItem>
       <DiamondLine />
