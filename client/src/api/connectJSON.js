@@ -16,13 +16,28 @@ export async function getWeek() {
   return week;
 }
 
-export async function updateWeekByRecipeName(RecipeName) {
+export async function isRecipeInWeek(RecipeName) {
   const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
   const weeks = await weekResponse.json();
   if (weeks.length > 0) {
-    console.log("Write an error message");
-    return;
+    console.log("Write an error message/ or delete method");
+    return true;
   }
+
+  return false;
+}
+
+// export async function updateWeekByRecipeName(RecipeName) {
+//   const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
+//   const recipeInWeek = await weekResponse.json();
+//   console.log(recipeInWeek.length);
+//   if (recipeInWeek.length > 0) {
+//     console.log("Write an error message/ or delete method");
+//     return true;
+//   }
+// }
+
+export async function putRecipeInWeek(RecipeName) {
   const newWeekItem = { RecipeName: RecipeName };
   const url = `/api/week`;
   await fetch(url, {
