@@ -9,3 +9,9 @@ export async function getRecipeByRecipeName(RecipeName) {
   const recipe = await response.json();
   return recipe;
 }
+
+export async function getWeek() {
+  const response = await fetch(`api/week`);
+  const week = await response.json();
+  return week;
+}
