@@ -27,7 +27,11 @@ const RecipeList = () => {
   return (
     <ListContainer>
       {recipes?.map((recipes) => (
-        <RecipeListItem key={recipes.id} RecipeName={recipes.RecipeName} />
+        <RecipeListItem
+          key={recipes.id}
+          RecipeName={recipes.RecipeName}
+          Id={recipes.id}
+        />
       ))}
     </ListContainer>
   );
