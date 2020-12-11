@@ -17,14 +17,18 @@ const WeeklyPage = () => {
     }
     fetchData();
   }, []);
-  console.log(chosenRecipies);
 
   return (
     <Layout>
       <Header title="Wochenplan" />
       <ContentContainer>
         {chosenRecipies?.map((recipe) => (
-          <WeekListItem key={recipe.id} RecipeName={recipe.RecipeName} />
+          <WeekListItem
+            key={recipe.id}
+            RecipeName={recipe.RecipeName}
+            Id={recipe.id}
+            ChosenDate={recipe.date}
+          />
         ))}
       </ContentContainer>
       <BottomNav />
