@@ -7,6 +7,8 @@ import "./DatePicker.css";
 import { registerLocale } from "react-datepicker";
 import de from "date-fns/locale/de";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { updateWeekByDate } from "../../api/connectJSON";
 registerLocale("de", de);
 
 const StyledDatePicker = styled(DatePicker)`
@@ -19,6 +21,9 @@ const StyledDatePicker = styled(DatePicker)`
   font-weight: 300;
   :focus {
     outline: none;
+  }
+  ::placeholder {
+    color: var(--active-color);
   }
 `;
 
@@ -48,28 +53,46 @@ const TextWeek = styled(Link)`
   /* 1px looked more aligned with the hr line. */
 `;
 
-const WeekListItem = () => {
-  const [date, setDate] = useState(new Date());
+const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
+  const parseDate = Date.parse(ChosenDate);
+
+  const [date, setDate] = useState(ChosenDate === undefined ? "" : parseDate);
 
   const getWeekDay = (date) => {
     return new Intl.DateTimeFormat("de-DE", { weekday: "short" }).format(date);
   };
 
+  const updateDate = async (selectedDate) => {
+    await updateWeekByDate(selectedDate, Id);
+  };
+
+  const handleOnChange = (selectedDate) => {
+    setDate(selectedDate);
+    updateDate(selectedDate);
+  };
+
   return (
     <ContainerWeek>
       <Diamond>
-        <div>{getWeekDay(date)}</div>
+        {date && <div>{getWeekDay(date)}</div>}
         <StyledDatePicker
           selected={date}
-          onChange={(selectedDate) => setDate(selectedDate)}
           dateFormat="dd.MM."
           locale="de"
+          onChange={(selected) => handleOnChange(selected)}
+          placeholderText="Click me"
         />
       </Diamond>
       <DiamondLine />
-      <TextWeek to="/Rezept">Geschnetzeltes</TextWeek>
+      <TextWeek to={`${RecipeName}`}>{RecipeName}</TextWeek>
     </ContainerWeek>
   );
+};
+
+WeekListItem.propTypes = {
+  RecipeName: PropTypes.string,
+  Id: PropTypes.number,
+  ChosenDate: PropTypes.any,
 };
 
 export { WeekListItem };

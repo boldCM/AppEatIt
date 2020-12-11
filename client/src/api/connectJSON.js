@@ -42,3 +42,14 @@ export async function deleteRecipeFromWeek(Id) {
     method: "DELETE",
   });
 }
+
+export async function updateWeekByDate(date, Id) {
+  const saveDate = { date };
+  await fetch(`/api/week/${Id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(saveDate),
+  });
+}
