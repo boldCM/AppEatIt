@@ -43,8 +43,6 @@ export async function deleteRecipeFromWeek(Id) {
   });
 }
 
-// patch methode fürs Datum schreiben:
-
 export async function updateWeekByDate(date, Id) {
   const saveDate = { date: date };
   await fetch(`/api/week/${Id}`, {

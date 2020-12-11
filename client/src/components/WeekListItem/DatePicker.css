@@ -722,6 +722,10 @@
   width: 100%;
 }
 
+.react-datepicker__input-container::-webkit-input-placeholder {
+  color: var(--active-color);
+}
+
 .react-datepicker__year-read-view,
 .react-datepicker__month-read-view,
 .react-datepicker__month-year-read-view {

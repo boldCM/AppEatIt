@@ -22,6 +22,9 @@ const StyledDatePicker = styled(DatePicker)`
   :focus {
     outline: none;
   }
+  ::placeholder {
+    color: var(--active-color);
+  }
 `;
 
 const ContainerWeek = styled.div`
@@ -77,6 +80,7 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
           dateFormat="dd.MM."
           locale="de"
           onChange={(selected) => handleOnChange(selected)}
+          placeholderText="Click me"
         />
       </Diamond>
       <DiamondLine />
