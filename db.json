@@ -15,13 +15,51 @@
         "Salz und Pfeffer zum Würzen",
         "1 Msp Kurkuma"
       ],
-      "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben."
+      "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben.",
+      "inWeek": true
     },
     {
       "id": 2,
       "RecipeName": "Geschnetzeltes",
-      "Ingredients": ["Fleisch", "Sahne", "Champignons", "1 Zwiebel", "uvm"],
-      "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
+      "Ingredients": [
+        "Fleisch",
+        "Sahne",
+        "Champignons",
+        "1 Zwiebel",
+        "uvm"
+      ],
+      "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)",
+      "inWeek": false
+    }
+  ],
+  "week": [
+    {
+      "id": 3,
+      "date": "Mo, 16.12.20",
+      "RecipeName": "Lasagne"
+    },
+    {
+      "id": 4,
+      "date": "Mi, 18.12.20",
+      "RecipeName": "Pizza"
+    },
+    {
+      "id": 5,
+      "date": "Do, 19.12.20",
+      "RecipeName": "Gyros"
+    },
+    {
+      "id": 7,
+      "date": "24.12.20",
+      "RecipeName": "Hühnersuppe"
+    },
+    {
+      "RecipeName": "Geschnetzeltes",
+      "id": 9
+    },
+    {
+      "RecipeName": "Möhrensuppe mit Maultaschen",
+      "id": 10
     }
   ]
 }
