@@ -35,28 +35,32 @@
   "week": [
     {
       "id": 3,
-      "date": "2020-12-11T13:24:17.666Z",
+      "date": "2020-12-01T13:24:17.000Z",
       "RecipeName": "Lasagne"
     },
     {
       "id": 4,
-      "date": "2020-12-01T13:24:17.000Z",
+      "date": "2020-12-02T13:24:17.000Z",
       "RecipeName": "Pizza"
     },
     {
       "id": 5,
-      "date": "2020-12-31T13:27:21.000Z",
+      "date": "2020-12-03T13:27:21.000Z",
       "RecipeName": "Gyros"
     },
     {
       "id": 7,
-      "date": "2020-12-09T14:09:12.000Z",
+      "date": "2020-12-04T14:09:12.000Z",
       "RecipeName": "Hühnersuppe"
     },
     {
       "RecipeName": "Möhrensuppe mit Maultaschen",
       "id": 1,
-      "date": "2020-12-24T14:20:21.000Z"
+      "date": "2020-12-05T14:20:21.000Z"
+    },
+    {
+      "RecipeName": "Geschnetzeltes",
+      "id": 2
     }
   ]
 }

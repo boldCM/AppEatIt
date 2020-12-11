@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import DiamondImg from "../../assets/diamond.svg";
 import { DiamondLine } from "../styledComponents/Lines";
@@ -8,7 +8,7 @@ import { registerLocale } from "react-datepicker";
 import de from "date-fns/locale/de";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { getWeek, updateWeekByDate } from "../../api/connectJSON";
+import { updateWeekByDate } from "../../api/connectJSON";
 registerLocale("de", de);
 
 const StyledDatePicker = styled(DatePicker)`
@@ -52,30 +52,24 @@ const TextWeek = styled(Link)`
 
 const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
   const parseDate = Date.parse(ChosenDate);
-  console.log(parseDate);
-  // const [date, setDate] = useState(new Date());
-  const [date, setDate] = useState(parseDate);
-  console.log(ChosenDate);
-  console.log(new Date());
-  // setDate(ChosenDate);
-  // das Time-Value scheint nicht für die Formatierung in z.58 zupassen
 
-  // das heißt ich muss die formatierte Version abspeichern und jedes Mal, wenn sich das date ändern, muss die Formatierung drüber laufen ?
+  const [date, setDate] = useState(ChosenDate === undefined ? "" : parseDate);
+
+  // wenn kein chosenDate vorhanden ist, setze einen leeren String.
+  // const parseDate = Date.parse(ChosenDate);
+  // const [date, setDate] = useState(parseDate);
 
   const getWeekDay = (date) => {
     return new Intl.DateTimeFormat("de-DE", { weekday: "short" }).format(date);
   };
 
-  // wenn das Date gesetzt wird, will ich es automatisch in meiner db.json haben.
-  // und dann den initial date aus der db.json holen statt useState(newDate())-> s. state für Icons...
-
-  const fetchData = async (selectedDate) => {
+  const updateDate = async (selectedDate) => {
     await updateWeekByDate(selectedDate, Id);
   };
 
   const handleOnChange = (selectedDate) => {
     setDate(selectedDate);
-    fetchData(selectedDate);
+    updateDate(selectedDate);
   };
 
   return (
@@ -84,7 +78,6 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
         <div>{getWeekDay(date)}</div>
         <StyledDatePicker
           selected={date}
-          // onChange={(selectedDate) => setDate(selectedDate)}
           dateFormat="dd.MM."
           locale="de"
           onChange={(selected) => handleOnChange(selected)}
