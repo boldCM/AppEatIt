@@ -6,7 +6,11 @@ import CalendarCheck from "../../assets/calendarCheck.svg";
 import CalendarFilled from "../../assets/calendarFilled.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { isRecipeInWeek, putRecipeInWeek } from "../../api/connectJSON";
+import {
+  deleteRecipeFromWeek,
+  isRecipeInWeek,
+  putRecipeInWeek,
+} from "../../api/connectJSON";
 
 const RecipeItem = styled.div`
   display: flex;
@@ -19,10 +23,8 @@ const RecipeItem = styled.div`
   }
 `;
 
-const RecipeListItem = ({ RecipeName }) => {
+const RecipeListItem = ({ RecipeName, Id }) => {
   const [inCalender, setInCalender] = useState(null);
-  // wenn der RecipeName auch in der week auftaucht, setze das Icon auf filled.
-  // beim generellen Laden leer, es sei denn, es ist in der week drin
 
   const startIsRecipeInWeek = async (RecipeName) =>
     await isRecipeInWeek(RecipeName);
@@ -44,13 +46,13 @@ const RecipeListItem = ({ RecipeName }) => {
     : "Item is in Calendar";
 
   const handleClick = async (RecipeName) => {
-    console.log(await startIsRecipeInWeek(RecipeName));
+    // console.log(await startIsRecipeInWeek(RecipeName));
     if (await startIsRecipeInWeek(RecipeName)) {
+      await deleteRecipeFromWeek(Id);
       setInCalender(false);
-      // toDo: write delete function
-      console.log("write delete function");
+      return;
     } else {
-      await putRecipeInWeek(RecipeName);
+      await putRecipeInWeek(RecipeName, Id);
       setInCalender(true);
       return;
     }
@@ -73,6 +75,7 @@ const RecipeListItem = ({ RecipeName }) => {
 
 RecipeListItem.propTypes = {
   RecipeName: PropTypes.string,
+  Id: PropTypes.number,
 };
 
 export default RecipeListItem;
