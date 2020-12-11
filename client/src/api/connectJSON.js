@@ -48,3 +48,9 @@ export async function putRecipeInWeek(RecipeName) {
     body: JSON.stringify(newWeekItem),
   });
 }
+
+export async function deleteRecipeFromWeek(RecipeName) {
+  await fetch(`/api/week?RecipeName=${RecipeName}`, {
+    method: "DELETE",
+  });
+}
