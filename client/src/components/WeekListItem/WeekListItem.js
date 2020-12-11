@@ -55,10 +55,6 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
 
   const [date, setDate] = useState(ChosenDate === undefined ? "" : parseDate);
 
-  // wenn kein chosenDate vorhanden ist, setze einen leeren String.
-  // const parseDate = Date.parse(ChosenDate);
-  // const [date, setDate] = useState(parseDate);
-
   const getWeekDay = (date) => {
     return new Intl.DateTimeFormat("de-DE", { weekday: "short" }).format(date);
   };
@@ -75,7 +71,7 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
   return (
     <ContainerWeek>
       <Diamond>
-        <div>{getWeekDay(date)}</div>
+        {date && <div>{getWeekDay(date)}</div>}
         <StyledDatePicker
           selected={date}
           dateFormat="dd.MM."

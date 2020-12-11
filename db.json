@@ -60,7 +60,8 @@
     },
     {
       "RecipeName": "Geschnetzeltes",
-      "id": 2
+      "id": 2,
+      "date": "2020-12-16T23:00:00.000Z"
     }
   ]
 }
