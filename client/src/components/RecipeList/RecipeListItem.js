@@ -38,7 +38,7 @@ const RecipeListItem = ({ RecipeName, Id }) => {
       }
     }
     doFetch();
-  }, []);
+  }, [RecipeName]);
   const CalendarSrc = !inCalender ? CalendarCheck : CalendarFilled;
 
   const CalendarAlt = !inCalender
@@ -46,7 +46,6 @@ const RecipeListItem = ({ RecipeName, Id }) => {
     : "Item is in Calendar";
 
   const handleClick = async (RecipeName) => {
-    // console.log(await startIsRecipeInWeek(RecipeName));
     if (await startIsRecipeInWeek(RecipeName)) {
       await deleteRecipeFromWeek(Id);
       setInCalender(false);

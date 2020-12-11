@@ -25,16 +25,6 @@ export async function isRecipeInWeek(RecipeName) {
   return false;
 }
 
-// export async function updateWeekByRecipeName(RecipeName) {
-//   const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
-//   const recipeInWeek = await weekResponse.json();
-//   console.log(recipeInWeek.length);
-//   if (recipeInWeek.length > 0) {
-//     console.log("Write an error message/ or delete method");
-//     return true;
-//   }
-// }
-
 export async function putRecipeInWeek(RecipeName, Id) {
   const newWeekItem = { RecipeName: RecipeName, id: Id };
   const url = `/api/week`;
@@ -48,16 +38,7 @@ export async function putRecipeInWeek(RecipeName, Id) {
 }
 
 export async function deleteRecipeFromWeek(Id) {
-  console.log(Id);
-  // id übergeben
-  const response = await fetch(`/api/week/${Id}`, {
+  await fetch(`/api/week/${Id}`, {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
   });
-  // const deleted = response.text();
-  const deleted = response.json();
-  console.log("Recipe deleted");
-  return deleted;
 }
