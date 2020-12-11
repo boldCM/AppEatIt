@@ -7,6 +7,7 @@ import "./DatePicker.css";
 import { registerLocale } from "react-datepicker";
 import de from "date-fns/locale/de";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 registerLocale("de", de);
 
 const StyledDatePicker = styled(DatePicker)`
@@ -48,7 +49,7 @@ const TextWeek = styled(Link)`
   /* 1px looked more aligned with the hr line. */
 `;
 
-const WeekListItem = () => {
+const WeekListItem = ({ RecipeName }) => {
   const [date, setDate] = useState(new Date());
 
   const getWeekDay = (date) => {
@@ -67,9 +68,14 @@ const WeekListItem = () => {
         />
       </Diamond>
       <DiamondLine />
-      <TextWeek to="/Rezept">Geschnetzeltes</TextWeek>
+      <TextWeek to={`${RecipeName}`}>{RecipeName}</TextWeek>
     </ContainerWeek>
   );
+};
+
+WeekListItem.propTypes = {
+  RecipeName: PropTypes.string,
+  // Id: PropTypes.number,
 };
 
 export { WeekListItem };
