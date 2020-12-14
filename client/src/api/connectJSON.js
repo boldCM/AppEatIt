@@ -25,8 +25,8 @@ export async function isRecipeInWeek(RecipeName) {
   return false;
 }
 
-export async function putRecipeInWeek(RecipeName, Id) {
-  const newWeekItem = { RecipeName: RecipeName, id: Id };
+export async function putRecipeInWeek(RecipeName, Id, WholeRecipe) {
+  const newWeekItem = { RecipeName: RecipeName, id: Id, WholeRecipe };
   const url = `/api/week`;
   await fetch(url, {
     method: "POST",

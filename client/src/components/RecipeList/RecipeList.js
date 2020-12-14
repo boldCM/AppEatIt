@@ -23,6 +23,10 @@ const RecipeList = () => {
     }
     fetchData();
   }, []);
+  // also ganzes Objekt holen und nicht in einen State speichern...?
+  // ich will das ganze Objekt haben und in einer Constanten speichern und die übergeben...
+
+  // und den rest der Infos getten...
 
   return (
     <ListContainer>
@@ -31,6 +35,8 @@ const RecipeList = () => {
           key={recipes.id}
           RecipeName={recipes.RecipeName}
           Id={recipes.id}
+          WholeRecipe={recipes}
+          // und denn Rest der Infos
         />
       ))}
     </ListContainer>

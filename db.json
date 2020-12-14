@@ -16,7 +16,8 @@
         "1 Msp Kurkuma"
       ],
       "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben.",
-      "inWeek": true
+      "inWeek": true,
+      "date": "24.12.20"
     },
     {
       "id": 2,
@@ -54,14 +55,66 @@
       "RecipeName": "Hühnersuppe"
     },
     {
-      "RecipeName": "Möhrensuppe mit Maultaschen",
-      "id": 1,
-      "date": "2020-12-05T14:20:21.000Z"
+      "WeekId": 15,
+      "date": "someDate",
+      "Recipe": {
+        "RecipeId": 1,
+        "RecipeName": "Möhrensuppe mit Maultaschen",
+        "Ingredients": [
+          "500gr Möhren",
+          "500ml Brühe",
+          "1Pck Maultaschen",
+          "200gr Schmand",
+          "250ml Milch",
+          "1 Prise Salz",
+          "1 Schuss Weißweinessig",
+          "1 Prise Zucker",
+          "Salz und Pfeffer zum Würzen",
+          "1 Msp Kurkuma"
+        ],
+        "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben.",
+        "inWeek": true
+      }
     },
     {
       "RecipeName": "Geschnetzeltes",
       "id": 2,
-      "date": "2020-12-24T23:00:00.000Z"
+      "WholeRecipe": {
+        "id": 2,
+        "RecipeName": "Geschnetzeltes",
+        "Ingredients": [
+          "Fleisch",
+          "Sahne",
+          "Champignons",
+          "1 Zwiebel",
+          "uvm"
+        ],
+        "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)",
+        "inWeek": false
+      }
+    },
+    {
+      "RecipeName": "Möhrensuppe mit Maultaschen",
+      "id": 1,
+      "WholeRecipe": {
+        "id": 1,
+        "RecipeName": "Möhrensuppe mit Maultaschen",
+        "Ingredients": [
+          "500gr Möhren",
+          "500ml Brühe",
+          "1Pck Maultaschen",
+          "200gr Schmand",
+          "250ml Milch",
+          "1 Prise Salz",
+          "1 Schuss Weißweinessig",
+          "1 Prise Zucker",
+          "Salz und Pfeffer zum Würzen",
+          "1 Msp Kurkuma"
+        ],
+        "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben.",
+        "inWeek": true,
+        "date": "24.12.20"
+      }
     }
   ]
 }
