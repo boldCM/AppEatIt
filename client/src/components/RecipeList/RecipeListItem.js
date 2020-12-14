@@ -23,7 +23,7 @@ const RecipeItem = styled.div`
   }
 `;
 // hier müsste ich die Ingredients, bzw das ganze Objekt übergeben bekommen
-const RecipeListItem = ({ RecipeName, Id, WholeRecipe }) => {
+const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
 
   const startIsRecipeInWeek = async (RecipeName) =>
@@ -48,11 +48,11 @@ const RecipeListItem = ({ RecipeName, Id, WholeRecipe }) => {
   // um dann hier alle weiteren Infos zum rezept in die Week zu posten
   const handleClick = async (RecipeName) => {
     if (await startIsRecipeInWeek(RecipeName)) {
-      await deleteRecipeFromWeek(Id);
+      await deleteRecipeFromWeek(RecipeId);
       setInCalender(false);
       return;
     } else {
-      await putRecipeInWeek(RecipeName, Id, WholeRecipe);
+      await putRecipeInWeek(RecipeName, RecipeId, WholeRecipe);
       setInCalender(true);
       return;
     }
@@ -75,7 +75,7 @@ const RecipeListItem = ({ RecipeName, Id, WholeRecipe }) => {
 
 RecipeListItem.propTypes = {
   RecipeName: PropTypes.string,
-  Id: PropTypes.number,
+  RecipeId: PropTypes.number,
   WholeRecipe: PropTypes.array,
 };
 
