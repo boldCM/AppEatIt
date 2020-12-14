@@ -13,6 +13,15 @@ const ListItem = styled.p`
   }
 `;
 
+// 1. Get Groceries
+// 2. Map each Groceries
+// 3. filtern nach doubled Groceries
+// 4. addiere doubled Groceries
+// dabei noch den String zur Number convertieren, durch +(Zahl) oder durch Number(Zahl)
+// ebenfalls kann mir parseInt eine ganze Zahl wiedergeben, obwohl Buchstaben drankleben wir bei 300gr und parseFloat gibt meine eine Komma-Zahl wieder 12.5g --> 12.5
+// 5. exlcude unneccessary groceries
+// vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
+
 const GroceryListItem = ({ Grocery }) => {
   const [ischecked, setIsChecked] = useState(false);
 
