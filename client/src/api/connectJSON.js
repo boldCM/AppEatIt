@@ -16,6 +16,7 @@ export async function getWeek() {
   return week;
 }
 
+// Ganze Woche fetchen und dann prüfen.
 export async function isRecipeInWeek(RecipeName) {
   const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
   const weeks = await weekResponse.json();
@@ -25,8 +26,13 @@ export async function isRecipeInWeek(RecipeName) {
   return false;
 }
 
-export async function putRecipeInWeek(RecipeName, Id, WholeRecipe) {
-  const newWeekItem = { RecipeName: RecipeName, id: Id, WholeRecipe };
+// achtung id nun random!
+export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
+  const newWeekItem = {
+    RecipeName: RecipeName,
+    Recipe: WholeRecipe,
+    id: RecipeId,
+  };
   const url = `/api/week`;
   await fetch(url, {
     method: "POST",
@@ -37,8 +43,8 @@ export async function putRecipeInWeek(RecipeName, Id, WholeRecipe) {
   });
 }
 
-export async function deleteRecipeFromWeek(Id) {
-  await fetch(`/api/week/${Id}`, {
+export async function deleteRecipeFromWeek(RecipeId) {
+  await fetch(`/api/week/${RecipeId}`, {
     method: "DELETE",
   });
 }
