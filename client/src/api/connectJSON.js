@@ -26,7 +26,9 @@ export async function isRecipeInWeek(RecipeName) {
   return false;
 }
 
-// achtung id nun random!
+// 1. id hier noch randomiseren, da sie momentan mit RecipeId gleichgesetzt wird (damit ich im Json-Server unten die deleteFunction ausühren kann)
+// später nur ein Object in die Klammer
+// RecipeName rausnehmen, dafür muss die isRecipeInWeek() angepasst werden
 export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
   const newWeekItem = {
     RecipeName: RecipeName,
@@ -43,6 +45,7 @@ export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
   });
 }
 
+// mit MongoDB kann ich hoffentlich tief genestete Sachen besser erreichen.
 export async function deleteRecipeFromWeek(RecipeId) {
   await fetch(`/api/week/${RecipeId}`, {
     method: "DELETE",
