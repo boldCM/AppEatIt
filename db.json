@@ -45,6 +45,43 @@
       "id": 7,
       "date": "2020-12-04T14:09:12.000Z",
       "RecipeName": "Hühnersuppe"
+    },
+    {
+      "RecipeName": "Möhrensuppe mit Maultaschen",
+      "Recipe": {
+        "RecipeId": 1,
+        "RecipeName": "Möhrensuppe mit Maultaschen",
+        "Ingredients": [
+          "500gr Möhren",
+          "500ml Brühe",
+          "1Pck Maultaschen",
+          "200gr Schmand",
+          "250ml Milch",
+          "1 Prise Salz",
+          "1 Schuss Weißweinessig",
+          "1 Prise Zucker",
+          "Salz und Pfeffer zum Würzen",
+          "1 Msp Kurkuma"
+        ],
+        "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben."
+      },
+      "id": 1
+    },
+    {
+      "RecipeName": "Geschnetzeltes",
+      "Recipe": {
+        "RecipeId": 2,
+        "RecipeName": "Geschnetzeltes",
+        "Ingredients": [
+          "Fleisch",
+          "Sahne",
+          "Champignons",
+          "1 Zwiebel",
+          "uvm"
+        ],
+        "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
+      },
+      "id": 2
     }
   ]
 }

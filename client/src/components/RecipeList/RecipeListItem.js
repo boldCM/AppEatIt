@@ -25,7 +25,6 @@ const RecipeItem = styled.div`
 // hier müsste ich die Ingredients, bzw das ganze Objekt übergeben bekommen
 const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
-  console.log(RecipeId);
 
   const startIsRecipeInWeek = async (RecipeName) =>
     await isRecipeInWeek(RecipeName);
