@@ -26,7 +26,9 @@ const SingleRecipe = () => {
   useEffect(() => {
     async function fetchData() {
       const result = await getRecipeByRecipeName(RecipeName);
-      const { id, Ingredients, Instructions } = result[0];
+      const { Ingredients, Instructions } = result;
+      const id = result._id;
+      // id kann hier raus, aber ich lasse sie als Erinnerung für dei Schreibweise drin
       setSingleRecipeId(id);
       setIngredients(Ingredients);
       setInstructions(Instructions);

@@ -1,12 +1,11 @@
 export async function getRecipies() {
   const response = await fetch("/api/recipes");
   const recipeList = response.json();
-  // console.log(response);
   return recipeList;
 }
 
 export async function getRecipeByRecipeName(RecipeName) {
-  const response = await fetch(`/api/recipes?RecipeName=${RecipeName}`);
+  const response = await fetch(`/api/recipes/${RecipeName}`);
   const recipe = await response.json();
   return recipe;
 }

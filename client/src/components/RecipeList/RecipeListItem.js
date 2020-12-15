@@ -31,6 +31,8 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
 
   useEffect(() => {
     async function doFetch() {
+      // findOne einfach für Icons...
+      // noch nicht möglich bei mir, da ich noch week collection schreiben muss.
       if (await startIsRecipeInWeek(RecipeName)) {
         setInCalender(true);
       } else {

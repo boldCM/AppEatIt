@@ -10,14 +10,13 @@ const Ingredient = styled.ul`
   }
 `;
 
-const RecipeIngredients = ({ Ingredients, id }) => {
-  console.log(Ingredients);
+const RecipeIngredients = ({ Ingredients }) => {
   return (
     <>
       <h2>Zutaten</h2>
       <Ingredient>
         {Ingredients?.map((ingredient) => (
-          <li key={id}>{ingredient}</li>
+          <li key={ingredient}>{ingredient}</li>
         ))}
       </Ingredient>
     </>
@@ -26,7 +25,7 @@ const RecipeIngredients = ({ Ingredients, id }) => {
 
 RecipeIngredients.propTypes = {
   Ingredients: PropTypes.array,
-  id: PropTypes.number,
+  // id: PropTypes.any,
 };
 
 export default RecipeIngredients;
