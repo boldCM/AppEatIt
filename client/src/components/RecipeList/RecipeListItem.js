@@ -22,8 +22,8 @@ const RecipeItem = styled.div`
     margin: 6px 0 0 8px;
   }
 `;
-
-const RecipeListItem = ({ RecipeName, Id }) => {
+// hier müsste ich die Ingredients, bzw das ganze Objekt übergeben bekommen
+const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
 
   const startIsRecipeInWeek = async (RecipeName) =>
@@ -45,13 +45,14 @@ const RecipeListItem = ({ RecipeName, Id }) => {
     ? "Item not in Calendar"
     : "Item is in Calendar";
 
+  // um dann hier alle weiteren Infos zum rezept in die Week zu posten
   const handleClick = async (RecipeName) => {
     if (await startIsRecipeInWeek(RecipeName)) {
-      await deleteRecipeFromWeek(Id);
+      await deleteRecipeFromWeek(RecipeId);
       setInCalender(false);
       return;
     } else {
-      await putRecipeInWeek(RecipeName, Id);
+      await putRecipeInWeek(RecipeName, RecipeId, WholeRecipe);
       setInCalender(true);
       return;
     }
@@ -74,7 +75,8 @@ const RecipeListItem = ({ RecipeName, Id }) => {
 
 RecipeListItem.propTypes = {
   RecipeName: PropTypes.string,
-  Id: PropTypes.number,
+  RecipeId: PropTypes.number,
+  WholeRecipe: PropTypes.array,
 };
 
 export default RecipeListItem;

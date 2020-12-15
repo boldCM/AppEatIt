@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "RecipeId": 1,
       "RecipeName": "Möhrensuppe mit Maultaschen",
       "Ingredients": [
         "500gr Möhren",
@@ -15,11 +15,10 @@
         "Salz und Pfeffer zum Würzen",
         "1 Msp Kurkuma"
       ],
-      "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben.",
-      "inWeek": true
+      "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben."
     },
     {
-      "id": 2,
+      "RecipeId": 2,
       "RecipeName": "Geschnetzeltes",
       "Ingredients": [
         "Fleisch",
@@ -28,16 +27,10 @@
         "1 Zwiebel",
         "uvm"
       ],
-      "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)",
-      "inWeek": false
+      "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
     }
   ],
   "week": [
-    {
-      "id": 3,
-      "date": "2020-12-01T13:24:17.000Z",
-      "RecipeName": "Lasagne"
-    },
     {
       "id": 4,
       "date": "2020-12-02T13:24:17.000Z",
@@ -55,13 +48,40 @@
     },
     {
       "RecipeName": "Möhrensuppe mit Maultaschen",
-      "id": 1,
-      "date": "2020-12-05T14:20:21.000Z"
+      "Recipe": {
+        "RecipeId": 1,
+        "RecipeName": "Möhrensuppe mit Maultaschen",
+        "Ingredients": [
+          "500gr Möhren",
+          "500ml Brühe",
+          "1Pck Maultaschen",
+          "200gr Schmand",
+          "250ml Milch",
+          "1 Prise Salz",
+          "1 Schuss Weißweinessig",
+          "1 Prise Zucker",
+          "Salz und Pfeffer zum Würzen",
+          "1 Msp Kurkuma"
+        ],
+        "Instructions": "Maultaschen nach Packunngsanweisung kochen. Möhren schälen, in Stücke schneiden und anschließend gar kochen. Schmand und Milch hinzufügen und fein pürieren. Würzen. Maultaschen klein schneiden und anschließend in die Suppe geben."
+      },
+      "id": 1
     },
     {
       "RecipeName": "Geschnetzeltes",
-      "id": 2,
-      "date": "2020-12-24T23:00:00.000Z"
+      "Recipe": {
+        "RecipeId": 2,
+        "RecipeName": "Geschnetzeltes",
+        "Ingredients": [
+          "Fleisch",
+          "Sahne",
+          "Champignons",
+          "1 Zwiebel",
+          "uvm"
+        ],
+        "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
+      },
+      "id": 2
     }
   ]
 }
