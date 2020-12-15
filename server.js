@@ -5,14 +5,34 @@ const { connect } = require("./lib/database");
 
 // JSON-Server brauche ich später nicht mehr:
 const jsonServer = require("json-server");
+const { getRecipiesMongo } = require("./lib/connectMongoDB");
+const { response } = require("express");
 const router = jsonServer.router("db.json");
 const middleware = jsonServer.defaults();
 // JSON-Server Ende
 
 const port = process.env.PORT || 3001;
 const app = express();
-// neu: vermutlich damit ich json format lesen kann:
+// neu: vermutlich damit ich json format lesen kann: ja!
 app.use(express.json());
+
+// hier ist Platz für meine req/res Anfragen und ihre Middlewarefunctions:
+app.get("/api/recipes", async (req, res) => {
+  try {
+    const recipeList = await getRecipiesMongo();
+    if (!recipeList) {
+      res.status(404).send("Could not find any recipies");
+      return;
+    }
+    res.send(recipeList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An internal server error occured");
+  }
+});
+// muss ich mir für jede get Route eine Http-anfrage hier schreiben?
+// Oder das wie oben verallgemeinern?
+//
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
