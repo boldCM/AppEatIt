@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import GroceryListItem from "./GroceryListItem";
-import { getRecipies, getWeek } from "../../api/connectJSON";
+import { getWeek } from "../../api/connectJSON";
 
 const ContainerGroceries = styled.div`
   display: flex;
@@ -44,29 +44,37 @@ const GroceryList = () => {
   // destructuring funktioniert:
   // const { RecipeName } = findIngredients;
   // console.log(RecipeName);
+  // const doubleArray = filterRecipe.Recipe;
+  // console.log(doubleArray);
 
-  // ich kann mir alle sachen zu dem einen Recipe geben lassen:
-  const Tschüss = findIngredients.Recipe;
-  console.log(Tschüss);
+  const Array = findIngredients.Recipe.Ingredients;
+  console.log(Array);
 
-  const Bla = Tschüss.Ingredients;
-  console.log(Bla);
+  // Für jedes Objekt in filterRecipe will ich die Ingredients darausgelesen haben.
+  // also für jedes Object einmal Array (Z.50) machen und dann unten mappen
+  // let arrayLength = recipeObject.length;
+
+  // const Dings = (filterRecipe) => {
+  //   for (let i = 0; i <= arrayLength; i++) {
+  //     const Array = filterRecipe.Recipe.Ingredients;
+  //     return Array?.map((ingredient) => (
+  //       <GroceryListItem key={ingredient} Grocery={ingredient} />
+  //     ));
+  //   }
+  // };
 
   // gibt mir zwei undefined Arrays
   // const anotherArray = filterRecipe.map((recipe) => recipe.findIngredients);
   // console.log(anotherArray);
 
-  console.log(recipeObject.length);
+  // console.log(recipeObject.length);
 
   return (
     <ContainerGroceries>
-      {Bla?.map((ingredient) => (
+      {Array?.map((ingredient) => (
         <GroceryListItem key={ingredient} Grocery={ingredient} />
       ))}
-      <GroceryListItem Grocery="Olivenöl" />
-      <GroceryListItem Grocery="Olivenöl" />
-      <GroceryListItem Grocery="Olivenöl" />
-      <GroceryListItem Grocery="Olivenöl" />
+      {/* {Dings()} */}
     </ContainerGroceries>
   );
 };
