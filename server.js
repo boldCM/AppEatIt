@@ -18,8 +18,10 @@ app.use(express.json());
 
 // hier ist Platz für meine req/res Anfragen und ihre Middlewarefunctions:
 app.get("/api/recipes", async (req, res) => {
+  console.log("ich bin da");
   try {
     const recipeList = await getRecipiesMongo();
+
     if (!recipeList) {
       res.status(404).send("Could not find any recipies");
       return;
@@ -42,8 +44,8 @@ app.use(
 );
 
 // JSON-Server Middleware brauche ich später nicht mehr
-app.use(middleware);
-app.use("/api", router);
+// app.use(middleware);
+// app.use("/api", router);
 // JSON-Srver Middlerware Ende
 
 app.get("*", (req, res) => {
