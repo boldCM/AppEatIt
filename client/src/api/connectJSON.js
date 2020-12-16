@@ -29,11 +29,11 @@ export async function isRecipeInWeek(RecipeName) {
 // 1. id hier noch randomiseren, da sie momentan mit RecipeId gleichgesetzt wird (damit ich im Json-Server unten die deleteFunction ausühren kann)
 // später nur ein Object in die Klammer
 // RecipeName rausnehmen, dafür muss die isRecipeInWeek() angepasst werden
-export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
+export async function putRecipeInWeek(WholeRecipe) {
+  console.log(WholeRecipe);
   const newWeekItem = {
-    RecipeName: RecipeName,
-    Recipe: WholeRecipe,
-    id: RecipeId,
+    ...WholeRecipe,
+    // WeekId: RecipeId,
   };
   const url = `/api/week`;
   await fetch(url, {

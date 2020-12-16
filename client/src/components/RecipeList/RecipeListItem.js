@@ -48,16 +48,19 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
     : "Item is in Calendar";
 
   // um dann hier alle weiteren Infos zum rezept in die Week zu posten
-  const handleClick = async (RecipeName) => {
-    if (await startIsRecipeInWeek(RecipeName)) {
-      await deleteRecipeFromWeek(RecipeId);
-      setInCalender(false);
-      return;
-    } else {
-      await putRecipeInWeek(RecipeName, RecipeId, WholeRecipe);
-      setInCalender(true);
-      return;
-    }
+  const handleClick = async (WholeRecipe) => {
+    // if (await startIsRecipeInWeek(RecipeName)) {
+    //   await deleteRecipeFromWeek(RecipeId);
+    //   setInCalender(false);
+    //   return;
+    // } else {
+    console.log(WholeRecipe);
+    console.log({ ...WholeRecipe });
+    console.log({ WholeRecipe });
+    await putRecipeInWeek(WholeRecipe);
+    setInCalender(true);
+    return;
+    // }
   };
 
   return (
@@ -67,7 +70,7 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
         <IconButton
           iconSrc={CalendarSrc}
           iconAlt={CalendarAlt}
-          onClick={() => handleClick(RecipeName)}
+          onClick={() => handleClick(WholeRecipe)}
         />
       </RecipeItem>
       <DiamondLine />

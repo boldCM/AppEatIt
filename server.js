@@ -51,11 +51,12 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
-app.post("api/week", async (req, res) => {
+app.post("/api/week", async (req, res) => {
   const recipe = req.body;
+  console.log(recipe);
   try {
-    await insertRecipeInWeekMongo(recipe.WholeRecipe);
-    res.send(`Successfully inserted ${recipe.WholeRecipe}`);
+    await insertRecipeInWeekMongo(recipe);
+    res.send(`Successfully inserted ${recipe}`);
   } catch (error) {
     console.error(error);
     res
