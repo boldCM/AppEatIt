@@ -23,8 +23,9 @@ const RecipeItem = styled.div`
   }
 `;
 
-const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
+const RecipeListItem = ({ WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
+  const RecipeName = WholeRecipe.RecipeName;
 
   const startIsRecipeInWeek = async (RecipeName) =>
     await isRecipeInWeek(RecipeName);
@@ -74,8 +75,8 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
 
 RecipeListItem.propTypes = {
   RecipeName: PropTypes.string,
-  RecipeId: PropTypes.number,
-  WholeRecipe: PropTypes.array,
+  RecipeId: PropTypes.string,
+  WholeRecipe: PropTypes.object,
 };
 
 export default RecipeListItem;

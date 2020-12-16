@@ -4,7 +4,7 @@ require("dotenv").config();
 const { connect } = require("./lib/database");
 
 // JSON-Server brauche ich später nicht mehr:
-const jsonServer = require("json-server");
+// const jsonServer = require("json-server");
 const {
   getRecipiesMongo,
   getRecipeByNameMongo,
@@ -12,9 +12,9 @@ const {
   getRecipeByNameWeekMongo,
   deleteRecipeInWeekMongo,
 } = require("./lib/connectMongoDB");
-const { response } = require("express");
-const router = jsonServer.router("db.json");
-const middleware = jsonServer.defaults();
+// const { response } = require("express");
+// const router = jsonServer.router("db.json");
+// const middleware = jsonServer.defaults();
 // JSON-Server Ende
 
 const port = process.env.PORT || 3001;
@@ -58,11 +58,9 @@ app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
   try {
     const getName = await getRecipeByNameWeekMongo(RecipeName);
     if (getName === null) {
-      console.log(getName);
-      res.status(404).send(false);
+      res.send(false);
       return;
     }
-    console.log(getName);
     res.send(true);
   } catch (error) {
     console.error(error);
