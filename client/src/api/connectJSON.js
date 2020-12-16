@@ -16,7 +16,6 @@ export async function getWeek() {
   return week;
 }
 
-// Ganze Woche fetchen und dann prüfen.
 export async function isRecipeInWeek(RecipeName) {
   const weekResponse = await fetch(`/api/week/Recipe/${RecipeName}`);
   const recipeStatus = await weekResponse.json();

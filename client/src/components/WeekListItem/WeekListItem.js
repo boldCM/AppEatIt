@@ -55,7 +55,6 @@ const TextWeek = styled(Link)`
 
 const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
   const parseDate = Date.parse(ChosenDate);
-
   const [date, setDate] = useState(ChosenDate === undefined ? "" : parseDate);
 
   const getWeekDay = (date) => {
@@ -92,7 +91,7 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
 WeekListItem.propTypes = {
   RecipeName: PropTypes.string,
   Id: PropTypes.string,
-  ChosenDate: PropTypes.instanceOf(Date),
+  ChosenDate: PropTypes.any,
 };
 
 export { WeekListItem };

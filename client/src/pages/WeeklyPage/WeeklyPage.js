@@ -28,7 +28,7 @@ const WeeklyPage = () => {
             key={recipe.Recipe._id}
             RecipeName={recipe.Recipe.RecipeName}
             Id={recipe.Recipe._id}
-            ChosenDate={recipe.Recipe.date}
+            ChosenDate={recipe.date}
           />
         ))}
       </ContentContainer>

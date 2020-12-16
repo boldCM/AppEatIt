@@ -3,8 +3,6 @@ const path = require("path");
 require("dotenv").config();
 const { connect } = require("./lib/database");
 
-// JSON-Server brauche ich später nicht mehr:
-// const jsonServer = require("json-server");
 const {
   getRecipiesMongo,
   getRecipeByNameMongo,
@@ -14,17 +12,11 @@ const {
   getWeekMongo,
   updateRecipeInWeekMongo,
 } = require("./lib/connectMongoDB");
-// const { response } = require("express");
-// const router = jsonServer.router("db.json");
-// const middleware = jsonServer.defaults();
-// JSON-Server Ende
 
 const port = process.env.PORT || 3001;
 const app = express();
-// neu: vermutlich damit ich json format lesen kann: ja!
 app.use(express.json());
 
-// hier ist Platz für meine req/res Anfragen und ihre Middlewarefunctions:
 app.get("/api/recipes/:RecipeName", async (req, res) => {
   const RecipeName = req.params["RecipeName"];
   try {
@@ -131,11 +123,6 @@ app.use(
   "/storybook",
   express.static(path.join(__dirname, "client/storybook-static"))
 );
-
-// JSON-Server Middleware brauche ich später nicht mehr
-// app.use(middleware);
-// app.use("/api", router);
-// JSON-Srver Middlerware Ende
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
