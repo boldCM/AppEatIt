@@ -91,8 +91,8 @@ const WeekListItem = ({ RecipeName, Id, ChosenDate }) => {
 
 WeekListItem.propTypes = {
   RecipeName: PropTypes.string,
-  Id: PropTypes.number,
-  ChosenDate: PropTypes.any,
+  Id: PropTypes.string,
+  ChosenDate: PropTypes.instanceOf(Date),
 };
 
 export { WeekListItem };

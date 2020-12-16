@@ -27,7 +27,7 @@ const WeeklyPage = () => {
           <WeekListItem
             key={recipe.Recipe._id}
             RecipeName={recipe.Recipe.RecipeName}
-            Id={recipe.Recipe.id}
+            Id={recipe.Recipe._id}
             ChosenDate={recipe.Recipe.date}
           />
         ))}
