@@ -45,8 +45,8 @@ export async function putRecipeInWeek(WholeRecipe) {
 }
 
 // mit MongoDB kann ich hoffentlich tief genestete Sachen besser erreichen.
-export async function deleteRecipeFromWeek(RecipeId) {
-  await fetch(`/api/week/${RecipeId}`, {
+export async function deleteRecipeFromWeek(RecipeName) {
+  await fetch(`/api/week/Recipe/${RecipeName}`, {
     method: "DELETE",
   });
 }

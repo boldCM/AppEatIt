@@ -47,7 +47,7 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
 
   const handleClick = async (WholeRecipe) => {
     if (await startIsRecipeInWeek(RecipeName)) {
-      //   await deleteRecipeFromWeek(RecipeId);
+      await deleteRecipeFromWeek(RecipeName);
       setInCalender(false);
       return;
     } else {

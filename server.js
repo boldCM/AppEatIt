@@ -10,6 +10,7 @@ const {
   getRecipeByNameMongo,
   insertRecipeInWeekMongo,
   getRecipeByNameWeekMongo,
+  deleteRecipeInWeekMongo,
 } = require("./lib/connectMongoDB");
 const { response } = require("express");
 const router = jsonServer.router("db.json");
@@ -69,9 +70,21 @@ app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
   }
 });
 
+app.delete("/api/week/Recipe/:RecipeName", async (req, res) => {
+  const RecipeName = req.params["RecipeName"];
+  try {
+    await deleteRecipeInWeekMongo(RecipeName);
+    res.send(`Successfully deleted ${RecipeName} from week`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
 app.post("/api/week", async (req, res) => {
   const recipe = req.body;
-  console.log(recipe);
   try {
     await insertRecipeInWeekMongo(recipe);
     res.send(`Successfully inserted ${recipe}`);
