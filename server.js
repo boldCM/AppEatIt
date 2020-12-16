@@ -8,6 +8,7 @@ const jsonServer = require("json-server");
 const {
   getRecipiesMongo,
   getRecipeByNameMongo,
+  insertRecipeInWeekMongo,
 } = require("./lib/connectMongoDB");
 const { response } = require("express");
 const router = jsonServer.router("db.json");
@@ -47,6 +48,19 @@ app.get("/api/recipes", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("An internal server error occured");
+  }
+});
+
+app.post("api/week", async (req, res) => {
+  const recipe = req.body;
+  try {
+    await insertRecipeInWeekMongo(recipe.WholeRecipe);
+    res.send(`Successfully inserted ${recipe.WholeRecipe}`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
   }
 });
 
