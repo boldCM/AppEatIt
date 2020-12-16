@@ -22,7 +22,7 @@ const RecipeItem = styled.div`
     margin: 6px 0 0 8px;
   }
 `;
-// hier müsste ich die Ingredients, bzw das ganze Objekt übergeben bekommen
+
 const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
 
@@ -31,8 +31,6 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
 
   useEffect(() => {
     async function doFetch() {
-      // findOne einfach für Icons...
-      // noch nicht möglich bei mir, da ich noch week collection schreiben muss.
       if (await startIsRecipeInWeek(RecipeName)) {
         setInCalender(true);
       } else {
@@ -47,20 +45,16 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
     ? "Item not in Calendar"
     : "Item is in Calendar";
 
-  // um dann hier alle weiteren Infos zum rezept in die Week zu posten
   const handleClick = async (WholeRecipe) => {
-    // if (await startIsRecipeInWeek(RecipeName)) {
-    //   await deleteRecipeFromWeek(RecipeId);
-    //   setInCalender(false);
-    //   return;
-    // } else {
-    console.log(WholeRecipe);
-    console.log({ ...WholeRecipe });
-    console.log({ WholeRecipe });
-    await putRecipeInWeek(WholeRecipe);
-    setInCalender(true);
-    return;
-    // }
+    if (await startIsRecipeInWeek(RecipeName)) {
+      //   await deleteRecipeFromWeek(RecipeId);
+      setInCalender(false);
+      return;
+    } else {
+      await putRecipeInWeek(WholeRecipe);
+      setInCalender(true);
+      return;
+    }
   };
 
   return (

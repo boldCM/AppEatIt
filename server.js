@@ -9,6 +9,7 @@ const {
   getRecipiesMongo,
   getRecipeByNameMongo,
   insertRecipeInWeekMongo,
+  getRecipeByNameWeekMongo,
 } = require("./lib/connectMongoDB");
 const { response } = require("express");
 const router = jsonServer.router("db.json");
@@ -32,7 +33,7 @@ app.get("/api/recipes/:RecipeName", async (req, res) => {
     res.send(getName);
   } catch (error) {
     console.error(error);
-    res.status(500).send("An internal sever error occured");
+    res.status(500).send("An internal server error occured");
   }
 });
 
@@ -45,6 +46,23 @@ app.get("/api/recipes", async (req, res) => {
       return;
     }
     res.send(recipeList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An internal server error occured");
+  }
+});
+
+app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
+  const RecipeName = req.params["RecipeName"];
+  try {
+    const getName = await getRecipeByNameWeekMongo(RecipeName);
+    if (getName === null) {
+      console.log(getName);
+      res.status(404).send(false);
+      return;
+    }
+    console.log(getName);
+    res.send(true);
   } catch (error) {
     console.error(error);
     res.status(500).send("An internal server error occured");

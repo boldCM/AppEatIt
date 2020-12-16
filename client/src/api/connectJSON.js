@@ -18,9 +18,9 @@ export async function getWeek() {
 
 // Ganze Woche fetchen und dann prüfen.
 export async function isRecipeInWeek(RecipeName) {
-  const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
-  const weeks = await weekResponse.json();
-  if (weeks.length > 0) {
+  const weekResponse = await fetch(`/api/week/Recipe/${RecipeName}`);
+  const recipeStatus = await weekResponse.json();
+  if (recipeStatus) {
     return true;
   }
   return false;
@@ -30,7 +30,6 @@ export async function isRecipeInWeek(RecipeName) {
 // später nur ein Object in die Klammer
 // RecipeName rausnehmen, dafür muss die isRecipeInWeek() angepasst werden
 export async function putRecipeInWeek(WholeRecipe) {
-  console.log(WholeRecipe);
   const newWeekItem = {
     ...WholeRecipe,
     // WeekId: RecipeId,
