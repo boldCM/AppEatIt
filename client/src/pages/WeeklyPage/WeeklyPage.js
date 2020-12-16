@@ -13,6 +13,7 @@ const WeeklyPage = () => {
   useEffect(() => {
     async function fetchData() {
       const getChosenRecipies = await getWeek();
+
       setChosenRecipies(getChosenRecipies);
     }
     fetchData();
@@ -24,10 +25,10 @@ const WeeklyPage = () => {
       <ContentContainer>
         {chosenRecipies?.map((recipe) => (
           <WeekListItem
-            key={recipe.id}
-            RecipeName={recipe.RecipeName}
-            Id={recipe.id}
-            ChosenDate={recipe.date}
+            key={recipe.Recipe._id}
+            RecipeName={recipe.Recipe.RecipeName}
+            Id={recipe.Recipe.id}
+            ChosenDate={recipe.Recipe.date}
           />
         ))}
       </ContentContainer>

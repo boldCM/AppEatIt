@@ -11,6 +11,7 @@ const {
   insertRecipeInWeekMongo,
   getRecipeByNameWeekMongo,
   deleteRecipeInWeekMongo,
+  getWeekMongo,
 } = require("./lib/connectMongoDB");
 // const { response } = require("express");
 // const router = jsonServer.router("db.json");
@@ -91,6 +92,21 @@ app.post("/api/week", async (req, res) => {
     res
       .status(500)
       .send("An unexpected error occured. Please try again later!");
+  }
+});
+
+app.get("/api/week", async (req, res) => {
+  try {
+    const weekList = await getWeekMongo();
+
+    if (!weekList) {
+      res.status(404).send("Could not find any recipies");
+      return;
+    }
+    res.send(weekList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An internal server error occured");
   }
 });
 
