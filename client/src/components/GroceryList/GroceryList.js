@@ -17,30 +17,19 @@ const ContainerGroceries = styled.div`
 // vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
 
 const GroceryList = () => {
-  // const [groceries, setGroceries] = useState([]);
   const [recipeObject, setRecipeObject] = useState([]);
 
   useEffect(() => {
     async function getRecipesInWeek() {
       const getRecipeObjects = await getWeek();
-      console.log(getRecipeObjects);
       setRecipeObject(getRecipeObjects);
     }
     getRecipesInWeek();
   }, []);
 
-  console.log(recipeObject);
-
-  // evtl flatMap benutzen
-  const groceryArrays = recipeObject?.map((ingredient) => {
+  const oneGroceryArray = recipeObject.flatMap((ingredient) => {
     return ingredient.Recipe.Ingredients;
   });
-
-  // const oneGroceryArray = [].concat.apply([], groceryArrays);
-
-  const oneGroceryArray = groceryArrays.flat();
-
-  console.log(oneGroceryArray);
 
   return (
     <ContainerGroceries>

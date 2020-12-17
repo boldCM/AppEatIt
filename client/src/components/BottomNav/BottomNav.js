@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
-import IconButton from "./IconButton";
-import DeleteIcon from "../../assets/deleteIcon.svg";
-import ShareIcon from "../../assets/shareIcon.svg";
+// import IconButton from "./IconButton";
+// import DeleteIcon from "../../assets/deleteIcon.svg";
+// import ShareIcon from "../../assets/shareIcon.svg";
 import HomeIcon from "../../assets/home.svg";
 import MenueButton from "./MenueButton";
 import { Link } from "react-router-dom";
