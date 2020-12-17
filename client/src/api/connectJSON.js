@@ -1,11 +1,11 @@
 export async function getRecipies() {
   const response = await fetch("/api/recipes");
-  const recipeList = await response.json();
+  const recipeList = response.json();
   return recipeList;
 }
 
 export async function getRecipeByRecipeName(RecipeName) {
-  const response = await fetch(`/api/recipes?RecipeName=${RecipeName}`);
+  const response = await fetch(`/api/recipes/${RecipeName}`);
   const recipe = await response.json();
   return recipe;
 }
@@ -16,24 +16,18 @@ export async function getWeek() {
   return week;
 }
 
-// Ganze Woche fetchen und dann prüfen.
 export async function isRecipeInWeek(RecipeName) {
-  const weekResponse = await fetch(`/api/week?RecipeName=${RecipeName}`);
-  const weeks = await weekResponse.json();
-  if (weeks.length > 0) {
+  const weekResponse = await fetch(`/api/week/Recipe/${RecipeName}`);
+  const recipeStatus = await weekResponse.json();
+  if (recipeStatus) {
     return true;
   }
   return false;
 }
 
-// 1. id hier noch randomiseren, da sie momentan mit RecipeId gleichgesetzt wird (damit ich im Json-Server unten die deleteFunction ausühren kann)
-// später nur ein Object in die Klammer
-// RecipeName rausnehmen, dafür muss die isRecipeInWeek() angepasst werden
-export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
+export async function putRecipeInWeek(WholeRecipe) {
   const newWeekItem = {
-    RecipeName: RecipeName,
-    Recipe: WholeRecipe,
-    id: RecipeId,
+    ...WholeRecipe,
   };
   const url = `/api/week`;
   await fetch(url, {
@@ -45,9 +39,8 @@ export async function putRecipeInWeek(RecipeName, RecipeId, WholeRecipe) {
   });
 }
 
-// mit MongoDB kann ich hoffentlich tief genestete Sachen besser erreichen.
-export async function deleteRecipeFromWeek(RecipeId) {
-  await fetch(`/api/week/${RecipeId}`, {
+export async function deleteRecipeFromWeek(RecipeName) {
+  await fetch(`/api/week/Recipe/${RecipeName}`, {
     method: "DELETE",
   });
 }

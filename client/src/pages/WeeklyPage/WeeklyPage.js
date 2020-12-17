@@ -10,6 +10,7 @@ import { getWeek } from "../../api/connectJSON";
 
 const WeeklyPage = () => {
   const [chosenRecipies, setChosenRecipies] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const getChosenRecipies = await getWeek();
@@ -24,9 +25,9 @@ const WeeklyPage = () => {
       <ContentContainer>
         {chosenRecipies?.map((recipe) => (
           <WeekListItem
-            key={recipe.id}
-            RecipeName={recipe.RecipeName}
-            Id={recipe.id}
+            key={recipe.Recipe._id}
+            RecipeName={recipe.Recipe.RecipeName}
+            Id={recipe.Recipe._id}
             ChosenDate={recipe.date}
           />
         ))}

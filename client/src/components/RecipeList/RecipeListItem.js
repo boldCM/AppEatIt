@@ -22,9 +22,10 @@ const RecipeItem = styled.div`
     margin: 6px 0 0 8px;
   }
 `;
-// hier müsste ich die Ingredients, bzw das ganze Objekt übergeben bekommen
-const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
+
+const RecipeListItem = ({ WholeRecipe }) => {
   const [inCalender, setInCalender] = useState(null);
+  const RecipeName = WholeRecipe.RecipeName;
 
   const startIsRecipeInWeek = async (RecipeName) =>
     await isRecipeInWeek(RecipeName);
@@ -45,14 +46,13 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
     ? "Item not in Calendar"
     : "Item is in Calendar";
 
-  // um dann hier alle weiteren Infos zum rezept in die Week zu posten
-  const handleClick = async (RecipeName) => {
+  const handleClick = async (WholeRecipe) => {
     if (await startIsRecipeInWeek(RecipeName)) {
-      await deleteRecipeFromWeek(RecipeId);
+      await deleteRecipeFromWeek(RecipeName);
       setInCalender(false);
       return;
     } else {
-      await putRecipeInWeek(RecipeName, RecipeId, WholeRecipe);
+      await putRecipeInWeek(WholeRecipe);
       setInCalender(true);
       return;
     }
@@ -65,7 +65,7 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
         <IconButton
           iconSrc={CalendarSrc}
           iconAlt={CalendarAlt}
-          onClick={() => handleClick(RecipeName)}
+          onClick={() => handleClick(WholeRecipe)}
         />
       </RecipeItem>
       <DiamondLine />
@@ -75,8 +75,8 @@ const RecipeListItem = ({ RecipeName, RecipeId, WholeRecipe }) => {
 
 RecipeListItem.propTypes = {
   RecipeName: PropTypes.string,
-  RecipeId: PropTypes.number,
-  WholeRecipe: PropTypes.array,
+  RecipeId: PropTypes.string,
+  WholeRecipe: PropTypes.object,
 };
 
 export default RecipeListItem;
