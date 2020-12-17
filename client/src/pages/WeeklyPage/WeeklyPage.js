@@ -10,10 +10,10 @@ import { getWeek } from "../../api/connectJSON";
 
 const WeeklyPage = () => {
   const [chosenRecipies, setChosenRecipies] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const getChosenRecipies = await getWeek();
-
       setChosenRecipies(getChosenRecipies);
     }
     fetchData();

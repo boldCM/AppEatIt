@@ -25,7 +25,6 @@ const RecipeIngredients = ({ Ingredients }) => {
 
 RecipeIngredients.propTypes = {
   Ingredients: PropTypes.array,
-  // id: PropTypes.any,
 };
 
 export default RecipeIngredients;
