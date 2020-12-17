@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.738" height="26.264" viewBox="0 0 23.738 26.264">
+  <g id="einkaufsliste" transform="translate(-2744.5 -905.5)">
+    <g id="home" transform="translate(-289 -18)">
+      <g id="Gruppe_37" data-name="Gruppe 37" transform="translate(21 -15)">
+        <g id="calendarIcon" transform="translate(3008.5 936)">
+          <path id="Pfad_54" data-name="Pfad 54" d="M7.026,6H24.711a2.526,2.526,0,0,1,2.526,2.526V26.211a2.526,2.526,0,0,1-2.526,2.526H7.026A2.526,2.526,0,0,1,4.5,26.211V8.526A2.526,2.526,0,0,1,7.026,6Z" transform="translate(0 -0.474)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <path id="Pfad_55" data-name="Pfad 55" d="M24,3V8.053" transform="translate(-3.079 0)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <path id="Pfad_56" data-name="Pfad 56" d="M12,3V8.053" transform="translate(-1.184 0)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <path id="Pfad_57" data-name="Pfad 57" d="M4.5,15H27.237" transform="translate(0 -1.894)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="Icon_feather-list" data-name="Icon feather-list" transform="translate(2746.5 911.624)">
+      <path id="Pfad_64" data-name="Pfad 64" d="M12,9h6.672" transform="translate(-4.934)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Pfad_65" data-name="Pfad 65" d="M12,18h6.672" transform="translate(-4.934 -5.921)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Pfad_66" data-name="Pfad 66" d="M12,27h6.672" transform="translate(-4.934 -11.842)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Pfad_67" data-name="Pfad 67" d="M4.5,9h0" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Pfad_68" data-name="Pfad 68" d="M4.5,18h0" transform="translate(0 -5.921)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Pfad_69" data-name="Pfad 69" d="M4.5,27h0" transform="translate(0 -11.842)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

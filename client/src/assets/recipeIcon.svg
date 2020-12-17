@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 23.738 26.264" xmlns="http://www.w3.org/2000/svg" width="23.738" height="26.264">
+<g transform="translate(-3136.5 -1038.5)">
+<g transform="translate(3132.5 1036)" fill="none" stroke="#037f8c" stroke-linecap="round" stroke-linejoin="round">
+<path transform="translate(0 -.474)" d="M7.026,6H24.711a2.526,2.526,0,0,1,2.526,2.526V26.211a2.526,2.526,0,0,1-2.526,2.526H7.026A2.526,2.526,0,0,1,4.5,26.211V8.526A2.526,2.526,0,0,1,7.026,6Z" data-name="Pfad 54"/>
+<path transform="translate(-3.079)" d="m24 3v5.053" data-name="Pfad 55"/>
+<path transform="translate(-1.184)" d="m12 3v5.053" data-name="Pfad 56"/>
+<path transform="translate(0 -1.894)" d="m4.5 15h22.737" data-name="Pfad 57"/>
+</g>
+<path transform="translate(3140.5 1049.6)" d="M5.475,1.928A2.121,2.121,0,0,0,3.535,4.192,2.221,2.221,0,0,0,5.028,6.4l-.321,5.237a.6.6,0,0,0,.607.646h.323a.6.6,0,0,0,.607-.646L5.923,6.4a2.221,2.221,0,0,0,1.493-2.2A2.121,2.121,0,0,0,5.475,1.928Zm6.523,0-.539,3.234h-.4l-.27-3.234h-.27l-.27,3.234h-.4L9.3,1.928h-.27v4.2a.323.323,0,0,0,.323.323H10.2l-.318,5.176a.6.6,0,0,0,.607.646h.323a.6.6,0,0,0,.607-.646L11.1,6.456h.842a.323.323,0,0,0,.323-.323v-4.2Z" fill="#037f8c" data-name="Icon metro-spoon-fork"/>
+</g>
+</svg>

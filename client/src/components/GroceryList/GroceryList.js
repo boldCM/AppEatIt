@@ -31,11 +31,14 @@ const GroceryList = () => {
 
   console.log(recipeObject);
 
+  // evtl flatMap benutzen
   const groceryArrays = recipeObject?.map((ingredient) => {
     return ingredient.Recipe.Ingredients;
   });
 
-  const oneGroceryArray = [].concat.apply([], groceryArrays);
+  // const oneGroceryArray = [].concat.apply([], groceryArrays);
+
+  const oneGroceryArray = groceryArrays.flat();
 
   console.log(oneGroceryArray);
 

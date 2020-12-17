@@ -6,6 +6,8 @@ import ShareIcon from "../../assets/shareIcon.svg";
 import HomeIcon from "../../assets/home.svg";
 import MenueButton from "./MenueButton";
 import { Link } from "react-router-dom";
+import GroceryIcon from "../../assets/grocerieIcon.svg";
+import RecipeIcon from "../../assets/recipeIcon.svg";
 
 const Footer = styled.footer`
   position: fixed;
@@ -39,8 +41,14 @@ const BottomNav = () => {
           <HomeButton to="/">
             <img src={HomeIcon} alt={"Zur Wochenübersicht"} />
           </HomeButton>
-          <IconButton iconSrc={ShareIcon} iconAlt={"ShareIcon"} />
-          <IconButton iconSrc={DeleteIcon} iconAlt={"DeleteIcon"} />
+          <HomeButton to="/Einkaufsliste">
+            <img src={GroceryIcon} alt={"Zur Einkaufsliste"} />
+          </HomeButton>
+          <HomeButton to="/Rezeptübersicht">
+            <img src={RecipeIcon} alt={"Zur Rezeptübersicht"} />
+          </HomeButton>
+          {/* <IconButton iconSrc={ShareIcon} iconAlt={"ShareIcon"} />
+          <IconButton iconSrc={DeleteIcon} iconAlt={"DeleteIcon"} /> */}
         </BottomNavBar>
       </Footer>
     </>
