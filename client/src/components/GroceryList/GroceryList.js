@@ -11,16 +11,11 @@ const ContainerGroceries = styled.div`
 
 // 3. filtern nach doubled Groceries
 // 4. addiere doubled Groceries
-// dabei noch den String zur Number convertieren, durch +(Zahl) oder durch Number(Zahl)
-// ebenfalls kann mir parseInt eine ganze Zahl wiedergeben, obwohl Buchstaben drankleben wir bei 300gr und parseFloat gibt meine eine Komma-Zahl wieder 12.5g --> 12.5
 // 5. exlcude unneccessary groceries
 // vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
 
 const GroceryList = () => {
   const [recipeObject, setRecipeObject] = useState([]);
-  const [grocery, setGrocery] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [unit, setUnit] = useState("");
 
   useEffect(() => {
     async function getRecipesInWeek() {
@@ -35,64 +30,64 @@ const GroceryList = () => {
   });
   console.log(oneShoppingListArray);
 
-  // const iterator1 = oneShoppingListArray.entries();
+  // if das grocery ist gleich einem anderen grocery,
+  //  dann addiere die quantitys dieser beiden  objekte
+  // und stecke das Ergebnis in einen neuen string/number
 
-  // console.log(iterator1.next().value);
+  // reduce benutzen
+  // useEffect(() => {
+  var holder = {};
+  oneShoppingListArray.forEach(function (object) {
+    if (Object.hasOwnProperty.call(holder, object.Grocery)) {
+      holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
+    } else {
+      holder[object.Grocery] = object.Quantity;
+    }
+  });
+  console.log(holder);
 
-  // const iteratedArray= oneShoppingListArray.map((object)=>{
-  // const bla = (oneShoppingListArray) => {
-  // for (let i = 0; i < oneShoppingListArray.length; i++) {
-  //   const element = oneShoppingListArray[i];
-  //   for (const [key, value] of Object.entries(element)) {
-  //     console.log(`${key}: ${value}`);
-  //     return `${key}: ${value}`;
+  var calculatedArray = [];
+
+  for (var prop in holder) {
+    calculatedArray.push({
+      Grocery: prop,
+      Quantity: holder[prop],
+    });
+  }
+
+  console.log(calculatedArray);
+
+  // return calculatedArray;
+  // }, []);
+
+  // var holder = {};
+  // oneShoppingListArray.forEach(function (object) {
+  //   if (holder.hasOwnProperty(object.Grocery)) {
+  //     holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
+  //   } else {
+  //     holder[object.Grocery] = object.Quantity;
   //   }
-  // }
-  // console.log(bla(oneShoppingListArray));
-  // ich will von jeder Stelle im Array, also von jedem Objekt erstmal das Value vom Grocery-Key haben.
-  // console.log(oneShoppingListArray[0]);
-  // const { Grocery, Unit, Quantity } = oneShoppingListArray[0];
-  // console.log(Grocery);
-  // console.log(Unit);
-  // console.log(Quantity);
-  // wenn ich für jede Stelle im Array destructere und dann rendere?
-  // kann ich für jede Stelle einen useState einsetzen?
-  // das heißt oneShoppingListArray mappen...?
-
-  // const iteratedArray = oneShoppingListArray.map((object) => {
-  //   const { Grocery, Unit, Quantity } = object;
-  //   setUnit(Unit);
-  //   setGrocery(Grocery);
-  //   setQuantity(Quantity);
-  //   return Grocery;
   // });
-  // console.log(iteratedArray);
+  // console.log(holder);
 
-  // Object.is() vergleich Objekte!!!
+  // var calculatedArray = [];
 
-  // console.log(iteratedArray)
+  // for (var prop in holder) {
+  //   calculatedArray.push({
+  //     Grocery: prop,
+  //     Quantity: holder[prop],
+  //   });
+  // }
 
-  // zahlen parsen
-
-  // console.log(parseInt(oneShoppingListArray));
-
-  // console.log(oneShoppingListArray.valueOf());
-
-  // gibt mir alle Zahlen wieder:
-  // const Numbers = oneShoppingListArray?.map((ingredient) => parseInt(ingredient));
-
-  // und den rest slicen, stellen im array gleich lassen und addieren?-->aber dann ist die Stelle vom alten Mehl gekürzt
+  // console.log(calculatedArray);
 
   return (
     <ContainerGroceries>
-      {/* {oneShoppingListArray?.map((ingredient) => (
-        <GroceryListItem key={ingredient} Grocery={ingredient} />
-      ))} */}
-
-      {oneShoppingListArray?.map((object) => (
+      {calculatedArray?.map((object) => (
         <GroceryListItem
           key={object.Grocery}
-          Grocery={object.Quantity + " " + object.Unit + " " + object.Grocery}
+          // Grocery={object.Quantity + " " + object.Unit + " " + object.Grocery}
+          Grocery={object.Quantity + " " + object.Grocery}
         />
       ))}
     </ContainerGroceries>
