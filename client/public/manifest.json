@@ -1,6 +1,6 @@
 {
-  "short_name": "CRA-Template",
-  "name": "CRA-Template Sample",
+  "short_name": "AppEatIt",
+  "name": "AppEatIt",
   "icons": [
     {
       "src": "favicon.svg",
