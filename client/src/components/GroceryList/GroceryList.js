@@ -9,9 +9,7 @@ const ContainerGroceries = styled.div`
   margin-left: 10px;
 `;
 
-// 3. filtern nach doubled Groceries
-// 4. addiere doubled Groceries
-// 5. exlcude unneccessary groceries
+// 5. exlcude unneccessary groceries (Salz, Pfeffer)
 // vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
 
 const GroceryList = () => {
@@ -30,64 +28,71 @@ const GroceryList = () => {
   });
   console.log(oneShoppingListArray);
 
-  // if das grocery ist gleich einem anderen grocery,
-  //  dann addiere die quantitys dieser beiden  objekte
-  // und stecke das Ergebnis in einen neuen string/number
-
-  // reduce benutzen
-  // useEffect(() => {
   var holder = {};
   oneShoppingListArray.forEach(function (object) {
     if (Object.hasOwnProperty.call(holder, object.Grocery)) {
       holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
+      //  zweites Obkject für unit und anschließend zusammen führen...
     } else {
       holder[object.Grocery] = object.Quantity;
     }
   });
+
   console.log(holder);
 
-  var calculatedArray = [];
+  const calculatedArray = [];
 
-  for (var prop in holder) {
+  for (const prop in holder) {
     calculatedArray.push({
       Grocery: prop,
       Quantity: holder[prop],
     });
   }
 
+  // zweites Object für Unit:
+  const holderUnit = {};
+  oneShoppingListArray.forEach(function (object) {
+    if (Object.hasOwnProperty.call(holderUnit, object.Grocery)) {
+      // aber was ist mit zwei unterschiedlichen units?
+      holderUnit[object.Grocery] = object.Unit;
+      //  zweites Obkject für unit und anschließend zusammen führen...
+    } else {
+      holderUnit[object.Grocery] = object.Unit;
+    }
+  });
+
+  console.log(holderUnit);
+
+  for (const prop in holderUnit) {
+    if (Object.hasOwnProperty.call(holderUnit, prop))
+      calculatedArray.push({
+        Unit: holderUnit[prop],
+      });
+  }
+
   console.log(calculatedArray);
 
-  // return calculatedArray;
-  // }, []);
+  const ArrayUnit = [""];
+  console.log(ArrayUnit);
 
-  // var holder = {};
-  // oneShoppingListArray.forEach(function (object) {
-  //   if (holder.hasOwnProperty(object.Grocery)) {
-  //     holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
-  //   } else {
-  //     holder[object.Grocery] = object.Quantity;
-  //   }
-  // });
-  // console.log(holder);
+  for (const units in holderUnit) {
+    ArrayUnit.push({
+      Grocery: units,
+      Unit: holderUnit[units],
+    });
+  }
+  console.log(ArrayUnit);
 
-  // var calculatedArray = [];
+  const ShoppingList = Object.assign(ArrayUnit, ...calculatedArray);
 
-  // for (var prop in holder) {
-  //   calculatedArray.push({
-  //     Grocery: prop,
-  //     Quantity: holder[prop],
-  //   });
-  // }
-
-  // console.log(calculatedArray);
+  console.log(ShoppingList);
 
   return (
     <ContainerGroceries>
       {calculatedArray?.map((object) => (
         <GroceryListItem
           key={object.Grocery}
-          // Grocery={object.Quantity + " " + object.Unit + " " + object.Grocery}
-          Grocery={object.Quantity + " " + object.Grocery}
+          Grocery={object.Quantity + " " + object.Unit + " " + object.Grocery}
         />
       ))}
     </ContainerGroceries>
