@@ -58,6 +58,9 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
   },
+  "engines": {
+    "node": "^15.2.1"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
