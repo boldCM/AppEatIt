@@ -70,6 +70,8 @@ const GroceryList = () => {
       });
   }
 
+  // füge jedem Object, dass den gleichen Namen hat noch ein key:valu pair hinzu...
+
   console.log(calculatedArray);
 
   const ArrayUnit = [""];
