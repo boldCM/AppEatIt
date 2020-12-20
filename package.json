@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "postinstall": "cd client && npm install",
-    "build": "cd client && npm run build && npm run build-storybook",
+    "build": "cd client && npm run build",
     "test:watch": "cd client && npm run test:watch",
     "test": "npm run lint && npm run prettier && cd client && npm test",
     "lint": "eslint . --ext .js",

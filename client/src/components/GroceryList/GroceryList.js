@@ -42,12 +42,14 @@ const GroceryList = () => {
 
   const calculatedArray = [];
 
-  for (const prop in holder) {
-    calculatedArray.push({
-      Grocery: prop,
-      Quantity: holder[prop],
-    });
-  }
+  // for (const prop in holder) {
+  //   calculatedArray.push({
+  //     Grocery: prop,
+  //     Quantity: holder[prop],
+  //   });
+  // }
+
+  console.log(calculatedArray);
 
   // zweites Object für Unit:
   const holderUnit = {};
@@ -63,9 +65,11 @@ const GroceryList = () => {
 
   console.log(holderUnit);
 
-  for (const prop in holderUnit) {
+  for (const prop in holder && holderUnit) {
     if (Object.hasOwnProperty.call(holderUnit, prop))
       calculatedArray.push({
+        Grocery: prop,
+        Quantity: holder[prop],
         Unit: holderUnit[prop],
       });
   }
@@ -74,20 +78,20 @@ const GroceryList = () => {
 
   console.log(calculatedArray);
 
-  const ArrayUnit = [""];
-  console.log(ArrayUnit);
+  // const ArrayUnit = [""];
+  // console.log(ArrayUnit);
 
-  for (const units in holderUnit) {
-    ArrayUnit.push({
-      Grocery: units,
-      Unit: holderUnit[units],
-    });
-  }
-  console.log(ArrayUnit);
+  // for (const units in holderUnit) {
+  //   ArrayUnit.push({
+  //     Grocery: units,
+  //     Unit: holderUnit[units],
+  //   });
+  // }
+  // console.log(ArrayUnit);
 
-  const ShoppingList = Object.assign(ArrayUnit, ...calculatedArray);
+  // const ShoppingList = Object.assign(ArrayUnit, ...calculatedArray);
 
-  console.log(ShoppingList);
+  // console.log(ShoppingList);
 
   return (
     <ContainerGroceries>
