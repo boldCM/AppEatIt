@@ -27,7 +27,7 @@ const GroceryList = () => {
     return ingredient.Recipe.Ingredients;
   });
 
-  var holder = {};
+  const holder = {};
   oneShoppingListArray.forEach(function (object) {
     if (Object.hasOwnProperty.call(holder, object.Grocery)) {
       holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
