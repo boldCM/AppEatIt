@@ -69,18 +69,6 @@ const GroceryList = () => {
       });
   }
 
-  // const filteredArray = calculatedArray.filter((object) => {
-  //   return (
-  //     object.Grocery !== "Salz" &&
-  //     object.Grocery !== "Wasser" &&
-  //     object.Grocery !== "Olivenöl" &&
-  //     object.Grocery !== "Öl" &&
-  //     object.Grocery !== "Pfeffer"
-  //   );
-  // });
-
-  // console.log(filteredArray);
-
   return (
     <ContainerGroceries>
       {calculatedArray?.map((object) => (
