@@ -94,4 +94,4 @@ WeekListItem.propTypes = {
   ChosenDate: PropTypes.any,
 };
 
-export { WeekListItem };
+export { WeekListItem, Diamond };
