@@ -9,7 +9,6 @@ const ContainerGroceries = styled.div`
   margin-left: 10px;
 `;
 
-// 5. exlcude unneccessary groceries (Salz, Pfeffer)
 // vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
 
 const GroceryList = () => {
@@ -27,8 +26,22 @@ const GroceryList = () => {
     return ingredient.Recipe.Ingredients;
   });
 
+  console.log(oneShoppingListArray);
+
+  const filteredArray = oneShoppingListArray.filter((object) => {
+    return (
+      object.Grocery !== "Salz" &&
+      object.Grocery !== "Wasser" &&
+      object.Grocery !== "Olivenöl" &&
+      object.Grocery !== "Öl" &&
+      object.Grocery !== "Pfeffer"
+    );
+  });
+
+  console.log(filteredArray);
+
   const holder = {};
-  oneShoppingListArray.forEach(function (object) {
+  filteredArray.forEach(function (object) {
     if (Object.hasOwnProperty.call(holder, object.Grocery)) {
       holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
     } else {
@@ -39,7 +52,7 @@ const GroceryList = () => {
   const calculatedArray = [];
 
   const holderUnit = {};
-  oneShoppingListArray.forEach(function (object) {
+  filteredArray.forEach(function (object) {
     if (Object.hasOwnProperty.call(holderUnit, object.Grocery)) {
       holderUnit[object.Grocery] = object.Unit;
     } else {
@@ -55,6 +68,18 @@ const GroceryList = () => {
         Unit: holderUnit[prop],
       });
   }
+
+  // const filteredArray = calculatedArray.filter((object) => {
+  //   return (
+  //     object.Grocery !== "Salz" &&
+  //     object.Grocery !== "Wasser" &&
+  //     object.Grocery !== "Olivenöl" &&
+  //     object.Grocery !== "Öl" &&
+  //     object.Grocery !== "Pfeffer"
+  //   );
+  // });
+
+  // console.log(filteredArray);
 
   return (
     <ContainerGroceries>
