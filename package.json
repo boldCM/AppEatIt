@@ -33,7 +33,6 @@
     "@typescript-eslint/parser": "^4.8.1",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.3.0",
-    "dotenv": "^8.2.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "^6.0.0",
@@ -59,6 +58,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "node": "^15.2.1"
