@@ -119,10 +119,10 @@ app.get("/api/week", async (req, res) => {
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
-app.use(
-  "/storybook",
-  express.static(path.join(__dirname, "client/storybook-static"))
-);
+// app.use(
+//   "/storybook",
+//   express.static(path.join(__dirname, "client/storybook-static"))
+// );
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
