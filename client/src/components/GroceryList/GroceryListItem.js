@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 const ListItem = styled.p`
   display: inline-flex;
-  margin: 0.4rem 0;
+  margin: 0.6rem 0;
   button {
     margin: 1px 5px 0 0;
   }
