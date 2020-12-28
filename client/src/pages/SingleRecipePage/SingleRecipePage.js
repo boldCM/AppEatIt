@@ -8,7 +8,6 @@ import {
   ContentContainer,
 } from "../../components/styledComponents/LayoutPages";
 import styled from "styled-components/macro";
-import PropTypes from "prop-types";
 import { getRecipeByRecipeName } from "../../api/connectJSON";
 import { useParams } from "react-router-dom";
 
@@ -19,7 +18,6 @@ const RecipeLayout = styled(ContentContainer)`
 const SingleRecipe = () => {
   const { RecipeName } = useParams();
 
-  const [singleRecipeId, setSingleRecipeId] = useState(Number);
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState("");
 
@@ -27,9 +25,6 @@ const SingleRecipe = () => {
     async function fetchData() {
       const result = await getRecipeByRecipeName(RecipeName);
       const { Ingredients, Instructions } = result;
-      const id = result._id;
-      // id kann hier raus, aber ich lasse sie als Erinnerung für dei Schreibweise drin
-      setSingleRecipeId(id);
       setIngredients(Ingredients);
       setInstructions(Instructions);
     }
@@ -40,7 +35,7 @@ const SingleRecipe = () => {
     <Layout>
       <Header title={RecipeName} />
       <RecipeLayout>
-        <RecipeIngredients Ingredients={ingredients} id={singleRecipeId} />
+        <RecipeIngredients Ingredients={ingredients} />
         <RecipePreparation Instructions={instructions} />
       </RecipeLayout>
       <BottomNav />
@@ -48,7 +43,4 @@ const SingleRecipe = () => {
   );
 };
 
-SingleRecipe.propTypes = {
-  RecipeName: PropTypes.string,
-};
 export default SingleRecipe;

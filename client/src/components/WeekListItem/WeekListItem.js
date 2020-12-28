@@ -49,6 +49,8 @@ const Diamond = styled.div`
 
 const TextWeek = styled(Link)`
   color: var(--text-color);
+  width: 150px;
+  margin-right: 5px;
   padding-bottom: 1px;
   /* 1px looked more aligned with the hr line. */
 `;
@@ -94,4 +96,4 @@ WeekListItem.propTypes = {
   ChosenDate: PropTypes.any,
 };
 
-export { WeekListItem };
+export { WeekListItem, Diamond };

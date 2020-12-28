@@ -26,8 +26,6 @@ const GroceryList = () => {
     return ingredient.Recipe.Ingredients;
   });
 
-  console.log(oneShoppingListArray);
-
   const filteredArray = oneShoppingListArray.filter((object) => {
     return (
       object.Grocery !== "Salz" &&
@@ -37,8 +35,6 @@ const GroceryList = () => {
       object.Grocery !== "Pfeffer"
     );
   });
-
-  console.log(filteredArray);
 
   const holder = {};
   filteredArray.forEach(function (object) {

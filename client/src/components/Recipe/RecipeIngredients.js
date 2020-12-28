@@ -16,7 +16,13 @@ const RecipeIngredients = ({ Ingredients }) => {
       <h2>Zutaten</h2>
       <Ingredient>
         {Ingredients?.map((ingredient) => (
-          <li key={ingredient}>{ingredient}</li>
+          <li key={ingredient.Grocery}>
+            {ingredient.Quantity +
+              " " +
+              ingredient.Unit +
+              " " +
+              ingredient.Grocery}
+          </li>
         ))}
       </Ingredient>
     </>
