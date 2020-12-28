@@ -8,7 +8,6 @@ import {
   ContentContainer,
 } from "../../components/styledComponents/LayoutPages";
 import styled from "styled-components/macro";
-import PropTypes from "prop-types";
 import { getRecipeByRecipeName } from "../../api/connectJSON";
 import { useParams } from "react-router-dom";
 
@@ -44,7 +43,4 @@ const SingleRecipe = () => {
   );
 };
 
-SingleRecipe.propTypes = {
-  RecipeName: PropTypes.string,
-};
 export default SingleRecipe;
