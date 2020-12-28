@@ -10,26 +10,27 @@ const ContainerHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
-  /* height: auto; */
+
+  h1 {
+    text-align: center;
+    width: 100%;
+    padding-right: 54px;
+    padding-left: 54px;
+    /* overflow-wrap: break-word; */
+    /* word-break: break-all; */
+  }
+
   @media screen and (max-width: 400px) {
-    padding-right: 24px;
+    /* overflow-wrap: white-space; */
+    /* padding-right: 24px; */
   }
 
   @media screen and (min-width: 401px) and (max-width: 430px) {
-    padding-right: 46px;
+    /* padding-right: 46px; */
   }
-
-  /* @if (height: 65px) {
-    background: linear-gradient(var(--secondary-color), #f3d7b4);
-  } @else {
-    background: linear-gradient(var(--secondary-color), #f5dbba);
-  } */
-  /* background: (height<="65px")? (linear-gradient(var(--secondary-color), #f3d7b4)):
- (linear-gradient(var(--secondary-color), #f5DBBA)); */
 `;
 
 const Header = ({ title }) => {

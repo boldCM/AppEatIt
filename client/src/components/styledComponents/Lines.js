@@ -1,9 +1,12 @@
 import styled from "styled-components/macro";
 
 const DiamondLine = styled.hr`
-  width: 5rem;
-  margin: 0 5px 1px -2px;
+  width: 80px;
+  margin: 0 7px 0 -2px;
   background-color: var(--secondary-color);
+  @media screen and (max-width: 400px) {
+    width: 60px;
+  }
 `;
 
 const OverlayLine = styled(DiamondLine)`
