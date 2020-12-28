@@ -19,7 +19,6 @@ const RecipeLayout = styled(ContentContainer)`
 const SingleRecipe = () => {
   const { RecipeName } = useParams();
 
-  const [singleRecipeId, setSingleRecipeId] = useState(Number);
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState("");
 
@@ -27,9 +26,6 @@ const SingleRecipe = () => {
     async function fetchData() {
       const result = await getRecipeByRecipeName(RecipeName);
       const { Ingredients, Instructions } = result;
-      const id = result._id;
-      // id kann hier raus, aber ich lasse sie als Erinnerung für dei Schreibweise drin
-      setSingleRecipeId(id);
       setIngredients(Ingredients);
       setInstructions(Instructions);
     }
@@ -40,7 +36,7 @@ const SingleRecipe = () => {
     <Layout>
       <Header title={RecipeName} />
       <RecipeLayout>
-        <RecipeIngredients Ingredients={ingredients} id={singleRecipeId} />
+        <RecipeIngredients Ingredients={ingredients} />
         <RecipePreparation Instructions={instructions} />
       </RecipeLayout>
       <BottomNav />

@@ -24,8 +24,6 @@ padding-right: 24px;
 }
 `;
 
-// wenn das Element unter die Ecke geht, mache einen Zeilenumbruch
-
 const Header = ({ title }) => {
   return (
     <>

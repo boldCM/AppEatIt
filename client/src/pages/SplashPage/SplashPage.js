@@ -14,8 +14,7 @@ const AnimatedDiamond = styled(Diamond)`
 background-image: url(${DiamondActiveSrc});
   height: 10rem;
   width: 10rem;
-  padding-right: 5px;
-  padding-bottom: 15px;
+  padding: 0 5px 15px 0;
   animation: turner 2.5s ease-in alternate 1 none running;
 }
 @keyframes turner {
