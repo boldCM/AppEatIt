@@ -14,14 +14,22 @@ const ContainerHeader = styled.header`
   position: fixed;
   width: 100%;
   top: 0;
-  background: (height<=65px)? (linear-gradient(var(--secondary-color), #f3d7b4)):
- (linear-gradient(var(--secondary-color), #f5DBBA));
-
+  /* height: auto; */
   @media screen and (max-width: 400px) {
-padding-right: 24px;
+    padding-right: 24px;
+  }
 
-    }
-}
+  @media screen and (min-width: 401px) and (max-width: 430px) {
+    padding-right: 46px;
+  }
+
+  /* @if (height: 65px) {
+    background: linear-gradient(var(--secondary-color), #f3d7b4);
+  } @else {
+    background: linear-gradient(var(--secondary-color), #f5dbba);
+  } */
+  /* background: (height<="65px")? (linear-gradient(var(--secondary-color), #f3d7b4)):
+ (linear-gradient(var(--secondary-color), #f5DBBA)); */
 `;
 
 const Header = ({ title }) => {

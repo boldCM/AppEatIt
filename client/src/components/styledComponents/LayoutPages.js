@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 const Layout = styled.div`
   padding: 65px 0 56px 0;
   height: 100vh;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 430px) {
     padding-top: 95px;
   }
 `;
