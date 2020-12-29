@@ -11,6 +11,7 @@ const {
   deleteRecipeInWeekMongo,
   getWeekMongo,
   updateRecipeInWeekMongo,
+  deleteWholeWeekMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -114,6 +115,18 @@ app.get("/api/week", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("An internal server error occured");
+  }
+});
+
+app.delete("/api/week/", async (req, res) => {
+  try {
+    await deleteWholeWeekMongo();
+    res.send(`Successfully deleted weekly overview`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
   }
 });
 
