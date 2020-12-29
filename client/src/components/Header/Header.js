@@ -10,9 +10,10 @@ const ContainerHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center; */
-  width: 100%;
-  top: 0;
-
+  /* width: 100%; */
+  /* top: 0; */
+  display: grid;
+  grid-row: 1/2;
   h1 {
     text-align: center;
     width: 100%;
