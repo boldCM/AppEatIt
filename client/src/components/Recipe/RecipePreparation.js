@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
 const Preparation = styled.p`
-  padding: 0 20px 0 0;
+  padding: 0 20px 30px 0;
   line-height: 1.5rem;
 `;
 
