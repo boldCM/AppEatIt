@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, Redirect, useHistory, useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
@@ -41,8 +41,16 @@ const IconWithText = styled.div`
 `;
 
 const OverlayItem = () => {
+  const history = useHistory();
+  const { title } = useParams();
+
   const handleWeekDelete = async () => {
     await deleteWholeWeek();
+    if (!title === "/") {
+      history.push("/");
+    } else {
+      window.location.reload();
+    }
   };
 
   return (
@@ -55,7 +63,8 @@ const OverlayItem = () => {
           iconAlt="DeleteIcon"
           onClick={() => handleWeekDelete()}
         />
-        Wochenübersicht löschen
+        <LinkedItem to="/">Wochenübersicht löschen</LinkedItem>
+        {/* Wochenübersicht löschen */}
       </IconWithText>
       <OverlayLine />
       <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
