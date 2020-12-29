@@ -6,10 +6,10 @@ import { UnderlineHeader } from "../styledComponents/Lines";
 
 const ContainerHeader = styled.header`
   /* background: linear-gradient(var(--secondary-color), #f3d7b4); */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   width: 100%;
   top: 0;
 
