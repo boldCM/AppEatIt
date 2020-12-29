@@ -1,11 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components/macro";
 
-const IconButton = ({ iconSrc, iconAlt, onClick }) => {
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 300;
+  img {
+    padding-right: 7px;
+  }
+`;
+
+const IconButton = ({ iconSrc, iconAlt, onClick, content }) => {
   return (
-    <button onClick={onClick}>
+    <StyledButton onClick={onClick}>
       <img src={iconSrc} alt={iconAlt} />
-    </button>
+      {content}
+    </StyledButton>
   );
 };
 
@@ -15,4 +27,5 @@ IconButton.propTypes = {
   iconSrc: PropTypes.string,
   iconAlt: PropTypes.string,
   onClick: PropTypes.func,
+  content: PropTypes.string,
 };

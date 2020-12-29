@@ -7,7 +7,6 @@ import DeleteIcon from "../../assets/deleteIcon.svg";
 import { deleteWholeWeek } from "../../api/connectJSON";
 
 const ContainerOverlayItems = styled.div`
-  /* @media (min-width: 576px) { */
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -21,23 +20,12 @@ const ContainerOverlayItems = styled.div`
     font-size: 24px;
     font-weight: 500;
   }
-  /* } */
 `;
 
 const LinkedItem = styled(Link)`
-  /* font-weight: 400; */
   margin: 1rem 0;
   display: block;
   text-align: right;
-`;
-
-const IconWithText = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  button {
-    margin-top: 3px;
-  }
 `;
 
 const OverlayItem = () => {
@@ -57,15 +45,13 @@ const OverlayItem = () => {
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
       <UnderlineHeaderOverlay />
-      <IconWithText>
-        <IconButton
-          iconSrc={DeleteIcon}
-          iconAlt="DeleteIcon"
-          onClick={() => handleWeekDelete()}
-        />
-        <LinkedItem to="/">Wochenübersicht löschen</LinkedItem>
-        {/* Wochenübersicht löschen */}
-      </IconWithText>
+      <IconButton
+        iconSrc={DeleteIcon}
+        iconAlt="DeleteIcon"
+        onClick={() => handleWeekDelete()}
+        content="Wochenübersicht löschen"
+      />
+
       <OverlayLine />
       <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
