@@ -31,8 +31,8 @@ const WeeklyPage = () => {
             ChosenDate={recipe.date}
           />
         ))}
+        <BottomNav />
       </ContentContainer>
-      <BottomNav />
     </Layout>
   );
 };

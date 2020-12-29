@@ -6,11 +6,10 @@ import { UnderlineHeader } from "../styledComponents/Lines";
 
 const ContainerHeader = styled.header`
   /* background: linear-gradient(var(--secondary-color), #f3d7b4); */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: fixed;
+  justify-content: center; */
   width: 100%;
   top: 0;
 
@@ -19,17 +18,6 @@ const ContainerHeader = styled.header`
     width: 100%;
     padding-right: 54px;
     padding-left: 54px;
-    /* overflow-wrap: break-word; */
-    /* word-break: break-all; */
-  }
-
-  @media screen and (max-width: 400px) {
-    /* overflow-wrap: white-space; */
-    /* padding-right: 24px; */
-  }
-
-  @media screen and (min-width: 401px) and (max-width: 430px) {
-    /* padding-right: 46px; */
   }
 `;
 
