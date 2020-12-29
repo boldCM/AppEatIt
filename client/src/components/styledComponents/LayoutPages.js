@@ -1,7 +1,6 @@
 import styled from "styled-components/macro";
 
 const Layout = styled.div`
-  height: 100vh;
   padding-bottom: 120px;
   height: 100vh;
 `;

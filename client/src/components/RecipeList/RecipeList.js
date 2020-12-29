@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import { getRecipies } from "../../api/connectJSON";
 import RecipeListItem from "./RecipeListItem";
+import { ContentContainer } from "../styledComponents/LayoutPages";
 
-const ListContainer = styled.div`
+const ListContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
