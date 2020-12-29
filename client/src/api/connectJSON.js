@@ -55,3 +55,9 @@ export async function updateWeekByDate(date, Id) {
     body: JSON.stringify(saveDate),
   });
 }
+
+export async function deleteWholeWeek() {
+  await fetch(`/api/week/`, {
+    method: "DELETE",
+  });
+}

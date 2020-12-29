@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
+import IconButton from "../BottomNav/IconButton";
+import DeleteIcon from "../../assets/deleteIcon.svg";
+import { deleteWholeWeek } from "../../api/connectJSON";
 
 const ContainerOverlayItems = styled.div`
   /* @media (min-width: 576px) { */
@@ -28,11 +31,33 @@ const LinkedItem = styled(Link)`
   text-align: right;
 `;
 
+const IconWithText = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  button {
+    margin-top: 3px;
+  }
+`;
+
 const OverlayItem = () => {
+  const handleWeekDelete = async () => {
+    await deleteWholeWeek();
+  };
+
   return (
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
       <UnderlineHeaderOverlay />
+      <IconWithText>
+        <IconButton
+          iconSrc={DeleteIcon}
+          iconAlt="DeleteIcon"
+          onClick={() => handleWeekDelete()}
+        />
+        Wochenübersicht löschen
+      </IconWithText>
+      <OverlayLine />
       <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
