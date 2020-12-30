@@ -82,6 +82,127 @@
         "Instructions": "Fleisch anbraten, ablöschen, Soße machen, Beilage kochen ;)"
       },
       "id": 2
-    }
+    },
+    {"RecipeName":"Auberginenröllchen mit Couscous-Salat",
+"Ingredients":[
+{  "Quantity":500,
+  "Unit":"gr",
+  "Grocery":"Aubergine"
+},
+{
+  "Quantity":2,
+  "Unit":"El",
+  "Grocery":"Balsamico"
+},
+{
+  "Quantity":3,
+  "Unit":"El",
+  "Grocery":"Mehl"
+},
+{
+  "Quantity":"",
+  "Unit":"",
+  "Grocery":"Salz"
+},
+{
+  "Quantity":"",
+  "Unit":"",
+  "Grocery":"Pfeffer"
+},
+{
+  "Quantity":"",
+  "Unit":"",
+  "Grocery":"Öl"
+},
+{
+  "Quantity":4,
+  "Unit":"El",
+  "Grocery":"Olivenöl"
+},
+{
+  "Quantity":200,
+  "Unit":"ml",
+  "Grocery":"Gemüsebrühe"
+},
+{
+  "Quantity":150,
+  "Unit":"gr",
+  "Grocery":"Couscous"
+},
+{
+  "Quantity":100,
+  "Unit":"gr",
+  "Grocery":"Feta"
+},
+{
+  "Quantity":100,
+  "Unit":"gr",
+  "Grocery":"Tomaten"
+},
+{
+  "Quantity":1,
+  "Unit":"",
+  "Grocery":"rote Zwiebel"
+},
+{
+  "Quantity":1,
+  "Unit":"Bund",
+  "Grocery":"Thymian"
+},
+{
+  "Quantity":2,
+  "Unit":"El",
+  "Grocery":"Zitronensaft"
+}
+],
+"Instructions":"Auberginen mit einem scharfen Messer der Länge nach in sehr dünne Scheiben schneiden. Jede Scheibe salzen und pfeffern, mit Balsamico Essig beträufeln. Öl in einer Pfanne erhitzen. Auberginenscheiben im Mehl wenden und in der Pfanne bei mittlerer Hitze goldbraun anbraten. Abkühlen lassen. Für den Couscous-Salat Gemüsebrühe mit 1 EL Olivenöl aufkochen. Couscous dazugeben, vom Herd nehmen und zugedeckt 5 Min. quellen lassen. Mit einer Gabel auflockern und abkühlen lassen. Tomaten vierteln, entkernen und würfeln. Zwiebel würfeln. Thymian hacken (ein Paar Zweige für Dekoration beiseite legen). Fetakäse zerbröseln. Alles mit Zitronensaft und 3 EL Olivenöl zum Couscous geben und vermischen. Mit Salz und Pfeffer abschmecken. Couscous auf die Auberginenscheiben verteilen, leicht andrücken und aufrollen. Mit einem Zahnstocher fest stecken. Die Röllchen dekorativ auf einer Platte anrichten, mit Crema die Balsamico beträufeln, mit Thymianzweigen dekorieren."},
+{"RecipeName":"Kartoffelsalat",
+  "Ingredients":[
+  {  "Quantity":1300,
+    "Unit":"gr",
+    "Grocery":"Kartoffeln"
+  },
+  {
+    "Quantity":350,
+    "Unit":"gr",
+    "Grocery":"Mayonnaise"
+  },
+  {
+    "Quantity":250,
+    "Unit":"ml",
+    "Grocery":"Milch"
+  },
+  {
+    "Quantity":"2",
+    "Unit":"Tl",
+    "Grocery":"Salz"
+  },
+  {
+    "Quantity":1,
+    "Unit":"Tl",
+    "Grocery":"Zucker"
+  },
+  {
+    "Quantity":"0.25",
+    "Unit":"Tl",
+    "Grocery":"weißer Pfeffer"
+  },
+  {
+    "Quantity":380,
+    "Unit":"gr",
+    "Grocery":"Fleischsalat"
+  },
+  {
+    "Quantity":5,
+    "Unit":"",
+    "Grocery":"Gewürzgurken"
+  },
+  {
+    "Quantity":3,
+    "Unit":"",
+    "Grocery":"Eier"
+  }
+  ],
+  "Instructions":"Kartoffeln kochen, pellen und abkühlen lassen. Klein Schneiden. Mayo und Milch verrühren (Milch nach und nach hinzugeben, evtl nicht die gesamte Menge nutzen!). Den Rest in die Soße geben und anschließend mit den abgekühlten und geschnittenen Kartoffeln vermengen."}
   ]
 }
