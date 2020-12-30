@@ -7,6 +7,11 @@ import {
 import { Header } from "../../components/Header";
 import { WeekListItem } from "../../components/WeekListItem/WeekListItem";
 import { getWeek } from "../../api/connectJSON";
+import styled from "styled-components/macro";
+
+const Placeholder = styled.p`
+  text-align: center;
+`;
 
 const WeeklyPage = () => {
   const [chosenRecipies, setChosenRecipies] = useState([]);
@@ -23,6 +28,9 @@ const WeeklyPage = () => {
     <Layout>
       <Header title="Wochenplan" />
       <ContentContainer>
+        {chosenRecipies.length <= 0 && (
+          <Placeholder>Choose a recipie </Placeholder>
+        )}
         {chosenRecipies?.map((recipe) => (
           <WeekListItem
             key={recipe.Recipe._id}
@@ -31,6 +39,7 @@ const WeeklyPage = () => {
             ChosenDate={recipe.date}
           />
         ))}
+
         <BottomNav />
       </ContentContainer>
     </Layout>

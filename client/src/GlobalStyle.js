@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
 button {
   border: none;
   background: none;
+  font-family: 'Encode Sans', sans-serif;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button:focus {
