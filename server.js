@@ -12,6 +12,7 @@ const {
   getWeekMongo,
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
+  postShoppingListMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -122,6 +123,19 @@ app.delete("/api/week/", async (req, res) => {
   try {
     await deleteWholeWeekMongo();
     res.send(`Successfully deleted weekly overview`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
+app.post("/api/shoppingList", async (req, res) => {
+  const shoppingList = req.body;
+  try {
+    await postShoppingListMongo(shoppingList);
+    res.send(`Successfully inserted Shopping List`);
   } catch (error) {
     console.error(error);
     res
