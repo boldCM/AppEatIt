@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components/macro";
 import GroceryListItem from "./GroceryListItem";
-import {
-  getWeek,
-  postGroceryList,
-  tryOut,
-  checkShoppingList,
-} from "../../api/connectJSON";
-import { HandleData, PostData } from "./HandleData";
+import { postGroceryList, checkShoppingList } from "../../api/connectJSON";
+import { HandleData } from "./HandleData";
 
 const ContainerGroceries = styled.div`
   display: flex;
@@ -21,15 +16,14 @@ const ContainerGroceries = styled.div`
 
 const GroceryList = () => {
   const calculatedArray = HandleData();
-  console.log(calculatedArray);
+  // console.log(calculatedArray);
 
   useEffect(() => {
     async function doFetch() {
-      console.log("started fetching");
       const checkList = await checkShoppingList();
-      console.log(checkList);
       if (checkList) {
-        PostData();
+        // PostData(calculatedArray);
+        await postGroceryList();
         return;
       }
       return;

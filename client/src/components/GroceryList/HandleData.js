@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getWeek, postGroceryList } from "../../api/connectJSON";
+import { useEffect, useState } from "react";
+import { getWeek } from "../../api/connectJSON";
 
 const HandleData = () => {
   const [recipeObject, setRecipeObject] = useState([]);
@@ -25,8 +25,6 @@ const HandleData = () => {
       object.Grocery !== "Pfeffer"
     );
   });
-
-  console.log(filteredArray);
 
   const holder = {};
   filteredArray.forEach(function (object) {
@@ -56,20 +54,7 @@ const HandleData = () => {
         Unit: holderUnit[prop],
       });
   }
-  console.log(calculatedArray);
   return calculatedArray;
 };
 
-const PostData = (calculatedArray) => {
-  //   const calculatedArray = HandleData();
-
-  const saveShoppingList = async (calculatedArray) => {
-    await postGroceryList(calculatedArray);
-  };
-  saveShoppingList(calculatedArray);
-  return;
-};
-
-// PostData()
-
-export { HandleData, PostData };
+export { HandleData };
