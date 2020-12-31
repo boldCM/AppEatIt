@@ -1,6 +1,7 @@
 export async function getRecipies() {
   const response = await fetch("/api/recipes");
   const recipeList = response.json();
+  console.log(recipeList);
   return recipeList;
 }
 
@@ -70,4 +71,13 @@ export async function postGroceryList(calculatedChosenRecipies) {
     },
     body: JSON.stringify(calculatedChosenRecipies),
   });
+}
+
+export async function checkShoppingList() {
+  const shoppingResponse = await fetch(`/api/shoppingList`);
+  const listStatus = await shoppingResponse.json();
+  if (listStatus) {
+    return true;
+  }
+  return false;
 }

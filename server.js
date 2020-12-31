@@ -13,6 +13,7 @@ const {
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
   postShoppingListMongo,
+  getShoppingListMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -37,7 +38,6 @@ app.get("/api/recipes/:RecipeName", async (req, res) => {
 app.get("/api/recipes", async (req, res) => {
   try {
     const recipeList = await getRecipiesMongo();
-
     if (!recipeList) {
       res.status(404).send("Could not find any recipies");
       return;
@@ -144,12 +144,21 @@ app.post("/api/shoppingList", async (req, res) => {
   }
 });
 
-// Serve any static files
+app.get("/api/shoppingList", async (req, res) => {
+  try {
+    const groceryList = await getShoppingListMongo();
+    if (!groceryList) {
+      res.status(404).send("Could not find any groceries");
+      return;
+    }
+    res.send(groceryList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An internal server error occured");
+  }
+});
+
 app.use(express.static(path.join(__dirname, "client/build")));
-// app.use(
-//   "/storybook",
-//   express.static(path.join(__dirname, "client/storybook-static"))
-// );
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
