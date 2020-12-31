@@ -33,9 +33,9 @@ const WeeklyPage = () => {
         )}
         {chosenRecipies?.map((recipe) => (
           <WeekListItem
-            key={recipe.Recipe._id}
-            RecipeName={recipe.Recipe.RecipeName}
-            Id={recipe.Recipe._id}
+            key={recipe._id}
+            RecipeName={recipe.RecipeName}
+            Id={recipe._id}
             ChosenDate={recipe.date}
           />
         ))}
