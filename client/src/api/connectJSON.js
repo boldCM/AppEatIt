@@ -63,14 +63,10 @@ export async function deleteWholeWeek() {
   });
 }
 
-export async function postGroceryList(calculatedChosenRecipies) {
-  await fetch("api/shoppingList", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(calculatedChosenRecipies),
-  });
+export async function postGroceryList() {
+  const response = await fetch("api/shoppingList/merge");
+  const translate = response.json();
+  return translate;
 }
 
 export async function checkShoppingList() {

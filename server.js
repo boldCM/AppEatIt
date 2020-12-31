@@ -131,11 +131,14 @@ app.delete("/api/week/", async (req, res) => {
   }
 });
 
-app.post("/api/shoppingList", async (req, res) => {
-  const shoppingList = req.body;
+app.get("/api/shoppingList/merge", async (req, res) => {
   try {
-    await postShoppingListMongo(shoppingList);
-    res.send(`Successfully inserted Shopping List`);
+    const insertedGroceries = await postShoppingListMongo();
+    if (!insertedGroceries) {
+      res.status(404).send("Could not find any groceries");
+      return;
+    }
+    res.send(insertedGroceries);
   } catch (error) {
     console.error(error);
     res
