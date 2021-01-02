@@ -1,17 +1,4 @@
-import { useEffect, useState } from "react";
-import { getWeek } from "../../api/connectJSON";
-
-const HandleData = () => {
-  const [recipeObject, setRecipeObject] = useState([]);
-
-  useEffect(() => {
-    async function getRecipesInWeek() {
-      const getRecipeObjects = await getWeek();
-      setRecipeObject(getRecipeObjects);
-    }
-    getRecipesInWeek();
-  }, []);
-
+const HandleData = (recipeObject) => {
   const oneShoppingListArray = recipeObject.flatMap((ingredient) => {
     return ingredient.Ingredients;
   });

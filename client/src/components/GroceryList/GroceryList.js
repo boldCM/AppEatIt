@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import GroceryListItem from "./GroceryListItem";
 import { postGroceryList, checkShoppingList } from "../../api/connectJSON";
@@ -15,21 +15,22 @@ const ContainerGroceries = styled.div`
 // einzelne Items posten oder deleten und updaten können.
 
 const GroceryList = () => {
-  const calculatedArray = HandleData();
-  // console.log(calculatedArray);
+  const [recipeObject, setRecipeObject] = useState([]);
 
   useEffect(() => {
     async function doFetch() {
       const checkList = await checkShoppingList();
+      setRecipeObject(checkList);
       if (checkList) {
-        // PostData(calculatedArray);
         await postGroceryList();
         return;
       }
       return;
     }
     doFetch();
-  });
+  }, []);
+
+  const calculatedArray = HandleData(recipeObject);
 
   return (
     <ContainerGroceries>
