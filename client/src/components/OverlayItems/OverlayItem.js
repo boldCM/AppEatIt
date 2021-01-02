@@ -36,10 +36,6 @@ const LinkedItem = styled(Link)`
   text-align: right;
 `;
 
-const ShowInputField = styled(InputField)`
-  ${({ show }) => (!show ? "visability:hidden" : "display:flex;")}
-`;
-
 const OverlayItem = () => {
   const history = useHistory();
   const { title } = useParams();
@@ -73,7 +69,7 @@ const OverlayItem = () => {
         onClick={() => setGrocery(!grocery)}
         content="Etwas zur Einkaufsliste hinzufügen"
       />
-      <OverlayLine />
+      {grocery && <InputField handleSubmit={() => setGrocery(!grocery)} />}
 
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
@@ -86,8 +82,6 @@ const OverlayItem = () => {
       <OverlayLine />
       <LinkedItem to="/">Neues Rezept erstellen</LinkedItem>
       <OverlayLine />
-      {grocery && <InputField handleSubmit={() => setGrocery(!grocery)} />}
-      {/* <ShowInputField show={grocery} /> */}
     </ContainerOverlayItems>
   );
 };
