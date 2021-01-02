@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
 import DeleteIcon from "../../assets/deleteIcon.svg";
+import GroceryIcon from "../../assets/grocerieIcon.svg";
 import { deleteWholeWeek } from "../../api/connectJSON";
 
 const ContainerOverlayItems = styled.div`
@@ -14,11 +15,17 @@ const ContainerOverlayItems = styled.div`
   background-repeat: no-repeat;
   height: 100%;
   justify-content: center;
-  text-align: right;
   margin-bottom: 50px;
   h2 {
     font-size: 24px;
     font-weight: 500;
+  }
+
+  button {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
   }
 `;
 
@@ -53,6 +60,14 @@ const OverlayItem = () => {
       />
 
       <OverlayLine />
+      <IconButton
+        iconSrc={GroceryIcon}
+        iconAlt="GroceryIcon"
+        // onClick={() => saveShoppingList()}
+        content="Etwas zur Einkaufsliste hinzufügen"
+      />
+      <OverlayLine />
+
       <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
