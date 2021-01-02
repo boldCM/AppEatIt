@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
@@ -6,6 +6,7 @@ import IconButton from "../BottomNav/IconButton";
 import DeleteIcon from "../../assets/deleteIcon.svg";
 import GroceryIcon from "../../assets/grocerieIcon.svg";
 import { deleteWholeWeek } from "../../api/connectJSON";
+import InputField from "../InputField/InputField";
 
 const ContainerOverlayItems = styled.div`
   display: flex;
@@ -35,9 +36,15 @@ const LinkedItem = styled(Link)`
   text-align: right;
 `;
 
+const ShowInputField = styled(InputField)`
+  ${({ show }) => (!show ? "visability:hidden" : "display:flex;")}
+`;
+
 const OverlayItem = () => {
   const history = useHistory();
   const { title } = useParams();
+  const [grocery, setGrocery] = useState(false);
+  console.log(grocery);
 
   const handleWeekDelete = async () => {
     await deleteWholeWeek();
@@ -63,12 +70,11 @@ const OverlayItem = () => {
       <IconButton
         iconSrc={GroceryIcon}
         iconAlt="GroceryIcon"
-        // onClick={() => saveShoppingList()}
+        onClick={() => setGrocery(!grocery)}
         content="Etwas zur Einkaufsliste hinzufügen"
       />
       <OverlayLine />
 
-      <LinkedItem to="/Einkaufsliste">Zur Einkaufsliste</LinkedItem>
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
       <OverlayLine />
@@ -76,10 +82,12 @@ const OverlayItem = () => {
       <OverlayLine />
       <LinkedItem to="/">Neue Liste erstellen</LinkedItem>
       <OverlayLine />
-      <LinkedItem to="/Rezeptübersicht">Zur Rezeptübersicht</LinkedItem>
+
       <OverlayLine />
       <LinkedItem to="/">Neues Rezept erstellen</LinkedItem>
       <OverlayLine />
+      {grocery && <InputField handleSubmit={() => setGrocery(!grocery)} />}
+      {/* <ShowInputField show={grocery} /> */}
     </ContainerOverlayItems>
   );
 };
