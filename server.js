@@ -12,7 +12,7 @@ const {
   getWeekMongo,
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
-  postShoppingListMongo,
+  // postShoppingListMongo,
   getShoppingListMongo,
   addShoppingItemMongo,
   insertIngredientsToShoppingMongo,
