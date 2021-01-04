@@ -51,6 +51,14 @@ const OverlayItem = () => {
     }
   };
 
+  const handleGrocerySubmit = async () => {
+    // macht es sinn für den setter die async schon vorher zu haben`?
+    // evtl setter außerhalb der async ändern.
+    setGrocery(!grocery);
+
+    // ich schreibe hier die Funktion, die ich im Inputfield mit den Agrumenten aufrufe.
+  };
+
   return (
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
@@ -67,9 +75,9 @@ const OverlayItem = () => {
         iconSrc={GroceryIcon}
         iconAlt="GroceryIcon"
         onClick={() => setGrocery(!grocery)}
-        content="Etwas zur Einkaufsliste hinzufügen"
+        content="Etwas zur Einkaufsliste hinzufügen:"
       />
-      {grocery && <InputField handleSubmit={() => setGrocery(!grocery)} />}
+      {grocery && <InputField handleSubmit={() => handleGrocerySubmit()} />}
 
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>

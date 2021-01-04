@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
@@ -41,6 +41,24 @@ const StyledInputField = styled.input`
 `;
 
 const InputField = ({ handleSubmit }) => {
+  const [quantity, setQuantity] = useState("");
+  const [unit, setUnit] = useState("");
+  const [shoppingItem, setShoppingItem] = useState("");
+
+  const handleQuantityChange = (event) => {
+    setQuantity(event.target.value);
+  };
+  const handleUnitChange = (event) => {
+    setUnit(event.target.value);
+  };
+  const handleShoppingItemChange = (event) => {
+    setShoppingItem(event.target.value);
+  };
+
+  console.log(quantity);
+  console.log(unit);
+  console.log(shoppingItem);
+
   return (
     <StyledForm onSubmit={handleSubmit} type="submit">
       <label htmlFor="Menge">
@@ -49,20 +67,25 @@ const InputField = ({ handleSubmit }) => {
           type="number"
           maxLength="3"
           size="3"
+          onChange={handleQuantityChange}
         />
       </label>
       <label htmlFor="Menge"></label>
-      <StyledSelect>
+      <StyledSelect onChange={handleUnitChange}>
+        <option value="">~</option>
         <option value="gr">gr</option>
         <option value="ml">ml</option>
         <option value="Pck">Pck</option>
         <option value="El">El</option>
         <option value="tl">tl</option>
-        <option value="">~</option>
       </StyledSelect>
 
       <label htmlFor="textarea">
-        <StyledInputField placeholder="Einkaufsartikel" type="text" />
+        <StyledInputField
+          placeholder="Einkaufsartikel"
+          type="text"
+          onChange={handleShoppingItemChange}
+        />
       </label>
     </StyledForm>
   );
