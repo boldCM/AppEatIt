@@ -78,3 +78,17 @@ export async function checkShoppingList() {
   }
   return false;
 }
+
+export async function addShoppingItem(ShoppingItem) {
+  const newShoppingItem = {
+    ...ShoppingItem,
+  };
+  const url = `/api/shoppingList`;
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(newShoppingItem),
+  });
+}

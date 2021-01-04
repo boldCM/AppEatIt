@@ -14,6 +14,7 @@ const {
   deleteWholeWeekMongo,
   postShoppingListMongo,
   getShoppingListMongo,
+  addShoppingItemMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -158,6 +159,19 @@ app.get("/api/shoppingList", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("An internal server error occured");
+  }
+});
+
+app.post("/api/shoppingList", async (req, res) => {
+  const shoppingItem = req.body;
+  try {
+    await addShoppingItemMongo(shoppingItem);
+    res.send(`Successfully inserted ${shoppingItem}`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
   }
 });
 
