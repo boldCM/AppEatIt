@@ -79,10 +79,13 @@ export async function checkShoppingList() {
   return false;
 }
 
-export async function addShoppingItem(ShoppingItem) {
+export async function addShoppingItem(Quantity, Unit, Grocery) {
   const newShoppingItem = {
-    ...ShoppingItem,
+    Quantity,
+    Unit,
+    Grocery,
   };
+  console.log(newShoppingItem);
   const url = `/api/shoppingList`;
   await fetch(url, {
     method: "POST",
