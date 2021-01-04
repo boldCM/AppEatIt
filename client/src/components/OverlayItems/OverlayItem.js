@@ -11,7 +11,7 @@ import InputField from "../InputField/InputField";
 const ContainerOverlayItems = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 1rem;
   background: var(--gradient-color);
   background-repeat: no-repeat;
   height: 100%;
