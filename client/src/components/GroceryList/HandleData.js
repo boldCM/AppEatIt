@@ -1,3 +1,5 @@
+// evtl im server sortieren?
+
 const HandleData = (recipeObject) => {
   const oneShoppingListArray = recipeObject.flatMap((ingredient) => {
     return ingredient.Ingredients;

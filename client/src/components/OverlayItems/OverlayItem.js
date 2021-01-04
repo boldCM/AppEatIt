@@ -5,7 +5,7 @@ import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
 import DeleteIcon from "../../assets/deleteIcon.svg";
 import GroceryIcon from "../../assets/grocerieIcon.svg";
-import { deleteWholeWeek, addShoppingItem } from "../../api/connectJSON";
+import { deleteWholeWeek } from "../../api/connectJSON";
 import InputField from "../InputField/InputField";
 
 const ContainerOverlayItems = styled.div`

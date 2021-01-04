@@ -9,6 +9,7 @@ const ListContainer = styled(ContentContainer)`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-bottom: 56px;
   hr {
     margin: 0;
   }
