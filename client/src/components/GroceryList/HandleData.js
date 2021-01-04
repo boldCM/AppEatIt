@@ -1,11 +1,7 @@
 // evtl im server sortieren?
 
 const HandleData = (recipeObject) => {
-  const oneShoppingListArray = recipeObject.flatMap((ingredient) => {
-    return ingredient.Ingredients;
-  });
-
-  const filteredArray = oneShoppingListArray.filter((object) => {
+  const filteredArray = recipeObject.filter((object) => {
     return (
       object.Grocery !== "Salz" &&
       object.Grocery !== "Wasser" &&

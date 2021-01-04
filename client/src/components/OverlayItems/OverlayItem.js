@@ -40,7 +40,6 @@ const OverlayItem = () => {
   const history = useHistory();
   const { title } = useParams();
   const [grocery, setGrocery] = useState(false);
-  console.log(grocery);
 
   const handleWeekDelete = async () => {
     await deleteWholeWeek();

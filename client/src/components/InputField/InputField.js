@@ -52,7 +52,8 @@ const InputField = () => {
   const [shoppingItem, setShoppingItem] = useState("");
 
   const handleQuantityChange = (event) => {
-    setQuantity(event.target.value);
+    const number = parseInt(event.target.value);
+    setQuantity(number);
   };
   const handleUnitChange = (event) => {
     setUnit(event.target.value);
@@ -62,10 +63,11 @@ const InputField = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log("submitted");
     e.preventDefault();
     await addShoppingItem(quantity, unit, shoppingItem);
   };
+
+  // work on reload, UX Experience...
 
   return (
     <StyledForm onSubmit={handleSubmit}>
