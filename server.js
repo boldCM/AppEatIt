@@ -15,6 +15,7 @@ const {
   postShoppingListMongo,
   getShoppingListMongo,
   addShoppingItemMongo,
+  insertIngredientsToShoppingMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -132,21 +133,21 @@ app.delete("/api/week/", async (req, res) => {
   }
 });
 
-app.get("/api/shoppingList/merge", async (req, res) => {
-  try {
-    const insertedGroceries = await postShoppingListMongo();
-    if (!insertedGroceries) {
-      res.status(404).send("Could not find any groceries");
-      return;
-    }
-    res.send(insertedGroceries);
-  } catch (error) {
-    console.error(error);
-    res
-      .status(500)
-      .send("An unexpected error occured. Please try again later!");
-  }
-});
+// app.get("/api/shoppingList/merge", async (req, res) => {
+//   try {
+//     const insertedGroceries = await postShoppingListMongo();
+//     if (!insertedGroceries) {
+//       res.status(404).send("Could not find any groceries");
+//       return;
+//     }
+//     res.send(insertedGroceries);
+//   } catch (error) {
+//     console.error(error);
+//     res
+//       .status(500)
+//       .send("An unexpected error occured. Please try again later!");
+//   }
+// });
 
 app.get("/api/shoppingList", async (req, res) => {
   try {
@@ -167,6 +168,19 @@ app.post("/api/shoppingList", async (req, res) => {
   try {
     await addShoppingItemMongo(shoppingItem);
     res.send(`Successfully inserted ${shoppingItem}`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
+app.post("/api/shoppingList/many", async (req, res) => {
+  const Ingredients = req.body;
+  try {
+    await insertIngredientsToShoppingMongo(Ingredients);
+    res.send(`Successfully inserted ${Ingredients}`);
   } catch (error) {
     console.error(error);
     res

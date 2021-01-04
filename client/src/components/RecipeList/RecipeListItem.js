@@ -7,6 +7,7 @@ import CalendarFilled from "../../assets/calendarFilled.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
+  addIngredients,
   deleteRecipeFromWeek,
   isRecipeInWeek,
   putRecipeInWeek,
@@ -49,10 +50,12 @@ const RecipeListItem = ({ WholeRecipe }) => {
   const handleClick = async (WholeRecipe) => {
     if (await startIsRecipeInWeek(RecipeName)) {
       await deleteRecipeFromWeek(RecipeName);
+      // delete items from shoppingList
       setInCalender(false);
       return;
     } else {
       await putRecipeInWeek(WholeRecipe);
+      await addIngredients(WholeRecipe.Ingredients);
       setInCalender(true);
       return;
     }

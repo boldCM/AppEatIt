@@ -1,7 +1,6 @@
 export async function getRecipies() {
   const response = await fetch("/api/recipes");
   const recipeList = response.json();
-  console.log(recipeList);
   return recipeList;
 }
 
@@ -85,7 +84,6 @@ export async function addShoppingItem(Quantity, Unit, Grocery) {
     Unit,
     Grocery,
   };
-  console.log(newShoppingItem);
   const url = `/api/shoppingList`;
   await fetch(url, {
     method: "POST",
@@ -93,5 +91,16 @@ export async function addShoppingItem(Quantity, Unit, Grocery) {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(newShoppingItem),
+  });
+}
+
+export async function addIngredients(Ingredients) {
+  const url = "/api/shoppingList/many";
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(Ingredients),
   });
 }
