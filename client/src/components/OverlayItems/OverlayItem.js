@@ -5,7 +5,7 @@ import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
 import DeleteIcon from "../../assets/deleteIcon.svg";
 import GroceryIcon from "../../assets/grocerieIcon.svg";
-import { deleteWholeWeek } from "../../api/connectJSON";
+import { deleteWholeWeek, deleteShoppingItem } from "../../api/connectJSON";
 import InputField from "../InputField/InputField";
 
 const ContainerOverlayItems = styled.div`
@@ -50,6 +50,15 @@ const OverlayItem = () => {
     }
   };
 
+  const handleShoppingListDelete = async () => {
+    await deleteShoppingItem();
+    if (!title === "/") {
+      history.push("/");
+    } else {
+      window.location.reload();
+    }
+  };
+
   return (
     <ContainerOverlayItems>
       <h2>Übersicht</h2>
@@ -69,7 +78,13 @@ const OverlayItem = () => {
         content="Etwas zur Einkaufsliste hinzufügen:"
       />
       {grocery && <InputField />}
-
+      <OverlayLine />
+      <IconButton
+        iconSrc={DeleteIcon}
+        iconAlt="DeleteIcon"
+        onClick={() => handleShoppingListDelete()}
+        content="Einkaufsliste leeren"
+      />
       <OverlayLine />
       <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
       <OverlayLine />
@@ -78,7 +93,6 @@ const OverlayItem = () => {
       <LinkedItem to="/">Neue Liste erstellen</LinkedItem>
       <OverlayLine />
 
-      <OverlayLine />
       <LinkedItem to="/">Neues Rezept erstellen</LinkedItem>
       <OverlayLine />
     </ContainerOverlayItems>

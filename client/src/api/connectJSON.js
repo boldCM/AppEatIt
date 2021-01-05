@@ -86,3 +86,9 @@ export async function addIngredients(ingredients) {
     body: JSON.stringify(ingredients),
   });
 }
+
+export async function deleteShoppingItem() {
+  await fetch("/api/shoppingItems", {
+    method: "DELETE",
+  });
+}
