@@ -1,6 +1,6 @@
 ![Node.js CI](https://github.com/boldCM/Starter-Template/workflows/Node.js%20CI/badge.svg)
 
-# AppEatIt ![AppEatIt Favicon](/root/dev/AppEatIt/client/src/assets/favicon.png)
+# AppEatIt ![AppEatIt Favicon](/client/public/favicon.svg)
 
 Final project for Web Dev Bootcamp with Neue Fische Cologne.
 
