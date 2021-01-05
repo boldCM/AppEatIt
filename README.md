@@ -1,54 +1,14 @@
 ![Node.js CI](https://github.com/boldCM/Starter-Template/workflows/Node.js%20CI/badge.svg)
 
-# Starter-Template
+# AppEatIt (/root/dev/AppEatIt/client/src/assets/favicon.png)
 
-## Getting Started
+You know this situation where you have appetite but the fridge seems to be empty? Well, here's a solution: AppEatIt.
+With this App you can organize your meals in advance. Pick the recipes, choose a date when to cook them and get immediatly the shoppinglist for the needed ingrediences. Plus you can edit your shopping list and add f.e. toiletpaper
 
-1. Click `Use this template`. This will create a new repository for you based on this template.
-2. Clone the code to your local machine.
-3. Run `npm install` in the root directory of your project folder.
-4. Happy hacking ...
+## Deployment
 
-### Available Scripts
+This App is deployed on Heroku: [AppEatIt](https://appeatit.herokuapp.com/)
 
-In the project directory, you can run:
+## Install all dependencies
 
-#### `npm run start`
-
-To start the server.
-
-#### `npm run server`
-
-To start the server with Nodemon. That's especcialy useful if you are developing the server file. Nodemon handles restarting the server on change for you.
-
-#### `npm run client`
-
-To start the create-react-app.
-
-#### `npm run storybook`
-
-To start storybook.
-
-#### `npm run dev`
-
-To start server and client with concurrently.
-
-#### `npm run test`
-
-To run your tests.
-
-#### `npm run build`
-
-To build create-react-app and storybook. Normally you wouldn't do this, as your deployment pipeline will take care of this.
-
-### Deployment
-
-Configuration is optimized for deployment with Heroku. If you want to deploy this somewhere else you maybe have to change the configuration files.
-
-### Learn More
-
-### Credits
-
-This project is inspired by @lmachens [cra-with-api](https://github.com/lmachens/cra-with-api)
-
-And ReadMe by @mhstrkmp [awesome-project-template](https://github.com/mhstrkmp/awesome-project-template)
+To use this code, type `npm install`. There is a postinstall-script which searches the client folder automatically and installs the required dependencies as well.
