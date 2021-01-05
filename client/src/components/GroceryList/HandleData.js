@@ -2,20 +2,13 @@
 
 const HandleData = (recipeObject) => {
   const necessaryIngredients = recipeObject.filter((object) => {
-    // return (
-    //   object.Grocery !== "Salz" &&
-    //   object.Grocery !== "Wasser" &&
-    //   object.Grocery !== "Olivenöl" &&
-    //   object.Grocery !== "Öl" &&
-    //   object.Grocery !== "Pfeffer"
-    // );
     return !["Salz", "Wasser", "Olivenöl", "Öl", "Pfeffer"].includes(
       object.Grocery
     );
   });
 
   const holder = {};
-  necessaryIngredients.forEach(function (object) {
+  necessaryIngredients.forEach((object) => {
     if (Object.hasOwnProperty.call(holder, object.Grocery)) {
       holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
     } else {
@@ -26,7 +19,7 @@ const HandleData = (recipeObject) => {
   const calculatedArray = [];
 
   const holderUnit = {};
-  necessaryIngredients.forEach(function (object) {
+  necessaryIngredients.forEach((object) => {
     if (Object.hasOwnProperty.call(holderUnit, object.Grocery)) {
       holderUnit[object.Grocery] = object.Unit;
     } else {
