@@ -21,10 +21,10 @@ const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-app.get("/api/recipes/:RecipeName", async (req, res) => {
-  const RecipeName = req.params["RecipeName"];
+app.get("/api/recipes/:recipeName", async (req, res) => {
+  const recipeName = req.params["recipeName"];
   try {
-    const getName = await getRecipeByNameMongo(RecipeName);
+    const getName = await getRecipeByNameMongo(recipeName);
     if (!getName) {
       res.status(404).send("Recipe is not in Database");
       return;
@@ -50,7 +50,7 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
-app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
+app.get("/api/week/recipe/:RecipeName", async (req, res) => {
   const RecipeName = req.params["RecipeName"];
   try {
     const getName = await getRecipeByNameWeekMongo(RecipeName);
@@ -65,7 +65,7 @@ app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
   }
 });
 
-app.delete("/api/week/Recipe/:RecipeName", async (req, res) => {
+app.delete("/api/week/recipe/:RecipeName", async (req, res) => {
   const RecipeName = req.params["RecipeName"];
   try {
     await deleteRecipeInWeekMongo(RecipeName);
@@ -91,11 +91,11 @@ app.post("/api/week", async (req, res) => {
   }
 });
 
-app.patch(`/api/week/:Id`, async (req, res) => {
-  const Id = req.params["Id"];
+app.patch("/api/week/:id", async (req, res) => {
+  const id = req.params["id"];
   const date = req.body;
   try {
-    await updateRecipeInWeekMongo(date, Id);
+    await updateRecipeInWeekMongo(date, id);
     res.send(`Successfully updated ${date}`);
   } catch (error) {
     console.error(error);
@@ -123,7 +123,7 @@ app.get("/api/week", async (req, res) => {
 app.delete("/api/week/", async (req, res) => {
   try {
     await deleteWholeWeekMongo();
-    res.send(`Successfully deleted weekly overview`);
+    res.send("Successfully deleted weekly overview");
   } catch (error) {
     console.error(error);
     res
