@@ -48,14 +48,18 @@ const RecipeListItem = ({ WholeRecipe }) => {
     : "Item is in Calendar";
 
   const handleClick = async (WholeRecipe) => {
+    console.log(WholeRecipe.Ingredients);
     if (await startIsRecipeInWeek(RecipeName)) {
       await deleteRecipeFromWeek(RecipeName);
-      // delete items from shoppingList
+      // deletes all items from shoppingList:
+      // await deleteShoppingItem();
+      // it needs an update/patch function
       setInCalender(false);
       return;
     } else {
       await putRecipeInWeek(WholeRecipe);
       await addIngredients(WholeRecipe.Ingredients);
+      // und dann updaten/patchen, wenn es die Ingredient schon gibt...
       setInCalender(true);
       return;
     }

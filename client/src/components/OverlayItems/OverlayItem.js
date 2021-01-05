@@ -5,7 +5,7 @@ import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
 import DeleteIcon from "../../assets/deleteIcon.svg";
 import GroceryIcon from "../../assets/grocerieIcon.svg";
-import { deleteWholeWeek, deleteShoppingItem } from "../../api/connectJSON";
+import { deleteWholeWeek, deleteShoppingList } from "../../api/connectJSON";
 import InputField from "../InputField/InputField";
 
 const ContainerOverlayItems = styled.div`
@@ -51,7 +51,7 @@ const OverlayItem = () => {
   };
 
   const handleShoppingListDelete = async () => {
-    await deleteShoppingItem();
+    await deleteShoppingList();
     if (!title === "/") {
       history.push("/");
     } else {
