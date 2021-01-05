@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import { addShoppingItem } from "../../api/connectJSON";
 
-const StyledForm = styled.form`
+const Form = styled.form`
   display: flex;
   justify-content: flex-end;
   input[type="number"] {
@@ -21,7 +21,7 @@ const StyledForm = styled.form`
   }
 `;
 
-const StyledSelect = styled.select`
+const Select = styled.select`
   border: 1px solid var(--active-color);
   background-color: var(--primary-color);
   font-family: "Encode Sans", sans-serif;
@@ -31,7 +31,7 @@ const StyledSelect = styled.select`
   font-weight: 300;
 `;
 
-const StyledInputField = styled.input`
+const Input = styled.input`
   border: 1px solid var(--active-color);
   background-color: var(--primary-color);
   font-family: "Encode Sans", sans-serif;
@@ -70,27 +70,27 @@ const InputField = () => {
   // work on reload, UX Experience...
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <label htmlFor="Menge">
-        <StyledInputField
+    <Form onSubmit={handleSubmit}>
+      <label htmlFor="Input">
+        <Input
           placeholder="Menge"
           type="number"
           value={quantity}
           onChange={handleQuantityChange}
         />
       </label>
-      <label htmlFor="Einheit"></label>
-      <StyledSelect onChange={handleUnitChange}>
+      <label htmlFor="Select"></label>
+      <Select onChange={handleUnitChange}>
         <option value="">~</option>
         <option value="gr">gr</option>
         <option value="ml">ml</option>
         <option value="Pck">Pck</option>
         <option value="El">El</option>
         <option value="tl">tl</option>
-      </StyledSelect>
+      </Select>
 
-      <label htmlFor="input">
-        <StyledInputField
+      <label htmlFor="Input">
+        <Input
           placeholder="Einkaufsartikel"
           type="text"
           value={shoppingItem}
@@ -98,8 +98,8 @@ const InputField = () => {
         />
       </label>
 
-      <StyledInputField type="submit" value="+" />
-    </StyledForm>
+      <Input type="submit" value="+" />
+    </Form>
   );
 };
 
