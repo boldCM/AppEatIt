@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import GroceryListItem from "./GroceryListItem";
-import { getWeek } from "../../api/connectJSON";
+import { checkShoppingList } from "../../api/connectJSON";
+import { HandleData } from "./HandleData";
 
 const ContainerGroceries = styled.div`
   display: flex;
@@ -9,61 +10,20 @@ const ContainerGroceries = styled.div`
   margin-left: 10px;
 `;
 
-// vllt noch in Klammern zu welchem Rezept die Groceries gehören? (also RecipeName mitgeben)
+// einzelne Items posten oder deleten und updaten können.
 
 const GroceryList = () => {
   const [recipeObject, setRecipeObject] = useState([]);
 
   useEffect(() => {
-    async function getRecipesInWeek() {
-      const getRecipeObjects = await getWeek();
-      setRecipeObject(getRecipeObjects);
+    async function doFetch() {
+      const checkList = await checkShoppingList();
+      setRecipeObject(checkList);
+      return;
     }
-    getRecipesInWeek();
+    doFetch();
   }, []);
-
-  const oneShoppingListArray = recipeObject.flatMap((ingredient) => {
-    return ingredient.Recipe.Ingredients;
-  });
-
-  const filteredArray = oneShoppingListArray.filter((object) => {
-    return (
-      object.Grocery !== "Salz" &&
-      object.Grocery !== "Wasser" &&
-      object.Grocery !== "Olivenöl" &&
-      object.Grocery !== "Öl" &&
-      object.Grocery !== "Pfeffer"
-    );
-  });
-
-  const holder = {};
-  filteredArray.forEach(function (object) {
-    if (Object.hasOwnProperty.call(holder, object.Grocery)) {
-      holder[object.Grocery] = holder[object.Grocery] + object.Quantity;
-    } else {
-      holder[object.Grocery] = object.Quantity;
-    }
-  });
-
-  const calculatedArray = [];
-
-  const holderUnit = {};
-  filteredArray.forEach(function (object) {
-    if (Object.hasOwnProperty.call(holderUnit, object.Grocery)) {
-      holderUnit[object.Grocery] = object.Unit;
-    } else {
-      holderUnit[object.Grocery] = object.Unit;
-    }
-  });
-
-  for (const prop in holder && holderUnit) {
-    if (Object.hasOwnProperty.call(holderUnit, prop))
-      calculatedArray.push({
-        Grocery: prop,
-        Quantity: holder[prop],
-        Unit: holderUnit[prop],
-      });
-  }
+  const calculatedArray = HandleData(recipeObject);
 
   return (
     <ContainerGroceries>

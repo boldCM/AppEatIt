@@ -4,20 +4,20 @@ export async function getRecipies() {
   return recipeList;
 }
 
-export async function getRecipeByRecipeName(RecipeName) {
-  const response = await fetch(`/api/recipes/${RecipeName}`);
+export async function getRecipeByRecipeName(recipeName) {
+  const response = await fetch(`/api/recipes/${recipeName}`);
   const recipe = await response.json();
   return recipe;
 }
 
 export async function getWeek() {
-  const response = await fetch(`/api/week`);
+  const response = await fetch("/api/week");
   const week = await response.json();
   return week;
 }
 
-export async function isRecipeInWeek(RecipeName) {
-  const weekResponse = await fetch(`/api/week/Recipe/${RecipeName}`);
+export async function isRecipeInWeek(recipeName) {
+  const weekResponse = await fetch(`/api/week/recipe/${recipeName}`);
   const recipeStatus = await weekResponse.json();
   if (recipeStatus) {
     return true;
@@ -25,39 +25,64 @@ export async function isRecipeInWeek(RecipeName) {
   return false;
 }
 
-export async function putRecipeInWeek(WholeRecipe) {
-  const newWeekItem = {
-    ...WholeRecipe,
-  };
-  const url = `/api/week`;
-  await fetch(url, {
+export async function putRecipeInWeek(wholeRecipe) {
+  await fetch("/api/week", {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(newWeekItem),
+    body: JSON.stringify({ ...wholeRecipe }),
   });
 }
 
-export async function deleteRecipeFromWeek(RecipeName) {
-  await fetch(`/api/week/Recipe/${RecipeName}`, {
+export async function deleteRecipeFromWeek(recipeName) {
+  await fetch(`/api/week/recipe/${recipeName}`, {
     method: "DELETE",
   });
 }
 
-export async function updateWeekByDate(date, Id) {
-  const saveDate = { date };
-  await fetch(`/api/week/${Id}`, {
+export async function updateWeekByDate(date, id) {
+  // const saveDate = { date };
+  await fetch(`/api/week/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(saveDate),
+    body: JSON.stringify({ date }),
   });
 }
 
 export async function deleteWholeWeek() {
-  await fetch(`/api/week/`, {
+  await fetch("/api/week/", {
     method: "DELETE",
+  });
+}
+
+export async function checkShoppingList() {
+  const shoppingResponse = await fetch("/api/shoppingList");
+  const listStatus = await shoppingResponse.json();
+  if (listStatus) {
+    return listStatus;
+  }
+  return false;
+}
+
+export async function addShoppingItem(quantity, unit, grocery) {
+  await fetch("/api/shoppingItems", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify({ Quantity: quantity, Unit: unit, Grocery: grocery }),
+  });
+}
+
+export async function addIngredients(ingredients) {
+  await fetch("/api/shoppingItems", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(ingredients),
   });
 }

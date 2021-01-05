@@ -12,16 +12,18 @@ const {
   getWeekMongo,
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
+  getShoppingListMongo,
+  insertShoppingItemsMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-app.get("/api/recipes/:RecipeName", async (req, res) => {
-  const RecipeName = req.params["RecipeName"];
+app.get("/api/recipes/:recipeName", async (req, res) => {
+  const recipeName = req.params["recipeName"];
   try {
-    const getName = await getRecipeByNameMongo(RecipeName);
+    const getName = await getRecipeByNameMongo(recipeName);
     if (!getName) {
       res.status(404).send("Recipe is not in Database");
       return;
@@ -36,7 +38,6 @@ app.get("/api/recipes/:RecipeName", async (req, res) => {
 app.get("/api/recipes", async (req, res) => {
   try {
     const recipeList = await getRecipiesMongo();
-
     if (!recipeList) {
       res.status(404).send("Could not find any recipies");
       return;
@@ -48,7 +49,7 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
-app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
+app.get("/api/week/recipe/:RecipeName", async (req, res) => {
   const RecipeName = req.params["RecipeName"];
   try {
     const getName = await getRecipeByNameWeekMongo(RecipeName);
@@ -63,7 +64,7 @@ app.get("/api/week/Recipe/:RecipeName", async (req, res) => {
   }
 });
 
-app.delete("/api/week/Recipe/:RecipeName", async (req, res) => {
+app.delete("/api/week/recipe/:RecipeName", async (req, res) => {
   const RecipeName = req.params["RecipeName"];
   try {
     await deleteRecipeInWeekMongo(RecipeName);
@@ -89,11 +90,11 @@ app.post("/api/week", async (req, res) => {
   }
 });
 
-app.patch(`/api/week/:Id`, async (req, res) => {
-  const Id = req.params["Id"];
+app.patch("/api/week/:id", async (req, res) => {
+  const id = req.params["id"];
   const date = req.body;
   try {
-    await updateRecipeInWeekMongo(date, Id);
+    await updateRecipeInWeekMongo(date, id);
     res.send(`Successfully updated ${date}`);
   } catch (error) {
     console.error(error);
@@ -121,7 +122,7 @@ app.get("/api/week", async (req, res) => {
 app.delete("/api/week/", async (req, res) => {
   try {
     await deleteWholeWeekMongo();
-    res.send(`Successfully deleted weekly overview`);
+    res.send("Successfully deleted weekly overview");
   } catch (error) {
     console.error(error);
     res
@@ -130,12 +131,34 @@ app.delete("/api/week/", async (req, res) => {
   }
 });
 
-// Serve any static files
+app.get("/api/shoppingList", async (req, res) => {
+  try {
+    const groceryList = await getShoppingListMongo();
+    if (!groceryList) {
+      res.status(404).send("Could not find any groceries");
+      return;
+    }
+    res.send(groceryList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An internal server error occured");
+  }
+});
+
+app.post("/api/shoppingItems", async (req, res) => {
+  try {
+    const newShopppingItems = Array.isArray(req.body) ? req.body : [req.body];
+    const inserted = await insertShoppingItemsMongo(newShopppingItems);
+    res.send(`Successfully inserted ${inserted} shopping items`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
 app.use(express.static(path.join(__dirname, "client/build")));
-// app.use(
-//   "/storybook",
-//   express.static(path.join(__dirname, "client/storybook-static"))
-// );
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
