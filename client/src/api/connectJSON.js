@@ -26,9 +26,6 @@ export async function isRecipeInWeek(recipeName) {
 }
 
 export async function putRecipeInWeek(wholeRecipe) {
-  // const newWeekItem = {
-  //   ...wholeRecipe,
-  // };
   await fetch("/api/week", {
     method: "POST",
     headers: {
@@ -71,22 +68,17 @@ export async function checkShoppingList() {
 }
 
 export async function addShoppingItem(quantity, unit, grocery) {
-  // const newShoppingItem = {
-  //   quantity,
-  //   unit,
-  //   grocery,
-  // };
-  await fetch("/api/shoppingList", {
+  await fetch("/api/shoppingItems", {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify({ quantity, unit, grocery }),
+    body: JSON.stringify({ Quantity: quantity, Unit: unit, Grocery: grocery }),
   });
 }
 
 export async function addIngredients(ingredients) {
-  await fetch("/api/shoppingList/many", {
+  await fetch("/api/shoppingItems", {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",

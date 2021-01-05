@@ -13,8 +13,7 @@ const {
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
   getShoppingListMongo,
-  addShoppingItemMongo,
-  insertIngredientsToShoppingMongo,
+  insertShoppingItemsMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -146,24 +145,11 @@ app.get("/api/shoppingList", async (req, res) => {
   }
 });
 
-app.post("/api/shoppingList", async (req, res) => {
-  const shoppingItem = req.body;
+app.post("/api/shoppingItems", async (req, res) => {
   try {
-    await addShoppingItemMongo(shoppingItem);
-    res.send(`Successfully inserted ${shoppingItem}`);
-  } catch (error) {
-    console.error(error);
-    res
-      .status(500)
-      .send("An unexpected error occured. Please try again later!");
-  }
-});
-
-app.post("/api/shoppingList/many", async (req, res) => {
-  const Ingredients = req.body;
-  try {
-    await insertIngredientsToShoppingMongo(Ingredients);
-    res.send(`Successfully inserted ${Ingredients}`);
+    const newShopppingItems = Array.isArray(req.body) ? req.body : [req.body];
+    const inserted = await insertShoppingItemsMongo(newShopppingItems);
+    res.send(`Successfully inserted ${inserted} shopping items`);
   } catch (error) {
     console.error(error);
     res
