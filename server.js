@@ -14,6 +14,7 @@ const {
   deleteWholeWeekMongo,
   getShoppingListMongo,
   insertShoppingItemsMongo,
+  deleteShoppingItemMongo,
 } = require("./lib/connectMongoDB");
 
 const port = process.env.PORT || 3001;
@@ -150,6 +151,18 @@ app.post("/api/shoppingItems", async (req, res) => {
     const newShopppingItems = Array.isArray(req.body) ? req.body : [req.body];
     const inserted = await insertShoppingItemsMongo(newShopppingItems);
     res.send(`Successfully inserted ${inserted} shopping items`);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
+app.delete("/api/shoppingItems", async (req, res) => {
+  try {
+    await deleteShoppingItemMongo();
+    res.send("Successfully deleted Shopping Item");
   } catch (error) {
     console.error(error);
     res
