@@ -12,7 +12,6 @@ const {
   getWeekMongo,
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
-  // postShoppingListMongo,
   getShoppingListMongo,
   addShoppingItemMongo,
   insertIngredientsToShoppingMongo,
@@ -132,22 +131,6 @@ app.delete("/api/week/", async (req, res) => {
       .send("An unexpected error occured. Please try again later!");
   }
 });
-
-// app.get("/api/shoppingList/merge", async (req, res) => {
-//   try {
-//     const insertedGroceries = await postShoppingListMongo();
-//     if (!insertedGroceries) {
-//       res.status(404).send("Could not find any groceries");
-//       return;
-//     }
-//     res.send(insertedGroceries);
-//   } catch (error) {
-//     console.error(error);
-//     res
-//       .status(500)
-//       .send("An unexpected error occured. Please try again later!");
-//   }
-// });
 
 app.get("/api/shoppingList", async (req, res) => {
   try {
