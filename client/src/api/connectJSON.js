@@ -72,7 +72,6 @@ export async function checkShoppingList() {
   const shoppingResponse = await fetch(`/api/shoppingList`);
   const listStatus = await shoppingResponse.json();
   if (listStatus) {
-    // return true;
     return listStatus;
   }
   return false;
