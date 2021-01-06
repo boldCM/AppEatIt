@@ -25,6 +25,9 @@ const GroceryList = () => {
   }, []);
   const calculatedArray = HandleData(recipeObject);
 
+  console.log(recipeObject);
+  console.log(calculatedArray);
+
   return (
     <ContainerGroceries>
       {calculatedArray?.map((object) => (

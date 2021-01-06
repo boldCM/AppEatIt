@@ -59,7 +59,6 @@ const RecipeListItem = ({ WholeRecipe }) => {
     } else {
       await putRecipeInWeek(WholeRecipe);
       await addIngredients(WholeRecipe.Ingredients);
-      // und dann updaten/patchen, wenn es die Ingredient schon gibt...
       setInCalender(true);
       return;
     }
