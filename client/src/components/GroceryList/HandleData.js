@@ -1,21 +1,23 @@
 const HandleData = (recipeObject) => {
   const necessaryIngredients = recipeObject.filter((object) => {
-    return !["Salz", "Wasser", "Olivenöl", "Öl", "Pfeffer"].includes(
+    return !["Salz", "Wasser", "Olivenöl", "Öl", "Pfeffer", "Zucker"].includes(
       object.Grocery
     );
   });
 
   if (necessaryIngredients.length > 0) {
-    const index = necessaryIngredients.findIndex((item) => {
-      return item.Quantity === 0;
+    necessaryIngredients.forEach(() => {
+      const index = necessaryIngredients.findIndex((item) => {
+        return item.Quantity === 0;
+      });
+      console.log(index);
+      if (index > 0) {
+        const newObject = Object.assign(
+          (necessaryIngredients[index].Quantity = "etwas")
+        );
+        console.log(newObject);
+      }
     });
-    console.log(index);
-    if (index > 0) {
-      const newObject = Object.assign(
-        (necessaryIngredients[index].Quantity = "etwas")
-      );
-      console.log(newObject);
-    }
   }
 
   // const holder = {};
