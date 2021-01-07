@@ -10,7 +10,7 @@ const ContainerGroceries = styled.div`
   margin-left: 10px;
 `;
 
-// einzelne Items posten oder deleten und updaten können.
+// einzelne Items deleten können.
 
 const GroceryList = () => {
   const [recipeObject, setRecipeObject] = useState([]);
@@ -24,9 +24,6 @@ const GroceryList = () => {
     doFetch();
   }, []);
   const calculatedArray = HandleData(recipeObject);
-
-  console.log(recipeObject);
-  console.log(calculatedArray);
 
   return (
     <ContainerGroceries>

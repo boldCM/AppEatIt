@@ -15,10 +15,8 @@ const RecipeIngredients = ({ Ingredients }) => {
     const index = Ingredients.findIndex((item) => {
       return item.Quantity === 0;
     });
-    console.log(index);
     if (index > 0) {
-      const newObject = Object.assign((Ingredients[index].Quantity = "etwas"));
-      console.log(newObject);
+      Object.assign((Ingredients[index].Quantity = "etwas"));
     }
   }
 
