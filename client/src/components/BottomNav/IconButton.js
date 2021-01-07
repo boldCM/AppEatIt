@@ -8,15 +8,15 @@ const StyledButton = styled.button`
   font-size: 1.1rem;
   font-weight: 300;
   img {
-    padding-right: 7px;
+    padding-left: 7px;
   }
 `;
 
 const IconButton = ({ iconSrc, iconAlt, onClick, content }) => {
   return (
     <StyledButton onClick={onClick}>
-      <img src={iconSrc} alt={iconAlt} />
       {content}
+      <img src={iconSrc} alt={iconAlt} />
     </StyledButton>
   );
 };
