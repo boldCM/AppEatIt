@@ -68,8 +68,8 @@ const InputField = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addShoppingItem(quantity, unit, shoppingItem);
-    if (!title === "/") {
-      history.push("/");
+    if (!title === "/Einkaufsliste") {
+      history.push("/Einkaufsliste");
     } else {
       window.location.reload();
     }
