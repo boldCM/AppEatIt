@@ -25,6 +25,9 @@ function App() {
           <Route path="/Einkaufsliste">
             <GroceryListPage />
           </Route>
+          <Route path="/Home">
+            <WeeklyPage />
+          </Route>
           <Route path="/:RecipeName">
             <SingleRecipe />
           </Route>

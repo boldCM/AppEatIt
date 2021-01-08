@@ -38,7 +38,7 @@ const BottomNav = () => {
       <MenueButton />
       <Footer>
         <BottomNavBar>
-          <HomeButton to="/">
+          <HomeButton to="/Home">
             <img src={HomeIcon} alt="Zur Wochenübersicht" />
           </HomeButton>
           <HomeButton to="/Einkaufsliste">

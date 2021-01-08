@@ -47,8 +47,8 @@ const OverlayItem = () => {
 
   const handleShoppingListDelete = async () => {
     await deleteShoppingList();
-    if (!title === "/") {
-      history.push("/");
+    if (!title === "/Home") {
+      history.push("/Home");
     } else {
       window.location.reload();
     }
