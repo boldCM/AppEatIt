@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { OverlayLine, UnderlineHeaderOverlay } from "../styledComponents/Lines";
 import IconButton from "../BottomNav/IconButton";
@@ -7,6 +7,7 @@ import DeleteIcon from "../../assets/deleteIcon.svg";
 import GroceryIcon from "../../assets/grocerieIcon.svg";
 import { deleteWholeWeek, deleteShoppingList } from "../../api/connectJSON";
 import InputField from "../InputField/InputField";
+import RecipeIcon from "../../assets/recipeIcon.svg";
 
 const ContainerOverlayItems = styled.div`
   display: flex;
@@ -28,12 +29,6 @@ const ContainerOverlayItems = styled.div`
     align-items: right;
     justify-content: flex-end;
   }
-`;
-
-const LinkedItem = styled(Link)`
-  margin: 1rem 0;
-  display: block;
-  text-align: right;
 `;
 
 const OverlayItem = () => {
@@ -64,18 +59,10 @@ const OverlayItem = () => {
       <h2>Übersicht</h2>
       <UnderlineHeaderOverlay />
       <IconButton
-        iconSrc={DeleteIcon}
-        iconAlt="DeleteIcon"
-        onClick={() => handleWeekDelete()}
-        content="Wochenübersicht löschen"
-      />
-
-      <OverlayLine />
-      <IconButton
         iconSrc={GroceryIcon}
         iconAlt="GroceryIcon"
         onClick={() => setGrocery(!grocery)}
-        content="Etwas zur Einkaufsliste hinzufügen:"
+        content="Etwas zur Einkaufsliste hinzufügen"
       />
       {grocery && <InputField />}
       <OverlayLine />
@@ -85,15 +72,22 @@ const OverlayItem = () => {
         onClick={() => handleShoppingListDelete()}
         content="Einkaufsliste leeren"
       />
-      <OverlayLine />
-      <LinkedItem to="/">Neue Einkaufsliste erstellen</LinkedItem>
-      <OverlayLine />
-      <LinkedItem to="/">Listen-Übersicht</LinkedItem>
-      <OverlayLine />
-      <LinkedItem to="/">Neue Liste erstellen</LinkedItem>
-      <OverlayLine />
 
-      <LinkedItem to="/">Neues Rezept erstellen</LinkedItem>
+      <OverlayLine />
+      <IconButton
+        iconSrc={DeleteIcon}
+        iconAlt="DeleteIcon"
+        onClick={() => handleWeekDelete()}
+        content="Wochenübersicht löschen"
+      />
+
+      <OverlayLine />
+      <IconButton
+        iconSrc={RecipeIcon}
+        iconAlt="RecipeIcon"
+        // onClick={() => handleWeekDelete()}
+        content="Neues Rezept erstellen"
+      />
       <OverlayLine />
     </ContainerOverlayItems>
   );

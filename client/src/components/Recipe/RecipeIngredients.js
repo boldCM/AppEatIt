@@ -11,6 +11,15 @@ const Ingredient = styled.ul`
 `;
 
 const RecipeIngredients = ({ Ingredients }) => {
+  if (Ingredients.length > 0) {
+    const index = Ingredients.findIndex((item) => {
+      return item.Quantity === 0;
+    });
+    if (index > 0) {
+      Object.assign((Ingredients[index].Quantity = "etwas"));
+    }
+  }
+
   return (
     <>
       <h2>Zutaten</h2>

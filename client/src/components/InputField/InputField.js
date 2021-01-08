@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import { addShoppingItem } from "../../api/connectJSON";
+import { useHistory, useParams } from "react-router-dom";
 
 const Form = styled.form`
   display: flex;
@@ -47,6 +48,8 @@ const Input = styled.input`
 `;
 
 const InputField = () => {
+  const history = useHistory();
+  const { title } = useParams();
   const [quantity, setQuantity] = useState("");
   const [unit, setUnit] = useState("");
   const [shoppingItem, setShoppingItem] = useState("");
@@ -65,9 +68,12 @@ const InputField = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addShoppingItem(quantity, unit, shoppingItem);
+    if (!title === "/Einkaufsliste") {
+      history.push("/Einkaufsliste");
+    } else {
+      window.location.reload();
+    }
   };
-
-  // work on reload, UX Experience...
 
   return (
     <Form onSubmit={handleSubmit}>
