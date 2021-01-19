@@ -10,8 +10,6 @@ const ContainerGroceries = styled.div`
   margin-left: 10px;
 `;
 
-// einzelne Items deleten können.
-
 const GroceryList = () => {
   const [recipeObject, setRecipeObject] = useState([]);
 
@@ -30,7 +28,10 @@ const GroceryList = () => {
       {calculatedArray?.map((object) => (
         <GroceryListItem
           key={object.Grocery}
-          Grocery={object.Quantity + " " + object.Unit + " " + object.Grocery}
+          splittedGrocery={
+            object.Quantity + " " + object.Unit + " " + object.Grocery
+          }
+          Grocery={object.Grocery}
         />
       ))}
     </ContainerGroceries>

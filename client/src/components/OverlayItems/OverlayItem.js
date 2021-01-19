@@ -38,8 +38,8 @@ const OverlayItem = () => {
 
   const handleWeekDelete = async () => {
     await deleteWholeWeek();
-    if (!title === "/") {
-      history.push("/");
+    if (!title === "/Home") {
+      history.push("/Home");
     } else {
       window.location.reload();
     }
@@ -47,8 +47,8 @@ const OverlayItem = () => {
 
   const handleShoppingListDelete = async () => {
     await deleteShoppingList();
-    if (!title === "/Home") {
-      history.push("/Home");
+    if (!title === "/Einkaufsliste") {
+      history.push("/Einkaufsliste");
     } else {
       window.location.reload();
     }
@@ -66,12 +66,7 @@ const OverlayItem = () => {
       />
       {grocery && <InputField />}
       <OverlayLine />
-      <IconButton
-        iconSrc={DeleteIcon}
-        iconAlt="DeleteIcon"
-        // onClick={() => handleWeekDelete()}
-        content="Einzelne Zeile  löschen"
-      />
+
       <OverlayLine />
       <IconButton
         iconSrc={DeleteIcon}
