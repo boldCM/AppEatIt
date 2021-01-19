@@ -69,6 +69,13 @@ const OverlayItem = () => {
       <IconButton
         iconSrc={DeleteIcon}
         iconAlt="DeleteIcon"
+        // onClick={() => handleWeekDelete()}
+        content="Einzelne Zeile  löschen"
+      />
+      <OverlayLine />
+      <IconButton
+        iconSrc={DeleteIcon}
+        iconAlt="DeleteIcon"
         onClick={() => handleShoppingListDelete()}
         content="Einkaufsliste leeren"
       />
