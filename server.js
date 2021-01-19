@@ -14,6 +14,7 @@ const {
   deleteWholeWeekMongo,
   getShoppingListMongo,
   insertShoppingItemsMongo,
+  deleteShoppingListMongo,
   deleteShoppingItemMongo,
 } = require("./lib/connectMongoDB");
 
@@ -159,10 +160,23 @@ app.post("/api/shoppingItems", async (req, res) => {
   }
 });
 
+app.delete("/api/shoppingItems/:item", async (req, res) => {
+  const shoppingItem = req.params["item"];
+  try {
+    await deleteShoppingItemMongo(shoppingItem);
+    res.send("Successfully deleted Shopping Item");
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send("An unexpected error occured. Please try again later!");
+  }
+});
+
 app.delete("/api/shoppingItems", async (req, res) => {
   try {
-    await deleteShoppingItemMongo();
-    res.send("Successfully deleted Shopping Item");
+    await deleteShoppingListMongo();
+    res.send("Successfully deleted Shoppinglist");
   } catch (error) {
     console.error(error);
     res
