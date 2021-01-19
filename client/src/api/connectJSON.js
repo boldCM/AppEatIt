@@ -92,3 +92,10 @@ export async function deleteShoppingList() {
     method: "DELETE",
   });
 }
+
+export async function deleteItemFromShoppingList(item) {
+  console.log(item);
+  await fetch(`/api/shoppingItems/${item}`, {
+    method: "DELETE",
+  });
+}
