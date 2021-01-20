@@ -42,7 +42,6 @@ export async function deleteRecipeFromWeek(recipeName) {
 }
 
 export async function updateWeekByDate(date, id) {
-  // const saveDate = { date };
   await fetch(`/api/week/${id}`, {
     method: "PATCH",
     headers: {
