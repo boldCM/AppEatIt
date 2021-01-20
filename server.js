@@ -2,11 +2,15 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 const { connect } = require("./lib/database");
-
 const {
   getRecipiesMongo,
   getRecipeByNameMongo,
   insertRecipeInWeekMongo,
+} = require("./lib/connectRecipes");
+const {
+  // getRecipiesMongo,
+  // getRecipeByNameMongo,
+  // insertRecipeInWeekMongo,
   getRecipeByNameWeekMongo,
   deleteRecipeInWeekMongo,
   getWeekMongo,
