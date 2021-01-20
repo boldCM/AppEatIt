@@ -8,19 +8,18 @@ const {
   insertRecipeInWeekMongo,
 } = require("./lib/connectRecipes");
 const {
-  // getRecipiesMongo,
-  // getRecipeByNameMongo,
-  // insertRecipeInWeekMongo,
   getRecipeByNameWeekMongo,
   deleteRecipeInWeekMongo,
   getWeekMongo,
   updateRecipeInWeekMongo,
   deleteWholeWeekMongo,
+} = require("./lib/connectWeek");
+const {
   getShoppingListMongo,
   insertShoppingItemsMongo,
   deleteShoppingListMongo,
   deleteShoppingItemMongo,
-} = require("./lib/connectMongoDB");
+} = require("./lib/connectShoppingList");
 
 const port = process.env.PORT || 3001;
 const app = express();
