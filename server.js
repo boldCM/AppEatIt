@@ -25,6 +25,8 @@ const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
+// für get und delete könne ich noch nen forEach loop schreiben...
+
 app.get("/api/recipes/:recipeName", async (req, res) => {
   const recipeName = req.params["recipeName"];
   try {
