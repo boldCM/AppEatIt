@@ -58,7 +58,7 @@ export async function deleteWholeWeek() {
 }
 
 export async function checkShoppingList() {
-  const shoppingResponse = await fetch("/api/shoppingList");
+  const shoppingResponse = await fetch("/api/shoppingItems");
   const listStatus = await shoppingResponse.json();
   if (listStatus) {
     return listStatus;
