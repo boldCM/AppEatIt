@@ -12,20 +12,30 @@ const {
   deleteRecipeInWeekMongo,
   getWeekMongo,
   updateRecipeInWeekMongo,
-  deleteWholeWeekMongo,
 } = require("./lib/connectWeek");
 const {
   getShoppingListMongo,
   insertShoppingItemsMongo,
-  deleteShoppingListMongo,
   deleteShoppingItemMongo,
 } = require("./lib/connectShoppingList");
+const { deleteAllElements } = require("./lib/helpFunctions");
 
 const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-// für get und delete könne ich noch nen forEach loop schreiben...
+const collections = ["recipes", "shoppingList", "week"];
+collections.forEach((collection) => {
+  app.route(`/api/${collection}`).delete(async (req, res) => {
+    try {
+      await deleteAllElements(`${collection}`);
+      res.send(`Successfully deleted content from ${collection}`);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("An internal server error occured");
+    }
+  });
+});
 
 app.get("/api/recipes/:recipeName", async (req, res) => {
   const recipeName = req.params["recipeName"];
@@ -125,17 +135,6 @@ app
         .status(500)
         .send("An unexpected error occured. Please try again later!");
     }
-  })
-  .delete(async (req, res) => {
-    try {
-      await deleteWholeWeekMongo();
-      res.send("successfully deleted weekly overview");
-    } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .send("An unexpected error occured. Please try again later!");
-    }
   });
 
 app.delete("/api/shoppingItems/:item", async (req, res) => {
@@ -173,17 +172,6 @@ app
       const newShopppingItems = Array.isArray(req.body) ? req.body : [req.body];
       await insertShoppingItemsMongo(newShopppingItems);
       res.send(`Successfully inserted shopping items`);
-    } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .send("An unexpected error occured. Please try again later!");
-    }
-  })
-  .delete(async (req, res) => {
-    try {
-      await deleteShoppingListMongo();
-      res.send("Successfully deleted Shoppinglist");
     } catch (error) {
       console.error(error);
       res

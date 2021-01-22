@@ -87,7 +87,7 @@ export async function addIngredients(ingredients) {
 }
 
 export async function deleteShoppingList() {
-  await fetch("/api/shoppingItems", {
+  await fetch("/api/shoppingList", {
     method: "DELETE",
   });
 }
