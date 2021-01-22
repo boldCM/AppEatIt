@@ -124,6 +124,7 @@ app
       res.status(500).send("An internal server error occured");
     }
   })
+  //this post-method could go into the forEachLoop, but doesn't make a difference down here or up there right now
   .post(async (req, res) => {
     const recipe = req.body;
     try {
@@ -152,6 +153,7 @@ app.delete("/api/shoppingItems/:item", async (req, res) => {
 
 app
   .route("/api/shoppingItems")
+  //this get-method could go into the forEachLoop, but doesn't make a difference down here or up there right now
   .get(async (req, res) => {
     try {
       const shoppingItems = await getShoppingListMongo();
