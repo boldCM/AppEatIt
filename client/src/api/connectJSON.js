@@ -42,7 +42,6 @@ export async function deleteRecipeFromWeek(recipeName) {
 }
 
 export async function updateWeekByDate(date, id) {
-  // const saveDate = { date };
   await fetch(`/api/week/${id}`, {
     method: "PATCH",
     headers: {
@@ -59,12 +58,9 @@ export async function deleteWholeWeek() {
 }
 
 export async function checkShoppingList() {
-  const shoppingResponse = await fetch("/api/shoppingList");
+  const shoppingResponse = await fetch("/api/shoppingItems");
   const listStatus = await shoppingResponse.json();
-  if (listStatus) {
-    return listStatus;
-  }
-  return false;
+  return listStatus ? listStatus : false;
 }
 
 export async function addShoppingItem(quantity, unit, grocery) {
@@ -88,7 +84,7 @@ export async function addIngredients(ingredients) {
 }
 
 export async function deleteShoppingList() {
-  await fetch("/api/shoppingItems", {
+  await fetch("/api/shoppingList", {
     method: "DELETE",
   });
 }
