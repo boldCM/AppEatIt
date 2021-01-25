@@ -60,10 +60,7 @@ export async function deleteWholeWeek() {
 export async function checkShoppingList() {
   const shoppingResponse = await fetch("/api/shoppingItems");
   const listStatus = await shoppingResponse.json();
-  if (listStatus) {
-    return listStatus;
-  }
-  return false;
+  return listStatus ? listStatus : false;
 }
 
 export async function addShoppingItem(quantity, unit, grocery) {
