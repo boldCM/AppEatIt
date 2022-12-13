@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "immer": "^9.0.6",
     "mongodb": "^3.6.3",
     "node": "^15.2.1"
